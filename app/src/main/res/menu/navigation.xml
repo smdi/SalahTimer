@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/qibla"
+        android:icon="@drawable/kaaba"
+        android:title="@string/title_qibla" />
+
+    <item
+        android:id="@+id/library"
+        android:icon="@drawable/library"
+        android:title="@string/title_library" />
+
+    <item
+        android:id="@+id/salahtimings"
+        android:icon="@drawable/clock"
+        android:title="@string/title_salah_timings" />
+
+    <item
+        android:id="@+id/hadithnotifier"
+        android:icon="@drawable/notifier"
+        android:title="@string/title_hadees_notifier" />
+
+    <item
+        android:id="@+id/masjidfinder"
+        android:icon="@drawable/masjid"
+        android:title="@string/title_masjid" />
+
+
+</menu>

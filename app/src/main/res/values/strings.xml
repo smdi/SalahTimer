@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Salah Timer</string>
+    <string name="title_salah_timings">Timings</string>
+    <string name="title_qibla">Qibla</string>
+    <string name="title_library">Library</string>
+    <string name="title_hadees_notifier">Hadith Notifier</string>
+    <string name="title_masjid">Masjid Finder</string>
+</resources>

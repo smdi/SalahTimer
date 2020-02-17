@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="faded">
+        <item> حي على الصلاة ِ</item>
+        <item>Rush to prayer</item>
+        <item>  حي على الفلاح</item>
+        <item>Rush to success</item>
+    </string-array>
+</resources>
