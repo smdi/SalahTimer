@@ -29,13 +29,13 @@ public class Router extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-            final Fragment[] fragment = {null};
+
 
             final boolean check = checkConnection();
 
             switch (item.getItemId()) {
                 case R.id.salahtimings:
-                    fragment[0] = new Location();
+                     loadFirstFragment(new Location());
                     break;
                 case R.id.qibla:
                     Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
@@ -50,7 +50,7 @@ public class Router extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
                     break;
             }
-            return loadFragment(fragment[0]);
+           return true;
         }
     };
 
@@ -62,6 +62,18 @@ public class Router extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.salahtimings);
+    }
+
+    public boolean loadFirstFragment(Fragment fragment){
+
+        if(fragment!=null)
+        {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame, fragment);
+            ft.commit();
+            return  true;
+        }
+        return false;
     }
 
     public boolean loadFragment(Fragment fragment)

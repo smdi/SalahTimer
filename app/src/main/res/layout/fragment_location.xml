@@ -35,7 +35,7 @@
                 android:layout_centerHorizontal="true"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_colorFilter="@color/back5"
+                app:lottie_colorFilter="@color/white"
                 android:layout_centerInParent="true"
                 app:lottie_rawRes="@raw/watch"
                 android:layout_width="match_parent"
