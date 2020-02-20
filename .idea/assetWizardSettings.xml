@@ -19,9 +19,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\share.png" />
-                                      <entry key="outputName" value="share" />
-                                      <entry key="theme" value="HOLO_DARK" />
+                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\calendar.png" />
+                                      <entry key="outputName" value="calendar" />
+                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="35005e" />
                                     </map>
                                   </option>
                                 </PersistentState>

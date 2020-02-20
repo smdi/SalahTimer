@@ -20,6 +20,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+
+
 public class Router extends AppCompatActivity {
 
 
@@ -62,6 +64,9 @@ public class Router extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.salahtimings);
+
+
+
     }
 
     public boolean loadFirstFragment(Fragment fragment){

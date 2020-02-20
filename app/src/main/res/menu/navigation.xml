@@ -24,7 +24,7 @@
 
     <item
         android:id="@+id/masjidfinder"
-        android:icon="@drawable/masjid"
+        android:icon="@drawable/moon"
         android:title="@string/title_masjid" />
 
 

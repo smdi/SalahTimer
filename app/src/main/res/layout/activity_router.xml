@@ -28,6 +28,8 @@
     android:layout_height="wrap_content"
     android:background="@drawable/navigation_back"
     android:layout_margin="5dp"
+    app:itemIconTint="@color/navigation_selected_item"
+    app:itemTextColor="@color/navigation_selected_item"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
