@@ -25,6 +25,7 @@ public class TimingsViewModel extends ViewModel {
         this.application = application;
         this.city = city;
         this.country = country;
+
     }
 
     public APITimingsInterface getApiTimingsInterface(){
@@ -34,10 +35,10 @@ public class TimingsViewModel extends ViewModel {
         else return apiTimingsInterface;
     }
 
-    public void getTimingsData(final RetrofitResponseListener retrofitResponseListener){
-        if(timingsData == null){
+    public void getHanafiTimingsData(final RetrofitResponseListener retrofitResponseListener){
+        if(timingsData == null ){
 
-            Call<TimingsData> call = getApiTimingsInterface().getTimingsData(city,country,"8");
+            Call<TimingsData> call = getApiTimingsInterface().getTimingsData(city,country,"8" ,"1");
             call.enqueue(new Callback<TimingsData>() {
                 @Override
                 public void onResponse(Call<TimingsData> call, Response<TimingsData> response) {
@@ -66,5 +67,36 @@ public class TimingsViewModel extends ViewModel {
         }
     }
 
+    public void getShafiTimingsData(final RetrofitResponseListener retrofitResponseListener){
+        if(timingsData == null ){
+
+            Call<TimingsData> call = getApiTimingsInterface().getTimingsData(city,country,"8" ,"0");
+            call.enqueue(new Callback<TimingsData>() {
+                @Override
+                public void onResponse(Call<TimingsData> call, Response<TimingsData> response) {
+
+
+                    if(response.isSuccessful()){
+                        timingsData = response.body();
+                        retrofitResponseListener.onSuccess(timingsData);
+                    }else {
+                        retrofitResponseListener.onFailure();
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<TimingsData> call, Throwable t) {
+                    call.cancel();
+                    retrofitResponseListener.onFailure();
+                }
+            });
+
+
+        }
+        else{
+            retrofitResponseListener.onSuccess(timingsData);
+        }
+    }
 
 }

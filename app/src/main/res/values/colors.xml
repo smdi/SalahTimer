@@ -2,6 +2,7 @@
 <resources>
     <color name="gray">#eaeaea</color>
     <color name="white">#FFF</color>
+    <color name="littlewhite">#f7f4f4</color>
     <color name="back1">#cc89ff</color>
     <color name="back2">#e084ff</color>
     <color name="back3">#985ac7</color>
@@ -16,4 +17,5 @@
     <color name="pink">#ff0291</color>
     <color name="green">#06972a</color>
     <color name="blue">#3964ba</color>
+    <color name="timings_text_color">#590481</color>
 </resources>

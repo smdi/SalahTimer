@@ -8,4 +8,7 @@
     <dimen name="margin_2_dp">2dp</dimen>
     <dimen name="text_size_15dp">15dp</dimen>
     <dimen name="timings_text_size">16dp</dimen>
+    <dimen name="size_of_card">100dp</dimen>
+    <dimen name="size_of_card_text">12dp</dimen>
+    <dimen name="card_image">24dp</dimen>
 </resources>
