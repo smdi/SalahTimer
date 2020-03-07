@@ -17,5 +17,5 @@
     <color name="pink">#ff0291</color>
     <color name="green">#06972a</color>
     <color name="blue">#3964ba</color>
-    <color name="timings_text_color">#590481</color>
+    <color name="timings_text_color">@color/back5</color>
 </resources>

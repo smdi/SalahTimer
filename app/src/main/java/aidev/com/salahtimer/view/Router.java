@@ -40,7 +40,7 @@ public class Router extends AppCompatActivity {
                      loadFirstFragment(new Location());
                     break;
                 case R.id.qibla:
-                    Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
+                    loadFragment(new Compass());
                     break;
                 case R.id.library:
                     Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
@@ -64,8 +64,6 @@ public class Router extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.salahtimings);
-
-
 
     }
 

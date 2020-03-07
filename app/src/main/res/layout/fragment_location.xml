@@ -6,209 +6,338 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ScrollView
+    <RelativeLayout
+        android:paddingBottom="25dp"
         android:layout_width="match_parent"
+        android:background="@drawable/bottom_curve_white"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <ScrollView
+            android:fillViewport="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:id="@+id/line"
-                android:background="@drawable/back_relative_timings"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
 
-                <TextView
-                    android:textColor="@color/colorAccent"
-                    android:layout_marginTop="@dimen/margin_20_dp"
-                    android:textSize="18sp"
-                    android:text="Assalamualaikum son of adam(a.s)"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="@dimen/margin_20_dp"
-                    android:layout_marginRight="@dimen/margin_20_dp"
+                <LinearLayout
+                    android:id="@+id/line"
+                    android:background="@drawable/back_relative_timings"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="5dp"
-                    android:paddingLeft="5dp"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:textColor="@color/colorAccent"
+                        android:layout_marginTop="@dimen/margin_20_dp"
+                        android:textSize="18sp"
+                        android:text="Assalamualaikum son of adam(a.s)"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        />
+
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:textColor="@color/colorAccent"
+                        android:text="Search prayers timings "
+                        android:textAllCaps="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/country"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_50_dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/margin_20_dp"
+                        android:background="@drawable/edit_back"
+                        android:textAlignment="center"
+                        android:ellipsize="middle"
+                        android:ems="10"
+                        android:hint="country"
+                        android:inputType="text"
+                        android:textSize="@dimen/text_size_15dp"
+                        >
+
+                        <requestFocus />
+                    </AutoCompleteTextView>
+
+                    <AutoCompleteTextView
+                        android:id="@+id/city"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_50_dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:background="@drawable/edit_back"
+                        android:ellipsize="middle"
+                        android:layout_centerHorizontal="true"
+                        android:ems="10"
+                        android:hint="city"
+                        android:textAlignment="center"
+                        android:layout_marginTop="@dimen/margin_20_dp"
+                        android:inputType="text"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large.Inverse"
+                        android:textSize="@dimen/text_size_15dp"
+                        >
+
+                        <requestFocus />
+                    </AutoCompleteTextView>
+
+                    <Button
+                        android:id="@+id/get_The_Results"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginTop="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:layout_marginBottom="@dimen/margin_20_dp"
+                        android:background="@drawable/custom_design_pressed_unpressed_holder"
+                        android:padding="@dimen/text_size_15dp"
+                        android:textAllCaps="false"
+                        android:text="search"
+                        android:textColor="@drawable/textcolor_pressed_unpressed" />
+
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
                     android:paddingTop="5dp"
-                    />
-
-                <TextView
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="5dp"
-                    android:layout_marginLeft="@dimen/margin_20_dp"
-                    android:layout_marginRight="@dimen/margin_20_dp"
-                    android:textColor="@color/colorAccent"
-                    android:text="Search prayers timings "
-                    android:textAllCaps="false"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <AutoCompleteTextView
-                    android:id="@+id/country"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/margin_50_dp"
-                    android:layout_marginLeft="@dimen/margin_20_dp"
-                    android:layout_marginRight="@dimen/margin_20_dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/margin_20_dp"
-                    android:background="@drawable/edit_back"
-                    android:textAlignment="center"
-                    android:ellipsize="middle"
-                    android:ems="10"
-                    android:hint="country"
-                    android:inputType="text"
-                    android:textSize="@dimen/text_size_15dp"
-                    >
-
-                    <requestFocus />
-                </AutoCompleteTextView>
-
-                <AutoCompleteTextView
-                    android:id="@+id/city"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/margin_50_dp"
-                    android:layout_marginLeft="@dimen/margin_20_dp"
-                    android:layout_marginRight="@dimen/margin_20_dp"
-                    android:background="@drawable/edit_back"
-                    android:ellipsize="middle"
-                    android:layout_centerHorizontal="true"
-                    android:ems="10"
-                    android:hint="city"
-                    android:textAlignment="center"
-                    android:layout_marginTop="@dimen/margin_20_dp"
-                    android:inputType="text"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large.Inverse"
-                    android:textSize="@dimen/text_size_15dp"
-                    >
-
-                    <requestFocus />
-                </AutoCompleteTextView>
-
-                <Button
-                    android:id="@+id/get_The_Results"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="@dimen/margin_20_dp"
-                    android:layout_marginTop="@dimen/margin_20_dp"
-                    android:layout_marginRight="@dimen/margin_20_dp"
-                    android:layout_marginBottom="@dimen/margin_20_dp"
-                    android:background="@drawable/custom_design_pressed_unpressed_holder"
-                    android:padding="@dimen/text_size_15dp"
-                    android:text="salah timings"
-                    android:textColor="@drawable/textcolor_pressed_unpressed" />
-
-            </LinearLayout>
-
-
-
-
-
-            <LinearLayout
-                android:paddingTop="5dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="15dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <LinearLayout
-                    android:background="@color/littlewhite"
-                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+
                     <LinearLayout
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/white"
-                        android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="@dimen/size_of_card"
-                        android:layout_height="@dimen/size_of_card">
+                        android:background="@color/littlewhite"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                        <ImageView
-                            android:layout_weight="2"
-                            android:layout_gravity="center"
-                            android:src="@drawable/tasbeeh"
-                            android:layout_width="@dimen/card_image"
-                            android:layout_height="@dimen/card_image" />
-
-                        <TextView
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textAllCaps="true"
+                        <LinearLayout
+                            android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:text="Tasbeeh"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_of_card_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="@dimen/size_of_card"
+                            android:layout_height="@dimen/size_of_card">
+
+                            <ImageView
+                                android:layout_weight="2"
+                                android:layout_gravity="center"
+                                android:src="@drawable/tasbeeh"
+                                android:layout_width="@dimen/card_image"
+                                android:layout_height="@dimen/card_image" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:layout_weight="1"
+                                android:text="Tasbeeh"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="@dimen/size_of_card"
+                            android:layout_height="@dimen/size_of_card">
+
+                            <ImageView
+                                android:layout_weight="2"
+                                android:layout_gravity="center"
+                                android:src="@drawable/quran"
+                                android:layout_width="@dimen/card_image"
+                                android:layout_height="@dimen/card_image" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:layout_weight="1"
+                                android:text="Quran"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="@dimen/size_of_card"
+                            android:layout_height="@dimen/size_of_card">
+
+                            <ImageView
+                                android:layout_weight="2"
+                                android:layout_gravity="center"
+                                android:src="@drawable/hadith"
+                                android:layout_width="@dimen/card_image"
+                                android:layout_height="@dimen/card_image" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:layout_weight="1"
+                                android:text="Hadith"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
 
                     </LinearLayout>
+
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"
-                        android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="@dimen/size_of_card"
-                        android:layout_height="@dimen/size_of_card">
+                        android:background="@color/littlewhite"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                        <ImageView
-                            android:layout_weight="2"
-                            android:layout_gravity="center"
-                            android:src="@drawable/quran"
-                            android:layout_width="@dimen/card_image"
-                            android:layout_height="@dimen/card_image" />
 
-                        <TextView
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textAllCaps="true"
+                        <LinearLayout
                             android:layout_weight="1"
-                            android:text="Quran"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_of_card_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"
-                        android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="@dimen/size_of_card"
-                        android:layout_height="@dimen/size_of_card">
-
-                        <ImageView
-                            android:layout_weight="2"
+                            android:layout_margin="5dp"
+                            android:background="@color/white"
                             android:layout_gravity="center"
-                            android:src="@drawable/hadith"
-                            android:layout_width="@dimen/card_image"
-                            android:layout_height="@dimen/card_image" />
+                            android:orientation="vertical"
+                            android:layout_width="@dimen/size_of_card"
+                            android:layout_height="@dimen/size_of_card">
 
-                        <TextView
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textAllCaps="true"
+                            <ImageView
+                                android:layout_weight="2"
+                                android:layout_gravity="center"
+                                android:src="@drawable/islamcalendar"
+                                android:layout_width="@dimen/card_image"
+                                android:layout_height="@dimen/card_image" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:text="Islamic"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:text="Calendar"
+                                android:textAlignment="center"
+                                android:paddingBottom="5dp"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
                             android:layout_weight="1"
-                            android:text="Hadith"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_of_card_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_margin="5dp"
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="@dimen/size_of_card"
+                            android:layout_height="@dimen/size_of_card">
+
+                            <ImageView
+                                android:layout_weight="2"
+                                android:layout_gravity="center"
+                                android:src="@drawable/unlawfulgazes"
+                                android:layout_width="@dimen/card_image"
+                                android:layout_height="@dimen/card_image" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:text="Unlawful"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:text="Gazes"
+                                android:paddingBottom="5dp"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="@dimen/size_of_card"
+                            android:layout_height="@dimen/size_of_card">
+
+                            <ImageView
+                                android:layout_weight="2"
+                                android:layout_gravity="center"
+                                android:src="@drawable/bookmark"
+                                android:layout_width="@dimen/card_image"
+                                android:layout_height="@dimen/card_image" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:text="Quran"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:text="Bookmark"
+                                android:paddingBottom="5dp"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
@@ -216,133 +345,18 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:background="@color/littlewhite"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"
-                        android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="@dimen/size_of_card"
-                        android:layout_height="@dimen/size_of_card">
-
-                        <ImageView
-                            android:layout_weight="2"
-                            android:layout_gravity="center"
-                            android:src="@drawable/islamcalendar"
-                            android:layout_width="@dimen/card_image"
-                            android:layout_height="@dimen/card_image" />
-
-                        <TextView
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textAllCaps="true"
-                            android:text="Islamic"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_of_card_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textAllCaps="true"
-                            android:text="Calendar"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_of_card_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"
-                        android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="@dimen/size_of_card"
-                        android:layout_height="@dimen/size_of_card">
-
-                        <ImageView
-                            android:layout_weight="2"
-                            android:layout_gravity="center"
-                            android:src="@drawable/unlawfulgazes"
-                            android:layout_width="@dimen/card_image"
-                            android:layout_height="@dimen/card_image" />
-
-                        <TextView
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textAllCaps="true"
-                            android:text="Unlawful"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_of_card_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                        <TextView
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textAllCaps="true"
-                            android:text="Gazes"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_of_card_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:background="@color/white"
-                        android:layout_gravity="center"
-                        android:layout_margin="5dp"
-                        android:orientation="vertical"
-                        android:layout_width="@dimen/size_of_card"
-                        android:layout_height="@dimen/size_of_card">
-
-                        <ImageView
-                            android:layout_weight="2"
-                            android:layout_gravity="center"
-                            android:src="@drawable/bookmark"
-                            android:layout_width="@dimen/card_image"
-                            android:layout_height="@dimen/card_image" />
-
-                        <TextView
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textAllCaps="true"
-                            android:text="Quran"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_of_card_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textAllCaps="true"
-                            android:text="Bookmark"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_of_card_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
 
 
 
             </LinearLayout>
 
 
+        </ScrollView>
+
+    </RelativeLayout>
 
 
-
-        </LinearLayout>
-
-
-    </ScrollView>
 
 
 </RelativeLayout>

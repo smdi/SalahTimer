@@ -1,7 +1,8 @@
 package aidev.com.salahtimer.view;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +13,14 @@ import android.widget.Toast;
 
 import com.sdsmdg.tastytoast.TastyToast;
 
+import aidev.com.salahtimer.model.ConfigurationFile;
 import aidev.com.salahtimer.R;
 import aidev.com.salahtimer.model.RetrofitResponseListener;
 import aidev.com.salahtimer.model.pojo.TimingsData;
 import aidev.com.salahtimer.viewmodel.TimingsViewModel;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
@@ -28,19 +31,21 @@ public class TimingsFragment extends Fragment {
 
     private TimingsViewModel tvmhanafi, tvmshafii;
     private TimingsData.Datum data;
-    private int i = 0;
+    private int i;
 
     private TextView citycountry, timezone, sunrise, sunset, date, imsak, fajr, dhuhr, asrs, asrh, maghrib, isha, midnight;
 
     private TextView viewgridlist;
 
-    private LinearLayout layout1, layout2, layout3, layout4, layout5, imsaklayout, fajrlayout, sunriselayout, dhuhrlayout, asrshafilayout,
-    asrhanafilayout, sunsetlayout, maghriblayout, ishalayout, midnightlayout;
+    private TextView sunriselv, sunsetlv, imsaklv, fajrlv, dhuhrlv, asrslv, asrhlv, maghriblv, ishalv, midnightlv;
+
+    private CardView listview;
+    private LinearLayout gridview;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.test,container ,false);
+        return inflater.inflate(R.layout.fragment_timings_item,container ,false);
     }
 
 
@@ -88,6 +93,19 @@ public class TimingsFragment extends Fragment {
                 maghrib.setText(data.timings.magrib);
                 isha.setText(data.timings.isha);
                 midnight.setText(data.timings.midnight);
+
+
+
+                sunriselv.setText(data.timings.sunrise);
+                sunsetlv.setText(data.timings.sunset);
+                imsaklv.setText(data.timings.imsak);
+                fajrlv.setText(data.timings.fajr);
+                dhuhrlv.setText(data.timings.dhuhr);
+                asrhlv.setText(data.timings.asr);
+                maghriblv.setText(data.timings.magrib);
+                ishalv.setText(data.timings.isha);
+                midnightlv.setText(data.timings.midnight);
+
             }
         });
 
@@ -103,6 +121,7 @@ public class TimingsFragment extends Fragment {
             public void onSuccess(TimingsData body) {
 
                 asrs.setText(body.data.timings.asr.toString());
+                asrslv.setText(body.data.timings.asr.toString());
             }
         });
     }
@@ -129,22 +148,26 @@ public class TimingsFragment extends Fragment {
         midnight =view.findViewById(R.id.midnight);
         viewgridlist = view.findViewById(R.id.view);
 
-        layout1 = view.findViewById(R.id.layout1);
-        layout2 = view.findViewById(R.id.layout2);
-        layout3 = view.findViewById(R.id.layout3);
-        layout4 = view.findViewById(R.id.layout4);
-        layout5 = view.findViewById(R.id.layout5);
+        sunriselv = view.findViewById(R.id.sunriselv);
+        sunsetlv = view.findViewById(R.id.sunsetlv);
+        imsaklv = view.findViewById(R.id.imsaklv);
+        fajrlv = view.findViewById(R.id.fajrlv);
+        dhuhrlv = view.findViewById(R.id.dhuhrlv);
+        asrhlv = view.findViewById(R.id.asrhlv);
+        asrslv = view.findViewById(R.id.asrslv);
+        maghriblv = view.findViewById(R.id.maghriblv);
+        ishalv =view.findViewById(R.id.ishalv);
+        midnightlv =view.findViewById(R.id.midnightlv);
 
-        imsaklayout = view.findViewById(R.id.imsaklayout);
-        fajrlayout = view.findViewById(R.id.fajrlayout);
-        sunriselayout = view.findViewById(R.id.sunriselayout);
-        dhuhrlayout = view.findViewById(R.id.dhuhrlayout);
-        asrshafilayout = view.findViewById(R.id.asrslayout);
-        asrhanafilayout = view.findViewById(R.id.asrhlayout);
-        sunsetlayout = view.findViewById(R.id.sunsetlayout);
-        maghriblayout = view.findViewById(R.id.maghriblayout);
-        ishalayout = view.findViewById(R.id.ishalayout);
-        midnightlayout = view.findViewById(R.id.midnightlayout);
+
+        gridview = view.findViewById(R.id.grid);
+        listview = view.findViewById(R.id.listview);
+
+        i = getDataFromSharedPref(view);
+        Toast.makeText(getActivity(), ""+i ,Toast.LENGTH_SHORT);
+
+        setVisibilityToViews(i);
+
 
 
         viewgridlist.setOnClickListener(new View.OnClickListener() {
@@ -152,72 +175,14 @@ public class TimingsFragment extends Fragment {
             public void onClick(View view) {
 
                 if(i == 0){
-                    viewgridlist.setText("Grid view");
                     i = 1;
-                    layout1.setOrientation(LinearLayout.VERTICAL);
-                    layout2.setOrientation(LinearLayout.VERTICAL);
-                    layout3.setOrientation(LinearLayout.VERTICAL);
-                    layout4.setOrientation(LinearLayout.VERTICAL);
-                    layout5.setOrientation(LinearLayout.VERTICAL);
-
-                    LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
-
-                    imsaklayout.setOrientation(LinearLayout.HORIZONTAL);
-                    imsaklayout.setLayoutParams(parms);
-                    fajrlayout.setOrientation(LinearLayout.HORIZONTAL);
-                    fajrlayout.setLayoutParams(parms);
-                    sunriselayout.setOrientation(LinearLayout.HORIZONTAL);
-                    sunriselayout.setLayoutParams(parms);
-                    dhuhrlayout.setOrientation(LinearLayout.HORIZONTAL);
-                    dhuhrlayout.setLayoutParams(parms);
-                    asrshafilayout.setOrientation(LinearLayout.HORIZONTAL);
-                    asrshafilayout.setLayoutParams(parms);
-                    asrhanafilayout.setOrientation(LinearLayout.HORIZONTAL);
-                    asrhanafilayout.setLayoutParams(parms);
-                    sunsetlayout.setOrientation(LinearLayout.HORIZONTAL);
-                    sunsetlayout.setLayoutParams(parms);
-                    maghriblayout.setOrientation(LinearLayout.HORIZONTAL);
-                    maghriblayout.setLayoutParams(parms);
-                    ishalayout.setOrientation(LinearLayout.HORIZONTAL);
-                    ishalayout.setLayoutParams(parms);
-                    midnightlayout.setOrientation(LinearLayout.HORIZONTAL);
-                    midnightlayout.setLayoutParams(parms);
-
+                    setVisibilityToViews(i);
+                    setViewDataToSharedPreference(i);
                 }
                 else{
-                    viewgridlist.setText("List view");
                     i = 0;
-
-                    layout1.setOrientation(LinearLayout.HORIZONTAL);
-                    layout2.setOrientation(LinearLayout.HORIZONTAL);
-                    layout3.setOrientation(LinearLayout.HORIZONTAL);
-                    layout4.setOrientation(LinearLayout.HORIZONTAL);
-                    layout5.setOrientation(LinearLayout.HORIZONTAL);
-
-
-                    LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(R.dimen.size_of_card,R.dimen.size_of_card);
-
-                    imsaklayout.setOrientation(LinearLayout.VERTICAL);
-                    imsaklayout.setLayoutParams(parms);
-                    fajrlayout.setOrientation(LinearLayout.VERTICAL);
-                    fajrlayout.setLayoutParams(parms);
-                    sunriselayout.setOrientation(LinearLayout.VERTICAL);
-                    sunriselayout.setLayoutParams(parms);
-                    dhuhrlayout.setOrientation(LinearLayout.VERTICAL);
-                    dhuhrlayout.setLayoutParams(parms);
-                    asrshafilayout.setOrientation(LinearLayout.VERTICAL);
-                    asrshafilayout.setLayoutParams(parms);
-                    asrhanafilayout.setOrientation(LinearLayout.VERTICAL);
-                    asrhanafilayout.setLayoutParams(parms);
-                    sunsetlayout.setOrientation(LinearLayout.VERTICAL);
-                    sunsetlayout.setLayoutParams(parms);
-                    maghriblayout.setOrientation(LinearLayout.VERTICAL);
-                    maghriblayout.setLayoutParams(parms);
-                    ishalayout.setOrientation(LinearLayout.VERTICAL);
-                    ishalayout.setLayoutParams(parms);
-                    midnightlayout.setOrientation(LinearLayout.VERTICAL);
-                    midnightlayout.setLayoutParams(parms);
-
+                    setVisibilityToViews(i);
+                    setViewDataToSharedPreference(i);
                 }
 
 
@@ -227,6 +192,33 @@ public class TimingsFragment extends Fragment {
 
     }
 
+    private void setVisibilityToViews(int i) {
+
+        if(i == 0){
+            viewgridlist.setText("Grid view");
+            gridview.setVisibility(View.GONE);
+            listview.setVisibility(View.VISIBLE);
+
+        }
+        else{
+            viewgridlist.setText("List view");
+            listview.setVisibility(View.GONE);
+            gridview.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private int getDataFromSharedPref(View view) {
+
+        SharedPreferences prefs = getActivity().getSharedPreferences(""+ConfigurationFile.viewDB, Context.MODE_PRIVATE);
+        int viewVal = prefs.getInt(""+ConfigurationFile.viewVal, 0);
+        return  viewVal;
+    }
 
 
-}
+    public void setViewDataToSharedPreference(int viewDataToSharedPreference) {
+        SharedPreferences.Editor editor = getActivity().getSharedPreferences(""+ConfigurationFile.viewDB, Context.MODE_PRIVATE).edit();
+        editor.putInt(""+ConfigurationFile.viewVal, viewDataToSharedPreference);
+        editor.apply();
+    }
+
+   }

@@ -23,12 +23,8 @@ import androidx.fragment.app.FragmentTransaction;
 public class Location extends Fragment {
 
 
-
-
     private EditText city;
-
     private EditText country;
-
     private Button search;
 
 
