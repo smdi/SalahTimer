@@ -1,13 +1,17 @@
 package aidev.com.salahtimer.view;
 
 
+import android.animation.ObjectAnimator;
+import android.graphics.Path;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import java.lang.Math;
 
 
 import aidev.com.salahtimer.R;
@@ -78,5 +82,7 @@ public class TasbeehFragment extends Fragment {
         reset = view.findViewById(R.id.resettasbeehcount);
 
     }
+
+
 
 }
