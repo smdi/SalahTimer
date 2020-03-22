@@ -138,6 +138,7 @@
                         android:layout_height="wrap_content">
 
                         <LinearLayout
+                            android:id="@+id/tasbeehlayout"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
                             android:background="@color/white"
@@ -147,6 +148,7 @@
                             android:layout_height="@dimen/size_of_card">
 
                             <ImageView
+
                                 android:layout_weight="2"
                                 android:layout_gravity="center"
                                 android:src="@drawable/tasbeeh"
@@ -344,8 +346,6 @@
 
 
                 </LinearLayout>
-
-
 
 
 

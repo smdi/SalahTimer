@@ -23,6 +23,7 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 public class TimingsFragment extends Fragment {
@@ -58,7 +59,7 @@ public class TimingsFragment extends Fragment {
         countryText = getArguments().getString("country");
         initializer(view);
 
-        tvmhanafi = ViewModelProviders.of(this, new TimingsFactory(getActivity(), cityText, countryText)).get(TimingsViewModel.class);
+        tvmhanafi = new ViewModelProvider(this, new TimingsFactory(getActivity(), cityText, countryText)).get(TimingsViewModel.class);
 
 
         tvmhanafi.getHanafiTimingsData(new RetrofitResponseListener() {

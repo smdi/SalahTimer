@@ -19,10 +19,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\compass.png" />
-                                      <entry key="outputName" value="compass" />
+                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\gear.png" />
+                                      <entry key="outputName" value="reset" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="b721ff" />
+                                      <entry key="themeColor" value="35005e" />
                                     </map>
                                   </option>
                                 </PersistentState>
