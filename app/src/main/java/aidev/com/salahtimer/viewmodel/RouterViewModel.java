@@ -68,21 +68,20 @@ public class RouterViewModel extends ViewModel {
 
     public boolean loadFirstFragment(Fragment fragment){
 
-            final boolean check = checkConnection();
 
-            if(check){ if(fragment!=null)
+
+            if(fragment!=null)
             {
                 FragmentTransaction ft = fragmentManager.beginTransaction();
                 ft.replace(R.id.frame, fragment);
                 ft.commitAllowingStateLoss();
                 return  true;
-            }}
-            else {displayNoInternet("No Internet");}
+            }
         return false;
         }
 
     private void displayNoInternet(String msg) {
-        TastyToast.makeText(activity,msg,TastyToast.ERROR,TastyToast.LENGTH_SHORT).show();
+        TastyToast.makeText(activity,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
     }
 
     public boolean loadFragment(Fragment fragment)

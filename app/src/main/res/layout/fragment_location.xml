@@ -47,59 +47,67 @@
                         />
 
                     <TextView
+                        android:textSize="14sp"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="5dp"
                         android:layout_marginLeft="@dimen/margin_20_dp"
                         android:layout_marginRight="@dimen/margin_20_dp"
-                        android:textColor="@color/colorAccent"
-                        android:text="Search prayers timings "
+                        android:textColor="@color/darkgray"
+                        android:text="Search prayer timings"
                         android:textAllCaps="false"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <AutoCompleteTextView
+
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/country"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/margin_50_dp"
+                        style="@style/InputLayoutStyle"
+                        app:boxBackgroundColor="@color/white"
+                        app:hintTextAppearance="@style/HintText"
                         android:layout_marginLeft="@dimen/margin_20_dp"
                         android:layout_marginRight="@dimen/margin_20_dp"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="@dimen/margin_20_dp"
-                        android:background="@drawable/edit_back"
-                        android:textAlignment="center"
-                        android:ellipsize="middle"
-                        android:ems="10"
-                        android:hint="country"
-                        android:inputType="text"
-                        android:textSize="@dimen/text_size_15dp"
-                        >
+                        android:layout_marginTop="10dp"
+                        app:errorTextAppearance="@style/ErrorTextAppearance"
+                        android:layout_height="wrap_content">
 
-                        <requestFocus />
-                    </AutoCompleteTextView>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:hint="country"
+                            android:inputType="text"
+                            android:paddingTop="20dp"
+                            android:textSize="@dimen/text_size_15dp"
+                            android:textColor="@color/back5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
 
-                    <AutoCompleteTextView
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/city"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/margin_50_dp"
+                        style="@style/InputLayoutStyle"
+                        app:boxBackgroundColor="@color/white"
+                        app:hintTextAppearance="@style/HintText"
                         android:layout_marginLeft="@dimen/margin_20_dp"
                         android:layout_marginRight="@dimen/margin_20_dp"
-                        android:background="@drawable/edit_back"
-                        android:ellipsize="middle"
-                        android:layout_centerHorizontal="true"
-                        android:ems="10"
-                        android:hint="city"
-                        android:textAlignment="center"
-                        android:layout_marginTop="@dimen/margin_20_dp"
-                        android:inputType="text"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large.Inverse"
-                        android:textSize="@dimen/text_size_15dp"
-                        >
+                        android:layout_marginTop="10dp"
+                        app:errorTextAppearance="@style/ErrorTextAppearance"
+                        android:layout_height="wrap_content">
 
-                        <requestFocus />
-                    </AutoCompleteTextView>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:hint="city"
+                            android:inputType="text"
+                            android:paddingTop="20dp"
+                            android:textSize="@dimen/text_size_15dp"
+                            android:textColor="@color/back5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
 
                     <Button
                         android:id="@+id/get_The_Results"
@@ -107,7 +115,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginLeft="@dimen/margin_20_dp"
-                        android:layout_marginTop="@dimen/margin_20_dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginRight="@dimen/margin_20_dp"
                         android:layout_marginBottom="@dimen/margin_20_dp"
                         android:background="@drawable/custom_design_pressed_unpressed_holder"
@@ -132,12 +140,13 @@
 
 
                     <LinearLayout
-                        android:background="@color/littlewhite"
+                        android:background="@color/white"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <LinearLayout
+                            android:elevation="5dp"
                             android:id="@+id/tasbeehlayout"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
@@ -167,6 +176,7 @@
 
                         </LinearLayout>
                         <LinearLayout
+                            android:elevation="5dp"
                             android:layout_weight="1"
                             android:layout_margin="5dp"
                             android:background="@color/white"
@@ -194,6 +204,7 @@
 
                         </LinearLayout>
                         <LinearLayout
+                            android:elevation="5dp"
                             android:layout_weight="1"
                             android:layout_margin="5dp"
                             android:background="@color/white"
@@ -226,6 +237,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+
                         android:background="@color/littlewhite"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -233,6 +245,7 @@
 
 
                         <LinearLayout
+                            android:elevation="5dp"
                             android:layout_weight="1"
                             android:layout_margin="5dp"
                             android:background="@color/white"
@@ -269,6 +282,7 @@
 
                         </LinearLayout>
                         <LinearLayout
+                            android:elevation="5dp"
                             android:layout_weight="1"
                             android:layout_margin="5dp"
                             android:background="@color/white"
@@ -304,6 +318,7 @@
 
                         </LinearLayout>
                         <LinearLayout
+                            android:elevation="5dp"
                             android:layout_weight="1"
                             android:background="@color/white"
                             android:layout_gravity="center"

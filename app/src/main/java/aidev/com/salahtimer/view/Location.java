@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import aidev.com.salahtimer.R;
@@ -32,8 +33,8 @@ import androidx.lifecycle.ViewModelProvider;
 public class Location extends Fragment {
 
 
-    private EditText city;
-    private EditText country;
+    private TextInputLayout city;
+    private TextInputLayout country;
     private Button search;
     private LinearLayout tasbeeh;
 
@@ -58,6 +59,7 @@ public class Location extends Fragment {
         tasbeeh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startplayer();
                 loadFragmentWithNoInternet(new TasbeehFragment());
             }
         });
@@ -77,22 +79,41 @@ public class Location extends Fragment {
             public void onClick(View view) {
                 startplayer();
 
-                String cityText = city.getText().toString();
-                String countryText = country.getText().toString();
+                String cityText = city.getEditText().getText().toString();
+                String countryText = country.getEditText().getText().toString();
 
-                if(cityText.length() > 0  && countryText.length() > 0){
-                    setCityCountry(cityText,countryText);
+                boolean cityb = false, countryb = false;
+
+                if(cityText.length() > 0){
+                    cityb = true;
                 }
                 else {
-                    TastyToast.makeText(getActivity(),"enter valid details",TastyToast.LENGTH_SHORT,TastyToast.CONFUSING).show();
+                    city.setError("City name required");
                 }
+                if(countryText.length() > 0){
+                    countryb = true;
+                }
+                else {
+                    country.setError("Country name required");
+                }
+                if(cityb & countryb){
+
+                    disableError(city);
+                    disableError(country);
+                    setCityCountry(cityText,countryText);
+                }
+
             }
         });
 
     }
 
 
-
+    private void disableError(TextInputLayout Wrapper) {
+        if(Wrapper.isErrorEnabled()){
+            Wrapper.setErrorEnabled(false);
+        }
+    }
 
     private void setCityCountry(String cityText, String countryText) {
 
@@ -126,21 +147,19 @@ public class Location extends Fragment {
 
     public boolean loadFragmentWithNoInternet(Fragment fragment)
     {
-        final boolean check = checkConnection();
-        if(check){if(fragment!=null)
+
+        if(fragment!=null)
         {
             FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.frame, fragment).addToBackStack("tag");
             ft.commitAllowingStateLoss();
             return  true;
-        }}
-        else { displayNoInternet("No Internet"); }
-
+        }
         return false;
     }
 
     private void displayNoInternet(String msg) {
-        TastyToast.makeText(getActivity(),msg,TastyToast.ERROR,TastyToast.LENGTH_SHORT).show();
+        TastyToast.makeText(getActivity(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
     }
 
     private void startplayer() {

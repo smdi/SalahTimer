@@ -1,5 +1,6 @@
 package aidev.com.salahtimer.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -43,6 +44,8 @@ public class TimingsFragment extends Fragment {
     private CardView listview;
     private LinearLayout gridview;
 
+    private ProgressDialog dialog;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -55,12 +58,13 @@ public class TimingsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+
         cityText = getArguments().getString("city");
         countryText = getArguments().getString("country");
+
         initializer(view);
 
         tvmhanafi = new ViewModelProvider(this, new TimingsFactory(getActivity(), cityText, countryText)).get(TimingsViewModel.class);
-
 
         tvmhanafi.getHanafiTimingsData(new RetrofitResponseListener() {
             @Override
@@ -75,6 +79,7 @@ public class TimingsFragment extends Fragment {
 
             @Override
             public void onSuccess(TimingsData body) {
+
                 data = body.data;
 
 
@@ -110,7 +115,7 @@ public class TimingsFragment extends Fragment {
             }
         });
 
-        tvmshafii = ViewModelProviders.of(this, new TimingsFactory(getActivity(), cityText, countryText)).get(TimingsViewModel.class);
+        tvmshafii = new ViewModelProvider(this, new TimingsFactory(getActivity(), cityText, countryText)).get(TimingsViewModel.class);
 
         tvmshafii.getShafiTimingsData(new RetrofitResponseListener() {
             @Override
@@ -123,6 +128,8 @@ public class TimingsFragment extends Fragment {
 
                 asrs.setText(body.data.timings.asr.toString());
                 asrslv.setText(body.data.timings.asr.toString());
+
+                dialog.dismiss();
             }
         });
     }
@@ -130,6 +137,12 @@ public class TimingsFragment extends Fragment {
 
 
     private void initializer(View view) {
+
+        dialog = new ProgressDialog(getActivity());
+        dialog.setMessage("processing data!");
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
 
         citycountry = view.findViewById(R.id.citycountry);
         timezone = view.findViewById(R.id.timezone);
@@ -163,6 +176,8 @@ public class TimingsFragment extends Fragment {
 
         gridview = view.findViewById(R.id.grid);
         listview = view.findViewById(R.id.listview);
+        
+
 
         i = getDataFromSharedPref(view);
         Toast.makeText(getActivity(), ""+i ,Toast.LENGTH_SHORT);
@@ -185,9 +200,6 @@ public class TimingsFragment extends Fragment {
                     setVisibilityToViews(i);
                     setViewDataToSharedPreference(i);
                 }
-
-
-
             }
         });
 
