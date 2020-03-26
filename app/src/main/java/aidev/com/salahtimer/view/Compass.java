@@ -29,7 +29,7 @@ import android.widget.TextView;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import aidev.com.salahtimer.R;
-import aidev.com.salahtimer.viewmodel.CompassViewModel;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,7 +42,7 @@ public class Compass extends Fragment {
     private ProgressBar progressBar;
     private WebView webView;
     private static  String url = "" ;
-    private CompassViewModel compassViewModel;
+
 
     @Nullable
     @Override
@@ -59,11 +59,44 @@ public class Compass extends Fragment {
 
 
         url =  "https://qiblafinder.withgoogle.com/intl/en/finder/ar";
+        
 
-        compassViewModel = new ViewModelProvider(getActivity(),new CompassFactory(getActivity(), view, url)).get(CompassViewModel.class);
+        progressBar = (ProgressBar) view.findViewById(R.id.qiblaprog);
 
-        compassViewModel.getDisplayData();
+        webView = (WebView) view.findViewById(R.id.webViewinActivity);
 
+        webView.setWebViewClient(new MyClient());
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().getLoadsImagesAutomatically();
+        webView.setWebChromeClient(new WebChromeClient(){
+
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+
+                progressBar.setProgress(newProgress);
+
+                if (newProgress == 100) {
+
+                    progressBar.setVisibility(View.GONE);
+                    webView.setVisibility(View.VISIBLE);
+                }
+
+            }
+        });
+
+        webView.loadUrl(url);
+
+    }
+
+    private class MyClient extends WebViewClient {
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
+            view.loadUrl(url);
+            return true;
+        }
     }
 
 
