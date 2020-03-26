@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
@@ -70,11 +71,15 @@ public class TimingsFragment extends Fragment {
             @Override
             public void onFailure() {
                 TastyToast.makeText(getActivity(),"No data found",Toast.LENGTH_SHORT,TastyToast.ERROR).show();
-                Fragment fragment = new Location();
-                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentstimingsitem,fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+//                Fragment fragment = new Location();
+//                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragmentstimingsitem,fragment);
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
+                dialog.dismiss();
+                FragmentManager fm = getActivity()
+                        .getSupportFragmentManager();
+                fm.popBackStack ("timings", FragmentManager.POP_BACK_STACK_INCLUSIVE);
             }
 
             @Override
@@ -176,7 +181,7 @@ public class TimingsFragment extends Fragment {
 
         gridview = view.findViewById(R.id.grid);
         listview = view.findViewById(R.id.listview);
-        
+
 
 
         i = getDataFromSharedPref(view);

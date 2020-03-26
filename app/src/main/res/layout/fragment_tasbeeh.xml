@@ -61,6 +61,7 @@
 
             <androidx.cardview.widget.CardView
                 app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/back1"
                 android:layout_marginLeft="@dimen/margin_20_dp"
                 android:layout_marginRight="@dimen/margin_20_dp"
                 android:layout_width="match_parent"
@@ -83,7 +84,7 @@
                         <TextView
                             android:layout_marginTop="5dp"
                             android:gravity="center"
-                            android:textColor="@color/back1"
+                            android:textColor="@color/white"
                             android:textAllCaps="true"
                             android:layout_weight="1"
                             android:text="count"
@@ -98,7 +99,7 @@
                             android:layout_margin="10dp"
                             android:layout_gravity="center"
                             android:id="@+id/counttasbeeh"
-                            android:textColor="@color/timings_text_color"
+                            android:textColor="@color/white"
                             android:textAllCaps="false"
                             android:layout_weight="1"
                             android:text="0"

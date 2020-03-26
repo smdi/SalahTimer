@@ -45,7 +45,7 @@ public class RouterViewModel extends ViewModel {
                           loadFirstFragment(new Location());
                           break;
                       case R.id.qibla:
-                          loadFragment(new Compass());
+                          loadFragment(new Compass(), "qibla");
                           break;
                       case R.id.library:
                           Toast.makeText(activity,"test",Toast.LENGTH_SHORT).show();
@@ -68,8 +68,6 @@ public class RouterViewModel extends ViewModel {
 
     public boolean loadFirstFragment(Fragment fragment){
 
-
-
             if(fragment!=null)
             {
                 FragmentTransaction ft = fragmentManager.beginTransaction();
@@ -84,13 +82,13 @@ public class RouterViewModel extends ViewModel {
         TastyToast.makeText(activity,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
     }
 
-    public boolean loadFragment(Fragment fragment)
+    public boolean loadFragment(Fragment fragment,String tag)
         {
             final boolean check = checkConnection();
             if(check){if(fragment!=null)
             {
                 FragmentTransaction ft = fragmentManager.beginTransaction();
-                ft.replace(R.id.frame, fragment).addToBackStack("tag");
+                ft.replace(R.id.frame, fragment).addToBackStack(tag);
                 ft.commitAllowingStateLoss();
                 return  true;
             }}

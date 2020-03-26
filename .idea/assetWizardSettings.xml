@@ -19,10 +19,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\history.png" />
-                                      <entry key="outputName" value="reset" />
+                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\book.png" />
+                                      <entry key="outputName" value="library" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="35005e" />
+                                      <entry key="themeColor" value="b721ff" />
                                     </map>
                                   </option>
                                 </PersistentState>

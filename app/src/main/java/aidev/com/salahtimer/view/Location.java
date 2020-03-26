@@ -55,12 +55,14 @@ public class Location extends Fragment {
     }
 
     private void initialisers(View view) {
+
+
         tasbeeh = (LinearLayout) view.findViewById(R.id.tasbeehlayout);
         tasbeeh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startplayer();
-                loadFragmentWithNoInternet(new TasbeehFragment());
+                loadFragmentWithNoInternet(new TasbeehFragment(),"tasbeeh");
             }
         });
 
@@ -124,19 +126,19 @@ public class Location extends Fragment {
             Fragment fragment = new TimingsFragment();
             fragment.setArguments(bundle);
             FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.location,fragment).addToBackStack("tag");
+            fragmentTransaction.replace(R.id.location,fragment).addToBackStack("timings");
             fragmentTransaction.commit();
         }
         else { displayNoInternet("No Internet"); }
 
     }
-    public boolean loadFragment(Fragment fragment)
+    public boolean loadFragment(Fragment fragment, String tag)
     {
         final boolean check = checkConnection();
         if(check){if(fragment!=null)
         {
             FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame, fragment).addToBackStack("tag");
+            ft.replace(R.id.frame, fragment).addToBackStack(tag);
             ft.commitAllowingStateLoss();
             return  true;
         }}
@@ -145,13 +147,13 @@ public class Location extends Fragment {
         return false;
     }
 
-    public boolean loadFragmentWithNoInternet(Fragment fragment)
+    public boolean loadFragmentWithNoInternet(Fragment fragment,String tag)
     {
 
         if(fragment!=null)
         {
             FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame, fragment).addToBackStack("tag");
+            ft.replace(R.id.frame, fragment).addToBackStack(tag);
             ft.commitAllowingStateLoss();
             return  true;
         }

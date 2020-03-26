@@ -9,7 +9,7 @@
 
     <item
         android:id="@+id/library"
-        android:icon="@drawable/library"
+        android:icon="@drawable/islamcalendar"
         android:title="@string/title_library" />
 
     <item

@@ -3,6 +3,7 @@ package aidev.com.salahtimer.view;
 
 import android.animation.ObjectAnimator;
 import android.graphics.Path;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -55,20 +56,21 @@ public class TasbeehFragment extends Fragment {
         subtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tasbeehViewModel.getTasbeehCount()>0){counttv.setText(""+tasbeehViewModel.minus());}
+                if(tasbeehViewModel.getTasbeehCount()>0){ startplayer(R.raw.subndreset); counttv.setText(""+tasbeehViewModel.minus());}
             }
         });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startplayer(R.raw.knock);
                 counttv.setText(""+tasbeehViewModel.addCount());
             }
         });
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                counttv.setText(""+tasbeehViewModel.reset());
+                if(tasbeehViewModel.getTasbeehCount()>0){startplayer(R.raw.subndreset); counttv.setText(""+tasbeehViewModel.reset());}
             }
         });
 
@@ -81,6 +83,12 @@ public class TasbeehFragment extends Fragment {
         subtract = view.findViewById(R.id.subtasbeehcount);
         reset = view.findViewById(R.id.resettasbeehcount);
 
+    }
+
+    private void startplayer(int res) {
+
+        final MediaPlayer mp = MediaPlayer.create(getActivity() ,res);
+        mp.start();
     }
 
 
