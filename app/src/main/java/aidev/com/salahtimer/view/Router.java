@@ -24,7 +24,7 @@ public class Router extends AppCompatActivity {
         setContentView(R.layout.activity_router);
 
         rvm = new ViewModelProvider(this,
-                new RouterFactory(getApplicationContext(),getFragementManagerObject())).get(RouterViewModel.class);
+                new RouterFactory(getApplicationContext(),getFragementManagerObject(),Router.this)).get(RouterViewModel.class);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(rvm.getBottomNavbarObject());

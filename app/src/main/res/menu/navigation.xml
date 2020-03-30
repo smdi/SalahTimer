@@ -8,7 +8,7 @@
         android:title="@string/title_qibla" />
 
     <item
-        android:id="@+id/library"
+        android:id="@+id/hijricalendar"
         android:icon="@drawable/islamcalendar"
         android:title="@string/title_library" />
 

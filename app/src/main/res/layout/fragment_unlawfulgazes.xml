@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:paddingTop="5dp"
+    android:paddingBottom="30dp"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_curve_white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/lowergaze"
+                />
+
+
+
+            <TextView
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="\nFew Tips for SafeGuarding OneSelf from Sin of the Eye \n \n UNLAWFUL GAZES \n\n"
+                android:id="@+id/heading"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="\nBY"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="SHAYKH ZULFIQAR AHMAD NAQSHBANDI MUJADDIDI(DB)"
+                android:id="@+id/author"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/matter"
+                android:layout_marginBottom="40dp"
+                android:textSize="15sp"
+                android:lineSpacingExtra="5dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n\n This era is not easy one.It is an era of great distress full of tests and trails which a person is facing constantly in his life .\n\n
+At present most of our population is in grievance due to immodesty and lack of moral values which is seen very commonly in our societies .\n\n
+To gaze at a substance which is not permitted in islam is called badh nazri in  urdu it is considered as an Unlawful gaze.\n\n
+This is an overwhelming difficulty and has become a problem of not just a one or two instances but a problem in every moment of our lives.\n\n
+A person engages himself in the mosque for an hour or so , worshipping Allah(swt) by reciting the holy quran , Zikr and muzakirah of deen etc.\n\n
+ He gets not out of masjid before that his eyes are already out wandering in streets and spiritual lights and spiritual light which he acquired in the last hour of worship is lost completely with just a sinle glance.\n\n
+
+Now the world is functioning with such a step that man has several chances where he encounters women and has a need to deal with them.\n\n
+In such circumstances what a man is supposed to arises a big Question here!\n\n
+
+so this humble servant asked our mentor hazrat jee(DB) that what is a man supposed to do when he encounters a woman , example say in counter or at a desk in airport?\n\n
+
+Hazrat jee(DB) replied that if you have to submit your tickets and documents isthe job of the hands and not the job of eyes .\n\n
+Likewise when there is a need of an enquiry or a talk ,  it is the job of the Tongue and not the eyes .\n\n
+So it means that in both the above mentioned scenarios the necessity of using the eyes is not essential.\n\n
+If one has to give or talk someting , he shall do it using the hands or tongue respectively and keep the eyes aside (Eg: gaze on the Desk or any adjacent place which is safe).
+Mashallah what a lovely way of teaching an dsee how wonderful solution is.\n\n
+
+Now the need of time to give due importance and ponder from instance to instance on how to save ourselves from this evil.
+There is a famous saying  : Where there is will there is way\n\n
+
+May Allah ta'ala on behalf of the whole nation give hazrat ji (DB) the best and the finest reward in this world as well as in the hereafter who has helped us with such wonderful teachimgs. May Allah give us toufeeq to act upon it.Ameen\n\n
+
+
+Few Tips for SafeGuarding oneself from the sin of the Eye - Unlawful Gazes\n\n
+
+
+
+Tell the believing men to lower their gaze and be modest\n\n
+
+
+And tell the believing women to lower their gaze and be modest
+(Qur'an , Surah An-Nur, Aayat 30,31. Only the relevant portion of Aayat is Documented)\n\n
+
+
+Unfortunately , today , we live in a society where advertisements ,  billboards , magazines , internet , television , newspapers etc .attract us with obscene images . the west also attempts to destroy our faith by propogating the message SHYNESS is a SICKNESS\n\n
+It is difficult to save ourselves from this evil as watching obscene images repeatedly destroys our modesty and make us immune to obscenity.\n\n
+'Remember , if we do not cast a veil over our eyes , then a veil will be cast over our hearts for sure'.\n\n
+
+Below are few steps of advice for people who intend to save themselves from this sin:\n\n
+
+1. while walking on the road , keep your gaze lowered in such a manner that just by the feet of passers by , one can get an idea if they are men or women.\n\n
+
+2.In supermarkets/Ticket Counters , etc., try looking for your gender.
+Avoid Counters with representatives of your opposite gender.\n\n
+
+3.while driving a car/riding a bike , keep your concentration on the road and vehicle around rather than people on the road and in  the vehicles . its always possible that you might end up looking at a Na-Mehram seated in a car , bike or walking.\n\n
+
+4. Never look at Billboards/Hoardings while drivig , riding or Walking\n\n
+
+5.Its better to avoid passing through a street which has a girls School or College.\n\n
+
+6.Always Carry an Islamic Book with you while Travelling in a bus /Plane / Train . This will keep your Mind Busy and help you against evil thoughts from shaitan.\n\n
+
+7.When entering your own house , make an audible sound from mouth , so that if ther is non-mehram woman present , she may cover herself.\n\n
+
+8. When You Knock on Someone's door , so as to avoid coming across an unveiled woman.\n\n
+
+9.Never stay alone in the house and never keep yourself free. keep yourself occupied with some work all the time.\n\n
+
+10.Connect to internet only when it's required . Never Connect un-necessarily as idle mind is the devils workshop.\n\n
+
+11. When you happen to be at airport or an office , where a television is playing or pictures of women are displayed , then intentionally sit with your back towards is.\n\n
+
+12. During any Official Work essential shopping , if One needs to interact with Non-mehram , then do not look at their face . just as two people who are displeased with each other would avoid looking at eah other faces or eyes when required to interact under compulsion.\n\n
+
+13.If married , keep your spouse happy.\n\n
+
+14.During Tawaaf of Kaabatullah ,keep you gaze fixed at your feet. never raise your gaze during tawaaf except for istilam of Hajr-e-Aswad.\n\n
+
+15.Avoid gatherings/functions if there is opportunity of sin (E.g. No arrangement of Purdah for Visiting Women , music , dancing ,etc.)
+if there is fear that the relationship between you an dthe organizer of the Fuction
+may be affected , then be the last to enter and first to leave the gathering.\n\n
+
+16. First of all, its best not to visit Picnic spots. However , if required to go , then choose such a time an day when there would be minimum crowd.\n\n
+
+17. Fast on  the 13th,14th,15th of every month as per the Lunar calendar.Also fast on every Mondays and Thursdays. if you are still unable to control your gaze , then fast on every alternative day.\n\n
+
+18.Visualize the Punishment you might get for the sin of unlawful gazes.Imagine that your eyes are being pierced with hot iron rod for years and years together.\n\n
+
+19. Fix a punishment for Yourself every time you end up sinning e.g. Offer 20 Rakaat Nafl Namaz for every sin occured or give sadaqah of Certain amount.(Possibly prevent you from sinning again).\n\n
+
+20.If you happen to cast a sinful gaze , lower your gaze immediately and recite Istigfaar.\n\n
+
+21.Always recite in your heart\n\n
+
+  I dont have any attarction, but Allah.\n
+
+  I dont have any passion , but Allah.\n
+
+  I dont have any beloved but Allah.\n
+
+  There is no God But Allah.\n\n
+
+22. Wake up for Tahajjud Salah every day and pray to Allah that Oh Allah! it is exteremely difficult for me to prevent myself from sinning,but it is extremely easy for you to save me from sinning . Oh Allah! Cleans my heart and my eyes  from the evil affects of my sins.\n\n
+
+
+REWARDS OF SAFEGUARDING ONESELF FROM UNLAWFUL GAZES :\n
+
+A) FOR EVERY GAZE THAT WAS SAFE GUARDED, ONE WOULD BE BESTOWED WITH THE DEEDAR OF ALLAH.\n
+
+
+B) SUCH EYES WILL BE SAFE FROM CRYING ON THE DAY OF JUDGEMENT.\n"
+
+                />
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

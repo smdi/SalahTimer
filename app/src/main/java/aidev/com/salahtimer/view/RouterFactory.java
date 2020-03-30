@@ -17,15 +17,17 @@ public class RouterFactory implements ViewModelProvider.Factory {
 
     private Context application;
     private FragmentManager fragementManagerObject;
+    private Router router;
 
-    public RouterFactory(Context application, FragmentManager fragementManagerObject) {
+    public RouterFactory(Context application, FragmentManager fragementManagerObject, Router router) {
         this.application = application;
         this.fragementManagerObject = fragementManagerObject;
+        this.router = router;
     }
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new RouterViewModel(application,fragementManagerObject);
+        return (T) new RouterViewModel(application,fragementManagerObject, router);
     }
 }

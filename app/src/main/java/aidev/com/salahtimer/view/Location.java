@@ -1,10 +1,12 @@
 package aidev.com.salahtimer.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +38,7 @@ public class Location extends Fragment {
     private TextInputLayout city;
     private TextInputLayout country;
     private Button search;
-    private LinearLayout tasbeeh;
+    private LinearLayout tasbeeh, unlawfulgazes, share;
 
     @Nullable
     @Override
@@ -56,15 +58,36 @@ public class Location extends Fragment {
 
     private void initialisers(View view) {
 
+        share = (LinearLayout) view.findViewById(R.id.share);
+        share.setOnClickListener(view13 -> {
+
+            startplayer();
+
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("text/plain");
+            i.putExtra(Intent.EXTRA_SUBJECT, "Salah Timer");
+            String sAux = "\nSalah Timer App link (Know salah timings, Qibla, Islamic Calendar,Quran - e - pak, Hadith, Tasbeeh counter," +
+                    "Unlawful gazes, Masjid finder Accurately)\n\n";
+            sAux = sAux + "app link\n\n";
+            i.putExtra(Intent.EXTRA_TEXT, sAux);
+            startActivity(Intent.createChooser(i, "share application"));
+        });
 
         tasbeeh = (LinearLayout) view.findViewById(R.id.tasbeehlayout);
-        tasbeeh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startplayer();
-                loadFragmentWithNoInternet(new TasbeehFragment(),"tasbeeh");
-            }
+        tasbeeh.setOnClickListener(view12 -> {
+            startplayer();
+            loadFragmentWithNoInternet(new TasbeehFragment(),"tasbeeh");
         });
+
+
+        unlawfulgazes = (LinearLayout) view.findViewById(R.id.unlawfulgazes);
+        unlawfulgazes.setOnClickListener(view1 -> {
+            startplayer();
+            loadFragmentWithNoInternet(new UnlawfulGazes(),"unlawfulgazes");
+
+        });
+
+
 
         city = view.findViewById(R.id.city);
         country = view.findViewById(R.id.country);

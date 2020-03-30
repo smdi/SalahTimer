@@ -7,6 +7,7 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
+        android:gravity="center"
         android:paddingBottom="25dp"
         android:layout_width="match_parent"
         android:background="@drawable/bottom_curve_white"
@@ -233,7 +234,6 @@
                         </LinearLayout>
 
 
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -282,6 +282,7 @@
 
                         </LinearLayout>
                         <LinearLayout
+                            android:id="@+id/unlawfulgazes"
                             android:elevation="5dp"
                             android:layout_weight="1"
                             android:layout_margin="5dp"
@@ -360,9 +361,49 @@
 
 
 
+
                 </LinearLayout>
 
 
+                <LinearLayout
+                    android:id="@+id/share"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.cardview.widget.CardView
+                        app:cardBackgroundColor="@color/back1"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="20dp"
+                        android:elevation="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:layout_margin="5dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:textColor="@color/white"
+                            android:text="Share"
+                            android:textAllCaps="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
 
             </LinearLayout>
 

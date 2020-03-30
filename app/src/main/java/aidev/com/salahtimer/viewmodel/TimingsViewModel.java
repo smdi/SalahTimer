@@ -43,7 +43,6 @@ public class TimingsViewModel extends ViewModel {
                 @Override
                 public void onResponse(Call<TimingsData> call, Response<TimingsData> response) {
 
-
                     if(response.isSuccessful()){
                         timingsData = response.body();
                         retrofitResponseListener.onSuccess(timingsData);
