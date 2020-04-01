@@ -40,7 +40,7 @@ public class Location extends Fragment {
     private TextInputLayout country;
     private Button search;
     private TextView share;
-    private LinearLayout tasbeeh, unlawfulgazes, hadith;
+    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark;
 
     @Nullable
     @Override
@@ -77,16 +77,13 @@ public class Location extends Fragment {
 
 
         hadith = (LinearLayout) view.findViewById(R.id.hadith);
-        hadith.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startplayer();
-                loadFragmentWithNoInternet(new Hadith(),"hadith");
-            }
+        hadith.setOnClickListener(view1 -> {
+            startplayer();
+            loadFragmentWithNoInternet(new Hadith(),"hadith");
         });
 
         tasbeeh = (LinearLayout) view.findViewById(R.id.tasbeehlayout);
-        tasbeeh.setOnClickListener(view12 -> {
+        tasbeeh.setOnClickListener(view1 -> {
             startplayer();
             loadFragmentWithNoInternet(new TasbeehFragment(),"tasbeeh");
         });
@@ -99,6 +96,11 @@ public class Location extends Fragment {
 
         });
 
+        hadithBookmark = (LinearLayout) view.findViewById(R.id.hadithbookmark);
+        hadithBookmark.setOnClickListener(view1 -> {
+            startplayer();
+            loadFragmentWithNoInternet(new HadithBookmark(),"HadithBookmark");
+        });
 
 
         city = view.findViewById(R.id.city);
