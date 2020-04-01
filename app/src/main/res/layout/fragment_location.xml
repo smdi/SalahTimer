@@ -47,18 +47,40 @@
                         android:paddingTop="5dp"
                         />
 
-                    <TextView
-                        android:textSize="14sp"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:paddingBottom="5dp"
-                        android:layout_marginLeft="@dimen/margin_20_dp"
-                        android:layout_marginRight="@dimen/margin_20_dp"
-                        android:textColor="@color/darkgray"
-                        android:text="Search prayer timings"
-                        android:textAllCaps="false"
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="14sp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="5dp"
+                            android:layout_marginLeft="@dimen/margin_20_dp"
+                            android:layout_marginRight="@dimen/margin_20_dp"
+                            android:textColor="@color/darkgray"
+                            android:text="Search prayer timings"
+                            android:textAllCaps="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/share"
+                            android:layout_marginRight="22dp"
+                            android:gravity="right"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:textColor="@color/blue"
+                            android:text="share"
+                            android:textSize="12sp"
+                            android:textAllCaps="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
 
 
 
@@ -121,7 +143,7 @@
                         android:layout_marginBottom="@dimen/margin_20_dp"
                         android:background="@drawable/custom_design_pressed_unpressed_holder"
                         android:padding="@dimen/text_size_15dp"
-                        android:textAllCaps="false"
+                        android:textAllCaps="true"
                         android:text="search"
                         android:textColor="@drawable/textcolor_pressed_unpressed" />
 
@@ -205,6 +227,7 @@
 
                         </LinearLayout>
                         <LinearLayout
+                            android:id="@+id/hadith"
                             android:elevation="5dp"
                             android:layout_weight="1"
                             android:layout_margin="5dp"
@@ -365,45 +388,6 @@
                 </LinearLayout>
 
 
-                <LinearLayout
-                    android:id="@+id/share"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-
-                    <androidx.cardview.widget.CardView
-                        app:cardBackgroundColor="@color/back1"
-                        android:layout_gravity="center"
-                        app:cardCornerRadius="20dp"
-                        android:elevation="10dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:paddingBottom="5dp"
-                            android:paddingTop="5dp"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="5dp"
-                            android:layout_margin="5dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:textColor="@color/white"
-                            android:text="Share"
-                            android:textAllCaps="true"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                    </androidx.cardview.widget.CardView>
-
-
-                </LinearLayout>
 
             </LinearLayout>
 

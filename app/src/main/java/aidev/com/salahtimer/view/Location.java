@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -38,7 +39,8 @@ public class Location extends Fragment {
     private TextInputLayout city;
     private TextInputLayout country;
     private Button search;
-    private LinearLayout tasbeeh, unlawfulgazes, share;
+    private TextView share;
+    private LinearLayout tasbeeh, unlawfulgazes, hadith;
 
     @Nullable
     @Override
@@ -58,7 +60,7 @@ public class Location extends Fragment {
 
     private void initialisers(View view) {
 
-        share = (LinearLayout) view.findViewById(R.id.share);
+        share = (TextView) view.findViewById(R.id.share);
         share.setOnClickListener(view13 -> {
 
             startplayer();
@@ -71,6 +73,16 @@ public class Location extends Fragment {
             sAux = sAux + "app link\n\n";
             i.putExtra(Intent.EXTRA_TEXT, sAux);
             startActivity(Intent.createChooser(i, "share application"));
+        });
+
+
+        hadith = (LinearLayout) view.findViewById(R.id.hadith);
+        hadith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startplayer();
+                loadFragmentWithNoInternet(new Hadith(),"hadith");
+            }
         });
 
         tasbeeh = (LinearLayout) view.findViewById(R.id.tasbeehlayout);

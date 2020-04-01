@@ -16,25 +16,17 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
-import com.sdsmdg.tastytoast.TastyToast;
 
 import aidev.com.salahtimer.R;
-
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+
 
 public class Compass extends Fragment {
 
@@ -84,6 +76,8 @@ public class Compass extends Fragment {
 
             }
         });
+
+        webView.loadUrl(url);
 
         webView.loadUrl(url);
 
