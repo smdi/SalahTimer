@@ -4,12 +4,13 @@
     <color name="darkgray">#878787</color>
     <color name="white">#FFF</color>
     <color name="littlewhite">#f7f4f4</color>
+    <color name="transparent">#80000000</color>
     <color name="back1">#cc89ff</color>
     <color name="back2">#e084ff</color>
     <color name="back3">#985ac7</color>
     <color name="back4">#ac70c6</color>
     <color name="back5">#B721FF</color>
-    <color name="transparent">#b6b6b6</color>
+    <!--<color name="transparent">#b6b6b6</color>-->
     <color name="link">#4362ea</color>
     <color name="colorPrimary">#35005e</color>
     <color name="colorPrimaryDark">#35005e</color>

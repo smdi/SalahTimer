@@ -2,6 +2,7 @@ package aidev.com.salahtimer.view;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.util.Collections;
 import java.util.List;
 
 import aidev.com.salahtimer.R;
@@ -49,7 +51,7 @@ public class HadithAdapter extends RecyclerView.Adapter<HadithAdapter.ViewHolder
 
         HadithBookmarkDBTable hadithBookmarkDBTable = listitem.get(position);
 
-        holder.title.setText(hadithBookmarkDBTable.getTitle());
+        holder.title.setText(hadithBookmarkDBTable.getSerail_no_of_hadith()+"\t"+hadithBookmarkDBTable.getTitle());
 
         holder.content.setText(hadithBookmarkDBTable.getContent());
 
@@ -69,12 +71,14 @@ public class HadithAdapter extends RecyclerView.Adapter<HadithAdapter.ViewHolder
                         hadithBookmarkDBTable.getTitle(),hadithBookmarkDBTable.getContent(),1));
 
             }
+            SharedPreferences.Editor editor = ctx.getSharedPreferences("HadithSNO", Context.MODE_PRIVATE).edit();
+            editor.putInt("hno",hadithBookmarkDBTable.getSerail_no_of_hadith());
+            editor.apply();
 
         });
 
 
     }
-
 
     @Override
     public int getItemCount() {

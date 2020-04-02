@@ -79,6 +79,9 @@ dependencies {
     androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
 
 
+    implementation 'com.tomer:fadingtextview:2.5'
+
+
 }
 
 repositories {

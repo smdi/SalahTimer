@@ -48,7 +48,7 @@ public class HadithBookmarkAdapter extends RecyclerView.Adapter<HadithBookmarkAd
 
         HadithBookmarkDBTable hadithBookmarkDBTable = listitem.get(position);
 
-        holder.title.setText(hadithBookmarkDBTable.getTitle());
+        holder.title.setText(hadithBookmarkDBTable.getSerail_no_of_hadith()+"\t"+hadithBookmarkDBTable.getTitle());
 
         holder.content.setText(hadithBookmarkDBTable.getContent());
 

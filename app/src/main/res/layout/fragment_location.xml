@@ -53,6 +53,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:layout_weight="1"
                             android:textSize="14sp"
                             android:paddingLeft="5dp"
                             android:paddingRight="5dp"
@@ -65,18 +66,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
-                        <TextView
+
+
+                        <com.tomer.fadingtextview.FadingTextView
                             android:id="@+id/share"
                             android:layout_marginRight="22dp"
-                            android:gravity="right"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:textColor="@color/blue"
-                            android:text="share"
-                            android:textSize="12sp"
+                            android:textSize="10dp"
                             android:textAllCaps="true"
+                            app:timeout="1000"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/blue"
+                            app:texts="@array/share" />
 
                     </LinearLayout>
 

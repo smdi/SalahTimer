@@ -50,7 +50,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="@dimen/margin_20_dp"
-                        android:background="@color/back3"
+                        android:background="@drawable/white_border"
                         android:padding="@dimen/text_size_15dp"
                         android:textAllCaps="true"
                         android:text="Notify"

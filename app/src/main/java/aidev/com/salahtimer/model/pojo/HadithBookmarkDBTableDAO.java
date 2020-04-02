@@ -26,6 +26,6 @@ public interface HadithBookmarkDBTableDAO {
     @Query("SELECT * from HadithBookmarkDBTable WHERE bookmarked = :bmark")
     LiveData<List<HadithBookmarkDBTable>> getAllBookmarkedHadiths(int bmark);
 
-    @Query("SELECT * from HadithBookmarkDBTable ORDER BY serail_no_of_hadith  DESC")
+    @Query("SELECT * from HadithBookmarkDBTable ORDER BY serail_no_of_hadith  ASC")
     LiveData<List<HadithBookmarkDBTable>> getAllHadiths();
 }

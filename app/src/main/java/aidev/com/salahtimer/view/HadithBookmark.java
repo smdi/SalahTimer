@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class HadithBookmark extends Fragment {
     private RecyclerView.Adapter adapter;
     private HadithBookmarkViewModel hadithBookmarkViewModel;
     private List<HadithBookmarkDBTable> listView;
+    private ImageView nodata;
 
     @Nullable
     @Override
@@ -41,12 +43,22 @@ public class HadithBookmark extends Fragment {
 
         initialiser(view);
 
+        nodata = (ImageView) view.findViewById(R.id.nodata);
+
         hadithBookmarkViewModel = new ViewModelProvider(this).get(HadithBookmarkViewModel.class);
 
         hadithBookmarkViewModel.getAllBookmarkHadiths().observe(this, hadithBookmarkDBTables -> {
 
             //set data to adapter
             listView = hadithBookmarkDBTables;
+            if(listView.size()>0){
+                recyclerView.setVisibility(View.VISIBLE);
+                nodata.setVisibility(View.GONE);
+            }
+            else {
+                recyclerView.setVisibility(View.GONE);
+                nodata.setVisibility(View.VISIBLE);
+            }
             adapter = new HadithBookmarkAdapter(getActivity(),listView, hadithBookmarkViewModel);
             recyclerView.setAdapter(adapter);
 

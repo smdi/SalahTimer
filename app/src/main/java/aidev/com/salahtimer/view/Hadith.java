@@ -2,6 +2,8 @@ package aidev.com.salahtimer.view;
 
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +16,8 @@ import android.widget.ListView;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import aidev.com.salahtimer.R;
@@ -56,9 +60,12 @@ public class Hadith extends Fragment {
         hadithBookmarkViewModel.getAllHadiths().observe(this, hadithBookmarkDBTables -> {
 
             //set data to adapter
+            SharedPreferences sh = getActivity().getSharedPreferences("HadithSNO", Context.MODE_PRIVATE);
+            int exe = sh.getInt("hno", 1);
             listView = hadithBookmarkDBTables;
-            adapter = new HadithAdapter(getActivity(),listView, hadithBookmarkViewModel);
+            adapter = new HadithAdapter(getActivity(), listView, hadithBookmarkViewModel);
             recyclerView.setAdapter(adapter);
+            recyclerView.scrollToPosition(exe);
 
         });
 
@@ -71,7 +78,7 @@ public class Hadith extends Fragment {
         recyclerView.setDrawingCacheEnabled(true);
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setReverseLayout(false);
         linearLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(linearLayoutManager);
     }

@@ -35,7 +35,7 @@ public class AlarmClass extends BroadcastReceiver {
 
 
      try {
-        MediaPlayer  mp = MediaPlayer.create(context, R.raw.tweet);
+        MediaPlayer  mp = MediaPlayer.create(context, R.raw.bell);
         mp.start();
      }
      catch (Exception e){

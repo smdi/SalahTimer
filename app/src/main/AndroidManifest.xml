@@ -14,11 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <receiver
             android:name=".view.AlarmClass"
             android:enabled="true"></receiver>
 
         <activity
+            android:windowSoftInputMode="adjustPan"
             android:name=".view.Router"
             android:label="@string/app_name"
             >

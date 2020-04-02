@@ -1188,145 +1188,145 @@ public final class Reference {
                             "                    gafil rehne waalon mein shumaar nahi hoga. ";
                     
                     break;
-                case 194:
+                case 193:
                     message="Hazrat Abu Huraira R.A. riwayat karte hain ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Jo shaks raat mein sau aayat ki tilawat kare wo is raat ibadat guzaaron mein\n" +
                             "                    shumar kiya jayega. ";
                     
                     break;
-                case 195:
+                case 194:
                     message="Hazrat Shadad Bin Aos R.A. riwayat karte hain ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Jo musalmaan bhi bistar par ja kar Quran Kareem ki koi si bhi surat padhleta hai to\n" +
                             "                    Allah Ta’ala iski hifaazat ke liye ek farishta muqarar farma dete hai. Phir jab bhi wo bedar ho\n" +
                             "                    Iske bedar hone tak koi takleef da cheez iske qareeb bhi nahi aati. ";
                     
                     break;
-                case 196:
+                case 195:
                     message="Hazrat Ayesha R.A farmaati hai ke humein Rasoolallah S.A.W ne is baat\n" +
                             "                    ka hukm farmaaya ke hum logon ke saat inke muratib ka lehaz karke bartao kiya\n" +
                             "                    karo. ";
                     
                     break;
-                case 197:
+                case 196:
                     message="Hazrat Jaber Bin Abdullah riwayat karte hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaya: Ghareeb-o-nadaar musalmaan maaldaar musalmaan se chalees\n" +
                             "                        (40) saal pehle jannat mein dakhil honge. ";
                     
                     break;
-                case 198:
+                case 197:
                     message="Hazrat Abu Huraira R.A. riwayat karte hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaya: Ghareeb ghurba maldaron se aadhe din pehle jannat mei dakhil\n" +
                             "                    honge aur is aadhe din ki miqdaar paanch sau baras hogi.";
                     
                     break;
-                case 199:
+                case 198:
                     message="Hazrat Abu Sayeed R.A. se riwayat hai ke maine Rasoolallah S.A.W ko\n" +
                             "                    irshaad farmaate huye suna : Ya Allah! Mujhe miskeen tabiyat bana kar zinda\n" +
                             "                    rakhiye,miskeeni ki halat mein duniya se uthaiye aur mera hasher miskeenon ki\n" +
                             "                    jannat mein farmaayiye. ";
                     
                     break;
-                case 200:
+                case 199:
                     message="Hazrat Raafa Bin Khadij R.A. se riwayat hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jab Allah Ta’ala kisi banda se mohabbat farmate hain to isko\n" +
                             "                    duniya se is tarah bchate hain jis tarah tum mein se koi shaks apne mareez ko\n" +
                             "                    paani se bachate hain. ";
                     
                     break;
-                case 201:
+                case 200:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Ghareebon se mohabbat karo aur inke saat baitho. Arbaon se dil se\n" +
                             "                    mohabbat karo. Aur jo aib tum mein maujood hain wo tumhe dusron par ta’an wa\n" +
                             "                    tashni’a karne se rokdein. ";
                     
                     break;
-                case 202:
+                case 201:
                     message="Hazrat Anas R.A. farmaate hain ke maine Rasoolallah S.A.W ko ye\n" +
                             "                    irshaad farmaate huye suna Bahut se pargandah baal,gard-alooda chadaron waale\n" +
                             "                    logon ko darwazon se hataye jaane waalw,agar Allah Ta’ala (ke bharosa)par qasam\n" +
                             "                    khale to Allah Ta’ala inki qasam ko zaroor poora farmaade. ";
                     
                     break;
-                case 203:
+                case 202:
                     message="Hazrat Abu Darda’a farmaate hai ke maine Rasoolallah S.A.W ko ye\n" +
                             "                    irshaad farmaate hue suna : Mujhe kamzoron mein talaash kiya karo isliye ke\n" +
                             "                    tumhare kamzoron ki wajah se tumhe rozi milti hai aur tumhari madad hothi hai. ";
                     
                     break;
-                case 204:
+                case 203:
                     message="Hazrat Muaz Bin Jabal R.A. se riwayat hai ke aakhri nasihat jo\n" +
                             "                    Rasoolallah S.A.W ne mujhe farmayi jis waqt maine apna paon rikaab mein rakhliya\n" +
                             "                    Tha wo ye thi: Muaz! Apne akhlaaq ko logon ke liye acha banao. ";
                     
                     break;
-                case 205:
+                case 204:
                     message="Hazrat Imam Malik farmaate hai mujhe ye hades pahunchu hai ke Aap\n" +
                             "                    S.A.W ne irshaad farmaaya: Mai achche akhlaq ko mukammil karne ke liye bheja\n" +
                             "                    Gaya hoon. ";
                     
                     break;
-                case 206:
+                case 205:
                     message="Hazrat Jaber R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Tum sab mein se mujhe zyada mehboob aur qayamath ke din mere\n" +
                             "                    sabse qareeb wo log honge jinke akhlaaq zyada ache honge.";
                     
                     break;
 
-                case 207:
+                case 206:
                     message="Hazrat Nawas Bin Samaan Ansaari R.A. farmaate hai ke maine\n" +
                             "                    Rasoolallah S.A.W se naiki aur gunah ke bare mein poocha: Rasoolallah S.A.W ne\n" +
                             "                    Irshaad farmaaya : Naiki achche akhlaq ka naam hai aur gunah wo hai jo tumhare\n" +
                             "                    Khatke aur tumhe ye baat na pasand ho ke logon koi ski khabr lo. ";
                     
                     break;
-                case 208:
+                case 207:
                     message="Hazrat Makbool riwayat karte hain ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaye : Imaan waale log Allah Ta’al ka bahut hukm man’ne waale aur nihayat\n" +
                             "                    narm tabiyat hote hain jaise tabedar ount jidhar isko chalaya jaata hai chala jaatha\n" +
                             "                    hai aur agar isko kisi chattan par bitha diya jaatha hai to is par baith jaata hai. ";
                     
                     break;
-                case 209:
+                case 208:
                     message="Qabeela Nabi Majasha ke Hazrat Ayaaz Bin Hamaar R.A. se riwayat hai\n" +
                             "                    ke Rasoolallah S.A.W ne irshaad farmaaya: Allah ta’ala ne meri taraf is baat ki\n" +
                             "                    wahi farmayi hai ke tum log is qadr tawaza ikhtiyar karo yahan tak ke koi kisi par\n" +
                             "                    fakr na kare aur koi kisi par zulm na kare.";
                     
                     break;
-                case 210:
+                case 209:
                     message="Hazrat Abdullah R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya: Wo shaks jannat mein nahi jaayega jiske dil mein zara barabar\n" +
                             "                    takabbur ho. ";
                     
                     break;
-                case 211:
+                case 210:
                     message="Hazrat Mawiya R.A. farmaate hai ke maine Rasoolallah S.A.W ko ye\n" +
                             "                    irshaad farmaate hue suna: Jo shals is baat ko pasand ho ke log is(ki ta’zeem)\n" +
                             "                    ke liye khade rahe wo apna thikana jahanum mein banale. ";
                     
                     break;
-                case 212:
+                case 211:
                     message="Hazrat Anas R.A. se riwayat hai ke sahaba ke nazdeek koi shaks bhi\n" +
                             "                    Rasoolallah S.A.W se zyada mehboob nahi tha. Iske bawajud wo Rasoolallah S.A.W\n" +
                             "                    Ko dekh kar khade nahi hote the kyunke wo jaanthe the wo Aap S.A.W isko na\n" +
                             "                    Pasand farmate the. ";
                     
                     break;
-                case 213:
+                case 212:
                     message="Hazrat Abu Darda’a se riwayat hai maine Rasoolallah S.A.W ko ye irshad\n" +
                             "                    farmaate hue suna: Jis shaks ko bhi ( kisi ki taraf se) jismani takleef pahunche phir\n" +
                             "                    wo isko mu’af karde to Allah Ta’ala iski wajah se ek darja phir wo buland farma\n" +
                             "                    dete hain aur ek gunah mu’af farma dethe hai. ";
                     
                     break;
-                case 214:
+                case 213:
                     message="Hazrat Judaan R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya: Jo shaks apne musalmaan bhau ke saamne azr pesh karta hai aur wo\n" +
                             "                    iske azr ko qubool nahi karta to isko aisa gunah hoga jaisa na haq tax wasool karne\n" +
                             "                    waale ka gunah hotha hai. ";
                     
                     break;
-                case 215:
+                case 214:
                     message="Hazrat Abu Huraira R.A. riwayat karte hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Hazrat Moosa Bin Imran R.A. ne Allah Ta’ala ki bargah mein\n" +
                             "                    arz kiya : Ae mere Rabb! Aapke bandon mein aapke nazdeek zyada izzat waala\n" +
@@ -1334,434 +1334,434 @@ public final class Reference {
                             "                    mu’af kardhe. ";
                     
                     break;
-                case 216:
+                case 215:
                     message="Hazrat Abu Qataada R.A. farmaate hai ke maine Rasoolallah S.A.W ko ye\n" +
                             "                    irshaad farmaate huye suna: Jo shaks ye chahte hai ke Allah Ta’ala isko qayamat ke\n" +
                             "                    din ki takleefon se bachale to isko chahiye ke tangdust ko(jis par iska qarz waghaira\n" +
                             "                        ho) mahulat de de ya (apna poora matlab ya is ka kuch hissa)mua’af karde. ";
                     
                     break;
-                case 217:
+                case 216:
                     message="Hazrat Abu Huraira R.A se riwayat hai ke ek shaks ne Nabi Kareem\n" +
                             "                    S.A.W se arz kiya ke mujhe koi waseeyat farmadijiye. Aap S.A.W ne irshaad\n" +
                             "                    Farmaaya : Gussa na kiya karo. Is shaks ne apni (wohi) darkhwast kayi baar\n" +
                             "                    Dauhrayi. Aap S.A.W ne har martaba yahi irshaad farmaaya : Gussa na kiya karo. ";
                     
                     break;
-                case 218:
+                case 217:
                     message="Hazrat Abu Huraira R.A se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Taqatwar wo nahi hai jo (apne muqabal ko) pachadh de taqatwar wo\n" +
                             "                    hai jo gusse ki haalat mein apne aap par qaabu pale. ";
                     
                     break;
-                case 219:
+                case 218:
                     message="Hazrat Abu Zarr R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Jab tum mein se kisi ko gussa aaye aur wo khada ho to isko chahiye ke\n" +
                             "                    baith jaaye agar baithe se gussa chalajaay (to theek hai) warna isko chahiye ke lait\n" +
                             "                    jaaye. ";
                     
                     break;
-                case 220:
+                case 219:
                     message="Hazrat Ibn Abbas R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya : Logon ko (deen) sikhao aurr khushkhabriyan sunao aur dushwariyan\n" +
                             "                    paida na karo. Aur jab tum mein se kisi gussa aaye to ise chahiye ke khamoshi\n" +
                             "                    ikhtiyaar karle. ";
                     
                     break;
-                case 221:
+                case 220:
                     message="Hazrat Atiya R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Gussa shaitan (ke asr se ) hota hai. Shaitan ki paidaish aag se hui hai\n" +
                             "                    aur aag paani se bujhayi jati hai lehaza jab tum mein se kisi ko gussa aaye to isko\n" +
                             "                    chahiye ke wuzu karle. ";
                     
                     break;
-                case 222:
+                case 221:
                     message="Hazrat Abdullah Bin Omer riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya: Banda ( kisi cheez ka ) aisa koi ghunt nahi peeta jo Allah Ta’ala\n" +
                             "                    ke nazdeek gusse ka ghunte peene se behtar ho,jisko wo mehaz Allah Ta’ala raza\n" +
                             "                    ke liye pee jaye. ";
                     
                     break;
-                case 223:
+                case 222:
                     message="Hazrat Mu’az R.A. riwayat karte hain ke Rasoolallah S.A.W ne qabeele\n" +
                             "                    abdqais ke sardar Hazrat Ashaj R.A. se irshaad farmaaya : Tum mein do khslatein\n" +
                             "                    aisi hain jo Allah Ta’ala ko mehboob hain. Ek hilm yani narmi aur bardasht dusre\n" +
                             "                    jald baazi se kaam na kare. ";
                     
                     break;
-                case 224:
+                case 223:
                     message="Hazrat Jareer R.A. riwayat karte hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya : Jo shaks narmi(ki sifat) se mehroom raha wo (saari) bhalayi se\n" +
                             "                    mehroom raha. ";
                     
                     break;
-                case 225:
+                case 224:
                     message="Hazrat Ayesha riwayat karti hai ke Rasoolallah S.A.W ne irshaad farmaya\n" +
                             "                    ke Jis shaks ko (Allah Ta’ala ki taraf se) narmi mein se hissa diya gaya isko duniya\n" +
                             "                    wa akhirat ki bhalayon mein se hissa diya gaya aur jo shaks narmi ke hisse se\n" +
                             "                    mehroom raha wo duniya aur akhirat ki bhalayion se mehroom raha. ";
                     
                     break;
-                case 226:
+                case 225:
                     message="Hazrat Jaber Bin Abdullah se riwayat hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Allah Ta’ala ki rehmat ho us bande par jo baichne, kharidne aur\n" +
                             "                    apne haq ka taqza karne aur wasool karne mein narmi ikhtiyaar kare. ";
                     
                     break;
-                case 227:
+                case 226:
                     message="Hazrat Abu Huraira R.A. farmaate hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaya : Jo shaks musalamaan ki baichi ya kharidi hui cheez ki waapsi par raazi\n" +
                             "                    hojate hai Allah Ta’al iski lagzish ko mu’af farmadethe hai.";
                     
                     break;
-                case 228:
+                case 227:
                     message="Hazrat Abu Huraira R.A. se riwayat karthe hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya: Jo musalman ki kagzish ko mu’af kare Allah Ta’ala qayamat ke\n" +
                             "                    din ski lagzish ki mu’af farmayenge. ";
                     
                     break;
-                case 229:
+                case 228:
                     message="Hazrat Abu Darda’a R.A se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Salam ko khoob phailo take tum buland hojao.";
                     
                     break;
-                case 230:
+                case 229:
                     message="Hazrat Ibn Masood R.A. riwayat karte hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya: Alamat-e-qayamat mein se ek alamat ye hai k eek shaks dusre\n" +
                             "                    shakhs dusre shaks ko sirf jaan pehchaan ki bunyaad par salam kare ( na ke\n" +
                             "                    muslaman hone ki bunyaad par).";
                     
                     break;
-                case 231:
+                case 230:
                     message="Hazrat Abu Umama R.A riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya: Logon mein Allah Ta’ala ke qareeb ka zyada mustahaq wo hai jo\n" +
                             "                    salam karne mein pahel kare. ";
                     
                     break;
-                case 232:
+                case 231:
                     message="Hazrat Abdullah R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya : Sala, mein pahel karne waala takkabur se bari hai. ";
                     
                     break;
-                case 233:
+                case 232:
                     message="”Hazrat Anas R.A farmaate hain ke mujhse Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya: Beta! Jab tum apne ghar mein dakhil ho to ghar walon ko salam karo. Ye\n" +
                             "                    tumhare liye aur ghar walon ke liye barkat ka sabab hai. ";
                     
                     break;
-                case 234:
+                case 233:
                     message="Hazrat Qattada se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya: Jab tum kisi ghar mein dakhil ho to is ghar walon ko salam karo. Aur jab\n" +
                             "                    (ghar se)jane lago to ghar walon se salam ke saath rukhsat ho. ";
                     
                     break;
-                case 235:
+                case 234:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya: Chote bade ko salam kare,guzarne waale baithe hue ko salam kare aur\n" +
                             "                    thode admi zyada admiyon ko salam kare. ";
                     
                     break;
-                case 236:
+                case 235:
                     message="Hazrat Ali R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad farmaaya :\n" +
                             "                    (Raaste se) guzarne wali jamaat mein se agar ek shaks salam karle to is sab ki tarf\n" +
                             "                    Se kaafi hai aur baithe hue logon mein se ek jawab dede to sab ki taraf se kaafi\n" +
                             "                    Hai.";
                     
                     break;
-                case 237:
+                case 236:
                     message="Hazrat Miqdad Bin Aswad R.A. farmaate hain ke Rasoolallah S.A.W raat\n" +
                             "                    ko tashreef laate to is tarah salam farmate ke sone waale na jaagte aur jaagne\n" +
                             "                    waale sunlete. ";
                     
                     break;
-                case 238:
+                case 237:
                     message="Hazrat Abu Huraira R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Logon mein sabse zyada aajiz wo shaks hai jo dua karne se aajiz\n" +
                             "                    ho yani dua na karta ho. Aur logon mein sabse zyada bakheel wo hai jo salam mein\n" +
                             "                    bhi bakhal kare. ";
                     
                     break;
-                case 239:
+                case 238:
                     message="Hazrat Ibn Masood R.A. Rasoolallah S.A.w ka irshaad naqal karte hain ke\n" +
                             "                    salam ki takmeel musafeha hai. ";
                     
                     break;
-                case 240:
+                case 239:
                     message="Hazrat Bara’a R.A. riwayat karte hain ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Momin jab momin se milta hai isko salam karta hai aur iska haath pakad\n" +
                             "                    kar musafa karta hai to dono ke gunah is tarah jhadte hain jaise darqt ke patthe\n" +
                             "                    jhadte hain. ";
                     
                     break;
-                case 241:
+                case 240:
                     message="Hazrat Huzaifa Bin Yamaan R.A. se riwayat hai ke Nabi Kareem S.A.W ne\n" +
                             "                    irshaad farmaaya : Momin jab momin se milta hai isko salam karta hai aur iska\n" +
                             "                    haath pakad kar musafa karta hai to dono ke gunah is tarah jhadte hain jaise darqt\n" +
                             "                    ke gunah is tarag jhadte hain jaise ke patte jhadte hain. ";
                     
                     break;
-                case 242:
+                case 241:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya: Jab nigah ghar mein chali gayi to phir ijazat koi cheez nahi (yani ijazat ka\n" +
                             "                    phir koi faida nahi). ";
                     
                     break;
-                case 243:
+                case 242:
                     message="Hazrat Abdullah Bin Omer se riwayat hai ke Nabi Kareem S.A.W ne\n" +
                             "                    irshaad farmaya : Kisi shaks ko is baat ka ijazata nahi ke kisi dusre koi ski jagah se\n" +
                             "                    utha kar khud is jagah baith jaye. ";
                     
                     break;
-                case 244:
+                case 243:
                     message="Hazrat Abu Huraira R.A se riwayt hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Jo shaks apni jagah se (kisi zaroorat se) utha aur phir wapas aagaya to\n" +
                             "                    iski jagah baithne ka wohi shaks zyada haqdaar hai. ";
                     
                     break;
-                case 245:
+                case 244:
                     message="Hazrat Omer Bin Sho’eb apne baap dada ke hawale se riwayat karte\n" +
                             "                    hain ke Rasoolallah S.A.W ne irshaad farmaya : Do aadmiyon ke darmiyaan mein\n" +
                             "                    inki ijazat ke bhagair na baitha jaaye. ";
                     
                     break;
-                case 246:
+                case 245:
                     message="Hazrat Huzaifa R.A. se riwayat hai ke Rasoolallah S.A.W ne halqe ke\n" +
                             "                    beech mein baithne walon par lanat farmayi hai. ";
                     
                     break;
-                case 247:
+                case 246:
                     message="Hazrat Amr Bin Hazm R.A. ki riwayt mein hai ke bemaar ke paas se uth\n" +
                             "                    jaane ke baad bhi wo rehmat mein gothe lagatha rehta hai yahan tak ke jis jagah se\n" +
                             "                    ayadat se gaya tha wahan wapas laut aaye. ";
                     
                     break;
-                case 248:
+                case 247:
                     message="Hazrat Omer Bin Khatab R.A. riwayat karte hai ke Nabi Kareem S.A.W ne\n" +
                             "                    mujhse irshaad farmaaya : Jab tum bemaar ke paas jao to ise kaho ke wo tumhare\n" +
                             "                    liye dua kare kyunki iski dua farishton ki tarah (qubool hoti) hai. ";
                     
                     break;
-                case 249:
+                case 248:
                     message="Hazrat Abdullah R.A. se riwayat karte hain ke Nabi Kareem S.A.W ne\n" +
                             "                    irshaad farmaaya: Jo shaks kisi musibatzada ko tasalli deta hai to isko musibatzada\n" +
                             "                    ki tarah sawab milta hai. ";
                     
                     break;
-                case 250:
+                case 249:
                     message="Hazrat Mohammed Bin Amr Bin Amr Hazm R.A. riwayat karte hain ke\n" +
                             "                    Nabi Kareem S.A.W ne irshaad farmaaya : Jo momin apne kisi momin bhai ki\n" +
                             "                    Musibat mein ise sabr wa sukoon ki talqeen karega. Allah Ta’ala qayamath ke din\n" +
                             "                    Ise izzat ka libas pehnaenge. ";
                     
                     break;
-                case 251:
+                case 250:
                     message="Hazrat Anas R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya: Tum mein se koi shaks is waqt tak (kaamil) imaan waala nahi hosaktha\n" +
                             "                    jab tak ke wo apne musalmaan bhai ke liye wohi pasand na kare jo apne liye\n" +
                             "                    pasand karta ho. ";
                     
                     break;
-                case 252:
+                case 251:
                     message="Hazrat Ayesha R.A. farmaati hain ke Rasoolallah S.A.W ne apne zaati\n" +
                             "                    muamle mein kabhi kisi se inteqaam nahi liye lekin jab Allah Ta’ala ki haram\n" +
                             "                    karda cheez ka irtekaab kiya jaata to Aap S.A.W Allah Ta’ala ka hukm tootne ki\n" +
                             "                    wajah se saza dete the. ";
                     
                     break;
-                case 253:
+                case 252:
                     message="Hazrat Abdullah Bin Omer se riwayat hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jo ghulam apne aaqa ke saath khair khwahi aur wafadari kare\n" +
                             "                    aur Allah Ta’ala ki ibadat bhoi achchi tarah kare wo dohre sawaab ka mustahiq\n" +
                             "                    hoga. ";
                     
                     break;
-                case 254:
+                case 253:
                     message="Hazrat Imran Bin Husain riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaya: Jis shaks ka kisi dusre shaks par koi haq (qarz wagaira) ho aur wo\n" +
                             "                    is maqruz ko adaa karne ke liye dair tak maholat dede to iske har din ke badle\n" +
                             "                    sadqa ka sawab milega. ";
                     
                     break;
-                case 255:
+                case 254:
                     message="Hazrat Ibn Abbas se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya: Barkat tumhare badhaon ke saath hai. ";
                     
                     break;
-                case 256:
+                case 255:
                     message="Hazrat Obada Bin Samit R.A se riwayat karte hai ke Rasoolallah S.A.W\n" +
                             "                    ne irshaad farmaaya : Jo shaks humare badhaon ki ta’zeem na kare, hamare\n" +
                             "                    bachchon par rahem na kare aur hamare aalim ka haq na pehchane wo meri\n" +
                             "                    ummat mein se nahi hai. ";
                     
                     break;
-                case 257:
+                case 256:
                     message="Hazrat Amr Bin Shoeb apne baap dada ke harwale se riwayat karte hain\n" +
                             "                    ke Nabi Karem S.A.W ne safaid baalon ko nochne se manaa farmaaya aur irshaad\n" +
                             "                    farmaaya: Keye budhapa musalman ka noor hai. ";
                     
                     break;
-                case 258:
+                case 257:
                     message="Hazrat Ayesha farmate hain ke Rasoolallah S.A.W hadiya qubool\n" +
                             "                    farmaate the aur iske jawab mein (khuwah issi waqt ya dusre waqt) khud bhi ataa\n" +
                             "                    farmaate the. ";
                     
                     break;
-                case 259:
+                case 258:
                     message="Hazrat Abu Huraira R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya: Bande ke dil mein kabhi bakhl aur Imaan jamaa nahi hosakthe. ";
                     
                     break;
-                case 260:
+                case 259:
                     message="Hazrat Abu Bakar Siddiq R.A. se riwayat hai ke Nabi Kareem S.A.W ne\n" +
                             "                    irshaad farmaaya : Bande ke dil mein kabhi bakhl aur Imaan jamaa nahi hosakthe.";
                     
                     break;
-                case 261:
+                case 260:
                     message="Hazrat Abu Huraira R.A. se riwayt hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya: Beshak Allah Ta’ala tumhari suraton aur tumhare maalon ko nahi\n" +
                             "                    dekhte balke tumhare dilon ko aur tumhare amaal ko dekhte hain.";
                     
                     break;
-                case 262:
+                case 261:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya : Qayamat ke din logon ko inki niyaton ke mutabiq uthaya jayega yani har\n" +
                             "                    ek ke saath iske niyat ke mutabiq muamla hoga. ";
                     
                     break;
-                case 263:
+                case 262:
                     message="Hazrat Abu Umama Bahli R.A. riwayat karte hai ke Nabi Kareem S.A.W\n" +
                             "                    ne irshaad farmaaya: Allah Ta’ala amaal mein se sirf isi amal ko qubool farmaate\n" +
                             "                    hain jo khalis inhi ke liye ho aur is mein sirf Allah Ta’ala hi ki khushnaudi maqsood\n" +
                             "                    ho. ";
                     
                     break;
-                case 264:
+                case 263:
                     message="Hazrat Saad R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya : Allah Ta’ala is ummat ki madad (iski qabiliyat aur salahiyat ki bunyad\n" +
                             "                        par nahi farmate balke ) kamzor aur khasta haal logon ki duaon,namazon aur\n" +
                             "                    unke ikhlas ki wajha farmate hain. ";
                     
                     break;
-                case 265:
+                case 264:
                     message="Hazrat Sauban R.A. riwayat karte hain ke maine Rasoolallah S.A.W ko ye\n" +
                             "                    irshaad farmaate huye suna: Ikhlas waalon ke liye khushkhabri ho ke wo andheron\n" +
                             "                    mein chirag hain inki wajah se sakht sse sakht fitne door hojathe hain. ";
                     
                     break;
-                case 266:
+                case 265:
                     message="Qabila Asla, ke Hazrat Abu Faras farmaate hain k eek shaks ne pukaar\n" +
                             "                    kar poocha : Ya Rasoolallah imaan kya hai? Aap Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya: Imaan ikhlas hai. ";
                     
                     break;
-                case 267:
+                case 266:
                     message="Hazrat Abu Umama R.A. Rasoolallah S.A.W ka irshaad naql karte hain\n" +
                             " : Poshida taur par sadqa karna Allah Ta’ala ke gusse ko thanda karta hai. ";
                     
                     break;
-                case 268:
+                case 267:
                     message="Hazrat Saad R.A. farmaate hai ke maine Rasoolallah S.A.W ko ye irshaad\n" +
                             "                    farmaate huye suna: Allah Ta’ala parhezgaar,makhlooq se beniyaz,gumnaam\n" +
                             "                    bande ko pasand farmaate hain. ";
                     
                     break;
-                case 269:
+                case 268:
                     message="Hazrat Abu Sayeed Khudri R.A. farmaate hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Agar koi shaks aisi chataan ke andar baitkar jis mein na koi\n" +
                             "                    darwaaza ho na kooi surakh ho,koi bhi amal kare to wo logon par zahir hokar\n" +
                             "                    rahega chahe wo amal achcha ho ya bura. ";
                     
                     break;
-                case 270:
+                case 269:
                     message="Hazrat Abu Masood R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jo aadmi apne ghar walon par sawab ki niyat se kharch karta\n" +
                             "                    hai to ( is kharch se) isko sadqa ka sawab milta hai. ";
                     
                     break;
-                case 271:
+                case 270:
                     message="Hazrat Anas Bin Malik R.A. Rasoolallah ka irshaad naqal farmaate hain\n" +
                             "                    ke: Insaan ke bura hone ke liye itna kaafi hai ke deen ya duniya ke bare mein iski\n" +
                             "                    taraf ungliyon se ishaara kiya jaaye magar ye ke kisi ko Allah Ta’ala hi mehfooz\n" +
                             "                    rakhe ";
                     
                     break;
-                case 272:
+                case 271:
                     message="Hazrat Malik R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya: Wo do bhuke bhediye jinhe bakriyon ke reward mein cord diya jaaye\n" +
                             "                    bakriyon ka utna nuqsaan nahi pahunchate jitna aadmi ke deen ko, maal ki hirs\n" +
                             "                    aur badha banne ki chahat nuqsaan pahunchahti hai. ";
                     
                     break;
-                case 273:
+                case 272:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Jisne wo ilm jo Allah Ta’ala ki raza ke liye sikhna chahiye tha duniya ka\n" +
                             "                    maal wa mataa hasil karne ke liye sikha wo Qayamat ke din jannat ki khushboo bhi\n" +
                             "                    na soongh sakega. ";
                     
                     break;
-                case 274:
+                case 273:
                     message="Hazrat Abdullah Bin Omer R.A. se riwayat hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jis shaks ne ilm Allah Ta’ala ki raza ke alawa kisi aur maqsas\n" +
                             "                    ( masalan izzat, shauhrat, maal waghaira hasil karne ) keliye sikha to wo apna\n" +
                             "                    Thikana jahanum mein banaale. ";
                     
                     break;
-                case 275:
+                case 274:
                     message="Hazrat Shadad Bin Aos R.A. farmaaate hain ke maine Rasoolallah S.A.W\n" +
                             "                    ko irshaad farmaate huye suna : Jis ne dikhlane ke liye namaz padhi isne shirk\n" +
                             "                    kiya,jisme dikhlane keliye roza rakha isne shirk kiya aur jisne dikhlane keliye sadqa\n" +
                             "                    kiya isne shirk kiya. ";
                     
                     break;
-                case 276:
+                case 275:
                     message="Hazrat Anas R.A. se riwayat hai ke Rasoolallah S.A.W irshaad farmaaya :\n" +
                             "                Halak karne waali cheezein ye hain : who bukhal jiski et’at ki jaaye yani bukhal kiya\n" +
                             "                    Jaaye,wo khwahish-e-nafs jis par chala jay aur aadmi ka apne aap ko behtar\n" +
                             "                    Samajhna. ";
                     
                     break;
-                case 277:
+                case 276:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Badtareen shaks wo hai jo dusron ki duniya ke liye apni aakhirat ko\n" +
                             "                    barbaad karle. Yani duraon ko duniyawi faida pahunchane ke lilye Allah Ta’ala ko\n" +
                             "                    naraaz karne wala kaam karke apni aakhirat ko barbaad karle. ";
                     
                     break;
-                case 278:
+                case 277:
                     message="Hazrat Omer Bin Khattab R.A. se riwayat hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Mujhe is ummat par sabse zyada darr is munafiq ka hai jo zuban\n" +
                             "                    ka aalim ho (ilm ki baatein karta ho lekin imaan aura mal se khali ho). ";
                     
                     break;
-                case 279:
+                case 278:
                     message="Hazrat Abdullah Bin Qais Khuzayi R.A. Rasoolallah S.A.W ka irshaad naql\n" +
                             "                    farmaate hain :Jo shaks kisi naik kaam mein dikhlawe aur shahuhrat ki niyat se lage\n" +
                             "                    to jab tak wo is niyat ko chod na dhe Allah Ta’ala ki sakht narazgi mein rehta hai. ";
                     
                     break;
-                case 280:
+                case 279:
                     message="Hazrat Abdullah Bin Omer farmaate hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jis shaks e duniya mein shahuhrat ka libaas pehna, Allah\n" +
                             "                    Ta’ala qayamat ke din isko zillat ka libaas pehna kar is mein aag bhadka denge. ";
                     
                     break;
-                case 281:
+                case 280:
                     message="Allah Ta’ala ka irshaad hai : Aur Allah Ta’ala ki razamandi hi keliye\n" +
                             "                    kharch kiya karo. ";
                     
                     break;
-                case 282:
+                case 281:
                     message="Allah Ta’ala ka irshaad hai : Aur jo sadqa mehez Allah Ta’ala ki razajoyi\n" +
                             "                    ke iraade se dete ho to jo log aisa karte hain wahi log apna maal aur sawaab\n" +
                             "                    badhane waale hain. ";
                     
                     break;
-                case 283:
+                case 282:
                     message="Allah Ta’ala ka irshaad hai : Aur khaas isi ki ibadat karo aur isi ko\n" +
                             "                    pukaro.";
                     
                     break;
-                case 284:
+                case 283:
                     message="Hazrat Abu Drda’a R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya : Jo shaks ( sone keliye ) apne bistar par aaye aur iski niyat ye ho le raat\n" +
                             "                    ko uthkar tahajaud padhoonga phir neend ka aisa galba hojaye ke subah hi aankh\n" +
@@ -1769,83 +1769,83 @@ public final class Reference {
                             "                    se iske liye aatiya hota hai. ";
                     
                     break;
-                case 285:
+                case 284:
                     message="Allah Ta’ala ka irshaad hai : Aur ye munafiq jab namaz keliye khade hote\n" +
                             "                    hain to bade sust banker khade hote hain, logon ko dikhate hain aur Allah Ta’ala ko\n" +
                             "                    bahut kam yaad karthe hain. ";
                     
                     break;
-                case 286:
+                case 285:
                     message="Allah Ta’ala ka irshaad hai : Aise namaziyon keliye badhi qarabi hai jo\n" +
                             "                    apni namaz se ghafil hain,jo aise hain ke (jab namaz padhte hain to) dikhlawa karte\n" +
                             "                    hain. ";
                     
                     break;
-                case 287:
+                case 286:
                     message="Hazrat Muaz Bin Jabal R.A. se riwayat hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jo bandha duniya mein shauhrat aur dikhlane ke liye koi naik\n" +
                             "                    amal karega Allah Ta’ala khiyamat ke din is baath ko tamam maqlooq ke saamne\n" +
                             "                    shauhrat denge(ke is shaks ne naik amaal logon ko dikhlane ke liye kiye tha).";
                     
                     break;
-                case 288:
+                case 287:
                     message="Hazrat Abdullah Ibne Amr R.A. farmaate hai ke maine Rasoolallah S.A.W\n" +
                             "                    ko ye irshaad framaate huye suna : Jo shaks apne amal ko logon ke darmiyaan\n" +
                             "                    mashhur karega tho, Allah Ta’ala uske is riyawale amal ko apni maqlooq ke kaanon\n" +
                             "                    tak pahuncha denge aur usko logon ki nazron mein chota aur daleel kardenge. ";
                     
                     break;
-                case 289:
+                case 288:
                     message="Ek jagah irshaad hai : Jisne apna chehra Allah Ta’ala ke saamne jhuka\n" +
                             "                    diya,aur wo muqlees bhi ho tho,aise shaqs ko uska azar uske rabb ke paas milta\n" +
                             "                    hai. Aise logon par na koi khauf hoga,na wo ghamgeen honge. ";
                     
                     break;
-                case 290:
+                case 289:
                     message="Hazrat Saleh alaihissalam ne apne khaum se farmaaya : Mai tumhe is\n" +
                             "                    tableegh par koi bala nahi chahta. Mera badla tho Rabbul Aalameen hi ke zimme\n" +
                             "                    hai. ";
                     
                     break;
-                case 291:
+                case 290:
                     message="Ek jagah irshaad hai : Aur jo sadqa mehaz Allah Ta’ala ki raza ke irade se\n" +
                             "                    dethe ho yho, jo log aisa karte hai,wahi log apna maal wa sawaab badhane waale\n" +
                             "                    hai. ";
                     
                     break;
-                case 292:
+                case 291:
                     message="Allah Ta’ala ka irshaad hai : Aur khaas usi ki ( yaani Allah ki ) ibaadath\n" +
                             "                    karo aur usi ko ( yani Allah ko ) pukaro. ";
                     
                     break;
-                case 293:
+                case 292:
                     message="Ek jagah Irshaad hai ke Allah Ta’ala ke paas na tho un qurbaaniyon ka\n" +
                             "                    ghosht pahunchta hai, aur na hi unka khoon, balke unke paas tho tumhari\n" +
                             "                    parhezgari pahunchthi hai, yani unke yahan tho tumhare dili jazbaath dekhe jaathe\n" +
                             "                    hai. ";
                     
                     break;
-                case 294:
+                case 293:
                     message="Hazrat Muawiya R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya: Mai tho Allah Ta’ala ka paigham logon tak pahunchane waala hoon aur\n" +
                             "                    atta karne wale tho Allah Ta’ala hi hain. ";
                     
                     break;
-                case 295:
+                case 294:
                     message="Hazrat Urs Bin Ameera R.A. farmate hain ke Rasoolallah S.A.W ne irshad\n" +
                             "                    farmaaya : Allah Ta’ala baaz logon ki galtiyon par sab ko azaab nahi dethe albatta\n" +
                             "                    sab ko is surat mein azaab dethe hain jab ke farmabardaar bawajud khudrat ke\n" +
                             "                    nafarmani karnewalo ko na roke.";
                     
                     break;
-                case 296:
+                case 295:
                     message="Hazrat Zainab Binte Hajash R.A. farmaate hain ke maine Rasoolallah\n" +
                             "                    S.A.W se poocha : Ya Rasoolallah kya hum log aisi halat mein bhi halaak hojayenge\n" +
                             "                    Jab ke hum mein naik log bhi ho? Aap S.A.W ne irshaad farmaaya: Haan jab burai\n" +
                             "                    Aam hojaye.";
                     
                     break;
-                case 297:
+                case 296:
                     message="Hazrat Jaree R.A. farmaate hain k eek martaba maine Aap S.A.W se\n" +
                             "                    shikayat ki ke mai ghode ki sawari achchi tarah nahi karpata to Aap S.A.W ne mere\n" +
                             "                    sine par haath maar kar dua di: Ae Allah isse achcha gudh sawar banadijiye aur\n" +
@@ -1853,262 +1853,262 @@ public final class Reference {
                             "                    dijiye. ";
                     
                     break;
-                case 298:
+                case 297:
                     message="Hazrat Huzaifa R.A. farmaate hain ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Aadmi se biwi ,maal,aulad aur padosi ke mutaliq ehkamat ke pura karne\n" +
                             "                    ke silsil mein jo kotahiyan aur gunah hojate in ka kafara namaz,sadqa banjate hai.";
                     
                     break;
-                case 299:
+                case 298:
                     message="Hazrat Ibn Abbas se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Who shaks humari itba’a karne waalon mein se nahi hai jo humare\n" +
                             "                    chotaon par shafaqat na kare,humare badaon ka ehteram na kare, naiki ka hukm\n" +
                             "                    na kare aur burai se mana na kare. ";
                     
                     break;
-                case 300:
+                case 299:
                     message="Hazrat Anas farmaate hai ke Rasoolallah S.A.W ne kasrra,qaisar,najashi\n" +
                             "                    aur har bade hakim ko khat likhna (in khatoot mein) inhe Allah Ta’ala ki tarf bulaya.\n" +
                             "                    Ye najashi wo nahi hai(jo muslmaan hogaye the aur) Rasoolallah S.A.W ne in ki\n" +
                             "                    Namaz janaza padhayi thi. ";
                     
                     break;
-                case 301:
+                case 300:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Agar koi shaks ye kahe ke log tabah hogaye to wo shaks in mein sabse\n" +
                             "                    zyada tabah hone wala hai (kyunke ye kehne wala dusron ko haqeer samjhne ki\n" +
                             "                        wajah se tukkabur ke gunah mein mubtela hai). ";
                     
                     break;
-                case 302:
+                case 301:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya : Aadmi ke hunahgar hone ke liye kaafi hai ke wo har suni sunayi baat ko\n" +
                             "                    baghair tehqeeq ke bayan kare. ";
                     
                     break;
-                case 303:
+                case 302:
                     message="Hazrat Afs Bin Asim R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Aadmi ke jhoota hone ke liye yehi kaafi hai ke wo jo kuch sune\n" +
                             "                    ise(baghair tehqeeq) ke bayan karde. ";
                     
                     break;
-                case 304:
+                case 303:
                     message="Hazrat Abu Umama R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya: Momin mein paidaishi taur par saari khaslatein ho sakthi hain(khuwah\n" +
                             "                    achchi hoy a buri) albatta khayant aur jhoot ki (buri) aadat nahi ho sakthi. ";
                     
                     break;
-                case 305:
+                case 304:
                     message="Hazrat Sufiyan Bin Aseed Hazarmi R.A. farmate hain ke maine Rasool\n" +
                             "                    Allah S.A.W ko ye irshaad farmaate huye suna: ye bahut badi khayant hai ke tum\n" +
                             "                    Apne bhai se koi jhooti baat bayan karo halake wo yumhari is baat ko sachcha\n" +
                             "                    Samajhta ho. ";
                     
                     break;
-                case 306:
+                case 305:
                     message="Hazrat Abdullah Bin Omer se riwayat hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jab banda jhoot boltha hai to farishta iske jhoot ki badbu ki\n" +
                             "                    wajah se ek meel door chala jaata hai. ";
                     
                     break;
-                case 307:
+                case 306:
                     message="Hazrat Muawiya Bin Hida R.A. farmaate hai ke maine Rasoolallah S.A.W\n" +
                             "                    ko ye irshaad farmaate huye suna : Is shaks ke liye barbaadi hai jo logon ko hasane\n" +
                             "                    ke liye jhoot bole. Is ke liye rabahi hai,is ke liye tabahi hai. ";
                     
                     break;
-                case 308:
+                case 307:
                     message="Hazrat Mu’az R.A ne arz kiya Ya Rasoolallah! Mujhe aisa amal bata dijiye\n" +
                             "                    jo mujhe jannat mein dakhil karde. Aap S.A.W ne irshaad farmaaya : Allah Ta’ala\n" +
                             "                    par imaan lao aur bhali baat kaho,tumhare liye ajar likha jayega aur buri baat na\n" +
                             "                    kaho tumhare liye gunah likha jayega. ";
                     
                     break;
-                case 309:
+                case 308:
                     message="Hazrat Amaar R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Duniya mein jis shaks ke do rukh ho( yani munafiq ki tarah muqhtalif\n" +
                             "                    logon se muqhtalif qism ki baatein kare) to qayamat ke din iske mooh mein aag\n" +
                             "                    ki do zubaanein hongi. ";
                     
                     break;
-                case 310:
+                case 309:
                     message="Hazrat Mughair Bin Shauba R.A. farmaate hain ke maine Rasoolallah\n" +
                             "                    S.A.W ko ye irshaad farmaate huye suna: Allah Ta’ala ne tumhare liye teen\n" +
                             "                    Cheezon ko napasand farmaya hai. Ek (befaida) idhar udhar ki baatein karna,dusre\n" +
                             "                    Ke maal ko zaaya karna,teesre zyada sawalat karna. ";
                     
                     break;
-                case 311:
+                case 310:
                     message="Hazrat Abdullah Bin Omer se riwayat hai ke Rasoolallah S.A.W ne irshad\n" +
                             "                    farmaaya : Allah Ta’ala ke zikr ke alawa zyada baatein na kiya karo,kyunke isse dil\n" +
                             "                    mein sakhti (aur behasi) paida hoti hai aur logon mein Allah Ta’ala se zyada door\n" +
                             "                    wo aadmi hai jiska dil sakht ho. ";
                     
                     break;
-                case 312:
+                case 311:
                     message="Rasoolallah S.A.W ki zauja mohtarma Hazrat Um Habeeba farmaati\n" +
                             "                    hain ke Rasoolallah S.A.W ne irshaad farmaaya : Naiki ka hukm karne ya burai se\n" +
                             "                    rokna ya Allah Ta’ala ka zikr karne ke alawa insaan ki tamaam baatein is par wabaal\n" +
                             "                    hain yani pakad ka zariya hain.";
                     
                     break;
-                case 313:
+                case 312:
                     message="Hazrat Abu Huraira R.A. riwayat krte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jo Allah Ta’ala par aur aakhirat ke din par Imaan rakhta ho usko\n" +
                             "                    chahiye ke khair ki baat kahe ya khamosh rahe. ";
                     
                     break;
-                case 314:
+                case 313:
                     message="Hazrat Amro Bin Aas farmaate hain ke maine Rasoolallah S.A.W ko\n" +
                             "                    irshaad farmaate huye suna: Mujhe mukhtasar baat karne ka hokum diya gaya hai\n" +
                             "                    kyunke mukhtasar baat karna hi behtar hai. ";
                     
                     break;
-                case 315:
+                case 314:
                     message= "Hazrat Abu Huraira R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya: Insaan koi baat keh detha hai aur iske kehne mein harj nahi\n" +
                             "                    samajhta lekin iski wajah se jahanum mein sattar saal ki musafat ke baraabar\n" +
                             "                        (neeche) girjata hai. ";
                     
                     break;
-                case 316:
+                case 315:
                     message="Hazrat Abu Huraiar R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Banda kabhi besonche samjhe koi aisi baat kehdeta hai jiski\n" +
                             "                    wajha se mashriq maghrib ke darmiyani faasle se bhi zyada door dozakh mein ja\n" +
                             "                    girta hai. ";
                     
                     break;
-                case 317:
+                case 316:
                     message="Hazrat Abu Sayeed Khudri R.A. riwayat karte hain ke Rasoolallah S.A.W\n" +
                             "                    ne irshaad farmaaya : Aadmi sirf logon ko hasane keliye koi aisi baat kehdeta hai jis\n" +
                             "                    mein koi harj nahi samajhta lekin iski wajha se jahanum mein zameen aasmaan ke\n" +
                             "                    darmiyaani faasle se bhi zyada gehrayi mein pahunch jaata hai. ";
                     
                     break;
-                case 318:
+                case 317:
                     message="Hazrat Abdullah R.A. farmaate hain ke maine Rasoolallah S.A.W ko ye\n" +
                             "                    irshaad farmaate huye suna : Insaan ki aksar galtiyan iski zuban se hoti hain. ";
                     
                     break;
-                case 319:
+                case 318:
                     message="Hazrat Abdullah Bin Omer se riwayat hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jo chup raha wo najaat pagaya. ";
                     
                     break;
-                case 320:
+                case 319:
                     message="Hazrat Hasan farmate hain humein ye hades pahuchi hai ke Rasoolallah\n" +
                             "                    S.A.W ne irshaad farmaaya : Allah Ta’ala is bande par rahem farmaye jo achchi\n" +
                             "                    Baat kare aur duniya wa aakhirat mein iska faida uthaye ya khamosh rahe aur\n" +
                             "                    Zuban ki lagzishon se bachjaye.";
                     
                     break;
-                case 321:
+                case 320:
                     message="Hazrat Aadi Bin Hatim R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Aadmi ki naikhbakhti aur badbakhti iske dono jabdaon ke\n" +
                             "                    darmiyan hai yani zuban ka sahi istemaal naikhbakhti aur ghalat istemaal badbakht\n" +
                             "                    ka zariya hai. ";
                     
                     break;
-                case 322:
+                case 321:
                     message="Hazrat Abu Sayeed Khudri R.A. se riwayat hai k eek shaks Rasoolallah\n" +
                             "                    S.A.W ke paas aaye aur arz kiya : Ya Rasoolallah! Mujhe wasiyat farmadijiye. Aap\n" +
                             "                    S.A.W ne chand wasiyatein ke har qism ki baat se mehfooz rakho isse tum shaitan\n" +
                             "                    Par qaboo paaloge. ";
                     
                     break;
-                case 323:
+                case 322:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Jisko Allah Ta’ala ne in azaa ki buraiyon se bachaliye jo dono jabdaon\n" +
                             "                    aur tangon ke darmiyaan hai (yani zuban aur sharmgah) to wo jannat mein daakhil\n" +
                             "                    hoga. ";
                     
                     break;
-                case 324:
+                case 323:
                     message="Hazrat Uqba Bin Aamir R.A. farmate hain ke maine arz kiya : Ya Rasool\n" +
                             "                    Allah! Nijaat haasil karne ka kya tareeqa hai? Aap S.A.W ne irshaad farmaaya : Apni\n" +
                             "                    Zuban ko qaboo mein rakho,apne ghar mein raho (fuzool baher na phiro) aur apne\n" +
                             "                    Gunahon par roya karo. ";
                     
                     break;
-                case 325:
+                case 324:
                     message="Hazrat Anas Bin Malik R.A. se riwayat hai ke Rasoolallah S.A.W ne irshad\n" +
                             "                    farmaaya : Banda jab tak apni zuban ki hifazat na karle Imaan ki haqeeqat ko haasil\n" +
                             "                    nahi kar saktha. ";
                     
                     break;
-                case 326:
+                case 325:
                     message="Hazrat Abu Huzaifa R.A. se riwayat hai ke Rasoolallah S.A.W ne Sahaba\n" +
                             "                    se poocha : Allah Ta’ala ke nazdeek sabse pasandida amal kaunsa hai? Sab\n" +
                             "                    khamosh rahe kisi ne jawab na diya to Aap S.A.W ne irshaad farmaaya : Sabse\n" +
                             "                    pasandida amal zuban ki hifazat karna hai.";
                     
                     break;
-                case 327:
+                case 326:
                     message="Hazrat Haris Bin Hasham R.A. se riwayat hai ke inhone Rasoolallah\n" +
                             "                    S.A.W se arz kiya : Mujhe koi aisi cheez batadein jise mai mazbooti se pakda\n" +
                             "                    Rahoon. Aap S.A.W ne apni zuban mubark ki taraf ishaara karke farmaya : Isko\n" +
                             "                    Apne qaboo mein rakho. ";
                     
                     break;
-                case 328:
+                case 327:
                     message="Hazrat Sahel Bin Saad R.A. se riwayat hai ke Rasoolallah S.A.W ne irshad\n" +
                             "                    farmaya: Jo shaks mujhe apne dono jabdaon aur dono taangon ke darmiyaan wale\n" +
                             "                    azaa ki zimmedaari de de ( ke wo zuban aur saharmargh ko ghalat istemaal nahi\n" +
                             "                        karega) to mai iske liye jannat ki zimmedari leta hoon. ";
                     
                     break;
-                case 329:
+                case 328:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Aadmi ke islaam ki khoobi aur kamaal ye hai ke wo fuzool kaamon aur\n" +
                             "                    baton ko chorde. ";
                     
                     break;
-                case 330:
+                case 329:
                     message="Hazrat Jaber Bin Abdullah R.A. farmaate hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jab kisi insaan ki ghar se ghair haazri ka zamana zyada hojaye\n" +
                             "                    yani isko safar mein zyada din lag jaayein to wo (achanak) raat ko apne ghar na\n" +
                             "                    jaaye. ";
                     
                     break;
-                case 331:
+                case 330:
                     message="Hazrat Jaber R.A. farmaate hai Rasoolallah S.A.W ne irshaad farmaaya :\n" +
                             "                    Safar se waapas aane waale mard ke liye apne ghar walon ke paas pahunchne ka\n" +
                             "                    Behtareen waqt raat ka ibtedayi hissa hai(ye is surat mein hai ke ghar waalon ko\n" +
                             "                        Aane ke bare mein pehle se ilm ho ya qareeb safar ho). ";
                     
                     break;
-                case 332:
+                case 331:
                     message="Hazrat Jaber Bin Abdullah R.A. farmaate hain ke jab hum (safar se\n" +
                             "                        waapas) madina aagaye to Rasoolallah S.A.W ne (mujh se) irshaad farmaaya:\n" +
                             "                    Masjid jao aur do rakaat namaz padho. ";
                     
                     break;
-                case 333:
+                case 332:
                     message="Hazrat Kaab Bin Malik R.A. farmaate hain ke Rasoolallah S.A.W ka\n" +
                             "                    mamool tha ke din mein chasht ke waqt safar s tashreef laate aur aane ke baad\n" +
                             "                    pehle masjid jaate,do rakaat namaz adaa farmaate phir masjid mein baith the. ";
                     
                     break;
-                case 334:
+                case 333:
                     message="Hazrat Abdullah Bin Amr R.A. se riwayat hai ke Nabi Kareem S.A.W ne\n" +
                             "                    irshaad farmaaya : Jihad se laut kar aana bhi Jihad mein jaane ki tarah hai. ";
                     
                     break;
-                case 335:
+                case 334:
                     message="Hazrat Mataam Bin Muqdaam R.A. se riwayat hai ke Rasoolalah S.A.W\n" +
                             "                    ne irshaad farmaaya : Aadmi jab safar par jane lage tho sab se behtar naib jise wo\n" +
                             "                    apne ahl-o-aayal ke paas chord kar jaaye wo do rakatein hai jo ke paas padh kar\n" +
                             "                    jaayein. ";
                     
                     break;
-                case 336:
+                case 335:
                     message="Hazrat Jaber Bin Abdullah R.A. bayam karte hain ke Rasoolallah S.A.W\n" +
                             "                    ek gazwah par jan lage to irshaad farmaaya : Muhajireen wa ansaar ki jamaat!\n" +
                             "                        Tumhare bhaiyon mein se kuch log aise hain jink e paas na maal hai na inke\n" +
                             "                    Rishtedaar hain isliye tum mein se har ek in mein se do ya teen apne saath milale.";
 
                     break;
-                case 337:
+                case 336:
                     message="Hazrat Abu Huraira R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya: Jab tum safar karo to tumhare imam wo hona chahiye jis ko\n" +
                             "                    Qur’an zyada yaad ho( aur masayal ko zyada jaann wala ho) agarcha wo tum mein\n" +
@@ -2116,13 +2116,13 @@ public final class Reference {
                             "                    Bhi hai. ";
 
                     break;
-                case 338:
+                case 337:
                     message="Hazrat Ali R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad farmaya :\n" +
                             "                    Allah Ta’ala ki nafarmani mein kisi ki eta’t na karo,eta’at to sirf naiki ke kaamon\n" +
                             "                    Mein hai. ";
 
                     break;
-                case 339:
+                case 338:
                     message="Hazrat Ibn Abbas R.A. riwayat karte hain k Rasoolallah S.A.W ne irshad\n" +
                             "                    farmaaya : Tum mein se jo shaks apne ameer ki aisi baat dekhe jo isse nagawar ho\n" +
                             "                    to isse iss chahiyeke is par sabr kare kyumke jo shaks muslamanon ki jamaat yani\n" +
@@ -2130,126 +2130,126 @@ public final class Reference {
                             "                    mar gaya to wo jahaliyat ki maut mara. ";
 
                     break;
-                case 340:
+                case 339:
                     message="Hazrat Anas Bin Malik R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Ameer ki baat sunte aur maante raho agarcha tumpar habshi\n" +
                             "                    gulaam bhi ameer kyun na banaya gaya ho jis ka sar goya ( chote hone mein )\n" +
                             "                    kishmish ki tarah ho. ";
 
                     break;
-                case 341:
+                case 340:
                     message="Hazrat Umm Husain R.A. farmaate hain ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmmaaya : Agar tumpar kisi naak,kaan kate hue kaaale gulaam ko bhi ameer\n" +
                             "                    banya jaye jo tumhe Allah Ta’ala ki kitaab ke zariye yani Allah Ta’ala ke hukm ke\n" +
                             "                    mutabiq chalayr to yum iska hukm suno aur maano. ";
 
                     break;
-                case 342:
+                case 341:
                     message="Hazrat Jaber Bin Nafer, Hazrat Kaseer Bin Marah, Hazrat Amr Bin Aswad\n" +
                             "                    Hazrat Miqdam Bin Maad Yukarb aur Hazrat Abu Umama R.A. riwayat karte hain\n" +
                             "                    Ke Nabi Kareem S.A.W ne irshaad farmaaya: Ameer jab logon mein shak wa shuba\n" +
                             "                    Ki baat dhundta hai to logon ko kharab kar detha hau. ";
 
                     break;
-                case 343:
+                case 342:
                     message="Hazrat Abu Huraira R.A. se riwayat hai ke Nabi Kareem S.A.W ne irshaad\n" +
                             "                    farmaaya : Har ameer chahe dus aadmiyon ka hi kyun nah o qayamat ke din is\n" +
                             "                    tarah laya jayga ke iski gardan mein tauq hoga yahan tak ke is ko tauq se iska adal\n" +
                             "                    chuddwaega ya iska zulm isko halaak kardega. ";
 
                     break;
-                case 344:
+                case 343:
                     message="Hazrat Abu Huraira R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jo shaks dus ya dus se ziyaad afraad par ameer banaya jaye aur\n" +
                             "                    wo inke saath adal wa insaf ke muamlaat na kare to qayamat ke din baidiyon aur\n" +
                             "                    hathkaidyon mein (bandha hua) aayega.";
 
                     break;
-                case 345:
+                case 344:
                     message="Hazrat Maaqil Bin Yasaar R.A. se riwayat hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jo shaks kisi musalmaan raiyat ka zimedar bane phir inke saath\n" +
                             "                    dhoke ka muamla kare aur issi haalat par iski maut aajaye to Allah Ta’ala jannat ko\n" +
                             "                    is par haram kar denge. ";
 
                     break;
-                case 346:
+                case 345:
                     message="Hazrat Maaqil Bin Yasaar R.A farmaate hain ke maine Rasoolallah S.A.W\n" +
                             "                    ko ye farmaate huye suna: Jo ameer musalmaanon ke muamalaat ka zimedar ban\n" +
                             "                    kar musalamanon ki khair khuwahi mein koshish na kare wo musalamanon ke saat\n" +
                             "                    jannat mein dakhil nahi ho sakega. ";
 
                     break;
-                case 347:
+                case 346:
                     message="Hazrat Anas R.A. riwayat karte hain ke Rasoolallah S.A.W ne irshaad\n" +
                             "                    farmaaya : Bilashuba Allah Ta’ala har nigraan se iski zimedari mein di hui cheezon\n" +
                             "                    ke bare mein poochenge ke isne apni zimedari ki hifazat ki ya isse zaaya kiya (yani\n" +
                             "                        is zimedari ko poore taur par adaa kiya ya nahi). ";
 
                     break;
-                case 348:
+                case 347:
                     message="Hazrat Huzaifa R.A. farmaate hain ke maine Rasoollaha ko ye irshaad\n" +
                             "                    farmaate huye suna: Jo shaks musalamaanon ki jamaat se alag hua aur ameer ki\n" +
                             "                    amaratko haqeer jaana thi Allah Ta’ala isse is haal mein milenge ke Allah Ta’ala ke\n" +
                             "                    yahan iska koi rutbaa na hoga yani Allah Ta’ala ki nigah se gir jayega. ";
 
                     break;
-                case 349:
+                case 348:
                     message="Hazrat Abu Sayeed Khudri se riwayat hai ke Rasoolallah S.A.W ne irshad\n" +
                             "                    farmaaya:Jab teen shaks safar mein nikle to apne mein kisi ek ko ameer banalein.";
 
                     break;
-                case 350:
+                case 349:
                     message="Hazrat Abu Huraira R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Shaitaan ek aur do (musafiron) ke saath burayi ka irada karta\n" +
                             "                    hai yani nuqsaan pahunchana chahta hai lekin jab (musafir) teen ho to inke saath\n" +
                             "                    burayi ka irada nahi karta. ";
 
                     break;
-                case 351:
+                case 350:
                     message="Hazrat Amr Bin Shoeb apne walid se aur who apne dada se riwayat\n" +
                             "                    karte hain ke Rasoolallah S.A.W ne irshaad farmaaya : Ek sawar ek shaitaan hai,\n" +
                             "                    do sawar do shaitaan hain aur teen sawar jamaat hain.";
 
                     break;
-                case 352:
+                case 351:
                     message="Hazrat Anas farmaate hain ke Rasoolallah S.A.W ne irshaad farmaaya :\n" +
                             "                    Tum jab safar karo to raat bhi zaroor kuch safar karliya karo kyunke raat ke waqt\n" +
                             "                    Zameen lapit di jati hai. ";
 
                     break;
-                case 353:
+                case 352:
                     message="Hazrat Abdullah Bin Omer R.A se riwayat hai ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Agar logon ka tanha safar karne mein (deeni aur duniyawi)\n" +
                             "                    nuqsanat ka ilm hojaye jo mujhe maloom hain to koi sawar raat mein tanha safar\n" +
                             "                    karne ki himmat na kare.";
 
                     break;
-                case 354:
+                case 353:
                     message="Hazrat Nomaan Bin Basher R.A. farmaate hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaya : Jamaat (ke saath milkar chalna) rehmat hai aur jamaat se alag\n" +
                             "                    hona azaab hai. ";
 
                     break;
-                case 355:
+                case 354:
                     message="Hazrat Osman Bin Affan R.A. farmaate hain ke maine Rasoolallah S.A.W\n" +
                             "                    ko irshaad farmaate huye suna: Allah Ta’ala ke raasthe mein ek raat ka pehra dena\n" +
                             "                    in hazaar raton se behtar hai jin mein raat bhar khade hokar Allah Ta’ala ki ibadat\n" +
                             "                    ki jaye aur din mein roza rakha jaye. ";
 
                     break;
-                case 356:
+                case 355:
                     message="Hazrat Abu Huraira R.A. farmaate hain ke maine Rasoolalalh S.A.W se\n" +
                             "                    zyada apne saathiyon se mashwara karne wala koi nahi dekha yani Aap bahut\n" +
                             "                    zyada mashwara farmaya karthe the. ";
 
                     break;
-                case 357:
+                case 356:
                     message="Hazrat Abu Sayed Khudri R.A. farmaate hain ke (hum ne ye dua padhni\n" +
                             "                        shuru kardi jis ki barkat se) Allah Ta’ala ne sakht hawa bhej dushmanon ke chehre\n" +
                             "                    kop hair diya (aur yun) Allah Ta’ala ne in ko hawa ke zariye shikast dedi. ";
 
                     break;
-                case 358:
+                case 357:
                     message="Hazrat Omer Bin Absa R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
                             "                    irshaad farmaaya : Jis ne ek din Allah Ta’ala ke raasthe mein roza rakha is se\n" +
                             "                    jahanu ki aag sau saal ki masafat ke baqdr door hojayegi.";

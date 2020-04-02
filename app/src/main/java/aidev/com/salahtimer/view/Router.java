@@ -101,7 +101,7 @@ public class Router extends AppCompatActivity {
 
             mRepository = new HadithBookmarkRepository(getApplication());
 
-            for (int i = 1; i <= 358; i++) {
+            for (int i = 1; i <= 357; i++) {
                 mRepository.insert(new HadithBookmarkDBTable(i,category(i),Reference.InnerReference.get(i),0));
             }
 

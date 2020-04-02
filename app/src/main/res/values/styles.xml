@@ -20,7 +20,7 @@
 
     <style name="ErrorTextAppearance" parent="@android:style/TextAppearance">
         <!-- Customize your theme here. -->
-        <item name="android:textColor">@color/back5</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">14sp</item>
     </style>
 
