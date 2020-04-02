@@ -17,6 +17,7 @@ import com.sdsmdg.tastytoast.TastyToast;
 
 import aidev.com.salahtimer.R;
 import aidev.com.salahtimer.view.Compass;
+import aidev.com.salahtimer.view.HadithNotifier;
 import aidev.com.salahtimer.view.HijriCalendar;
 import aidev.com.salahtimer.view.Location;
 import aidev.com.salahtimer.view.Router;
@@ -59,7 +60,7 @@ public class RouterViewModel extends ViewModel {
                           loadFragment(new HijriCalendar(), "hijricalendar");
                           break;
                       case R.id.hadithnotifier:
-                          Toast.makeText(activity,"test",Toast.LENGTH_SHORT).show();
+                          loadFragmentWithNoInternet(new HadithNotifier(),"HadithNotifier");
                           break;
                       case R.id.masjidfinder:
                           if(checkConnection()){
@@ -104,6 +105,19 @@ public class RouterViewModel extends ViewModel {
 
     }
 
+
+    public boolean loadFragmentWithNoInternet(Fragment fragment,String tag)
+    {
+
+        if(fragment!=null)
+        {
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            ft.replace(R.id.frame, fragment).addToBackStack(tag);
+            ft.commitAllowingStateLoss();
+            return  true;
+        }
+        return false;
+    }
 
     private boolean loadFirstFragment(Fragment fragment){
 

@@ -1,4 +1,4 @@
-package aidev.com.salahtimer.view;
+package aidev.com.salahtimer.model;
 
 public class HadithInitialiser {
 

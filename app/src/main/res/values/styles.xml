@@ -24,4 +24,10 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="TimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/back1</item>
+        <item name="colorPrimaryDark">@color/back2</item>
+        <item name="colorAccent">@color/back3</item>
+    </style>
+
 </resources>
