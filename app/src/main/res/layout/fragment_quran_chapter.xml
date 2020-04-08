@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottom_curve_white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/head"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/back1"
+        android:layout_marginLeft="@dimen/margin_20_dp"
+        android:layout_marginRight="@dimen/margin_20_dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_20_dp"
+        app:cardCornerRadius="10dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="left"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:text="surah name"
+                        android:textStyle="bold"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/play"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp" />
+
+                    <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/stop"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="left"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:text="Arabic"
+                        android:textStyle="bold"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="left"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:text="Transliteration"
+                        android:textStyle="bold"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+
+                    <TextView
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="left"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:text="Translation"
+                        android:textStyle="bold"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/head"
+        android:id="@+id/quranverses"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:fastScrollEnabled="true"
+        app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
+        app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
+        app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
+        app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</RelativeLayout>

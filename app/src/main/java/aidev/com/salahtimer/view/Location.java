@@ -40,7 +40,7 @@ public class Location extends Fragment {
     private TextInputLayout country;
     private Button search;
     private TextView share;
-    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark;
+    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark, quran;
 
     @Nullable
     @Override
@@ -75,6 +75,12 @@ public class Location extends Fragment {
             startActivity(Intent.createChooser(i, "share application"));
         });
 
+
+        quran = (LinearLayout) view.findViewById(R.id.quran);
+        quran.setOnClickListener(view1 -> {
+            startplayer();
+            loadFragmentWithNoInternet(new QuranIndexDisplay(),"index");
+        });
 
         hadith = (LinearLayout) view.findViewById(R.id.hadith);
         hadith.setOnClickListener(view1 -> {

@@ -17,6 +17,8 @@ import com.sdsmdg.tastytoast.TastyToast;
 import aidev.com.salahtimer.model.ConfigurationFile;
 import aidev.com.salahtimer.R;
 import aidev.com.salahtimer.model.RetrofitResponseListener;
+import aidev.com.salahtimer.model.pojo.Quran_Ar_En;
+import aidev.com.salahtimer.model.pojo.Quran_Transliteration;
 import aidev.com.salahtimer.model.pojo.TimingsData;
 import aidev.com.salahtimer.viewmodel.TimingsViewModel;
 import androidx.annotation.NonNull;
@@ -118,6 +120,16 @@ public class TimingsFragment extends Fragment {
                 midnightlv.setText(data.timings.midnight);
 
             }
+
+            @Override
+            public void onSuccess(Quran_Ar_En body) {
+
+            }
+
+            @Override
+            public void onSuccess(Quran_Transliteration body) {
+
+            }
         });
 
         tvmshafii = new ViewModelProvider(this, new TimingsFactory(getActivity(), cityText, countryText)).get(TimingsViewModel.class);
@@ -135,6 +147,15 @@ public class TimingsFragment extends Fragment {
                 asrslv.setText(body.data.timings.asr.toString());
 
                 dialog.dismiss();
+            }
+            @Override
+            public void onSuccess(Quran_Ar_En body) {
+
+            }
+
+            @Override
+            public void onSuccess(Quran_Transliteration body) {
+
             }
         });
     }

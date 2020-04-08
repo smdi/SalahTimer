@@ -28,9 +28,10 @@ public class TimingsViewModel extends ViewModel {
 
     }
 
-    public APITimingsInterface getApiTimingsInterface(){
+    private APITimingsInterface getApiTimingsInterface(){
         if(apiTimingsInterface == null){
-            return APIClientTimings.getClient().create(APITimingsInterface.class);
+            apiTimingsInterface = APIClientTimings.getClient().create(APITimingsInterface.class);
+            return apiTimingsInterface;
         }
         else return apiTimingsInterface;
     }
