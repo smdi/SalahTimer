@@ -25,6 +25,7 @@ import java.util.List;
 import aidev.com.salahtimer.R;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 
 public class QuranIndexDisplay extends Fragment {
@@ -58,13 +59,26 @@ public class QuranIndexDisplay extends Fragment {
                 listView.setAdapter(qa);
 
                 listView.setOnItemClickListener((adapterView, view1, i, l) -> {
-
-                    Toast.makeText(getActivity(),""+i,Toast.LENGTH_SHORT).show();
+                    //make a transaction to new fragment
+                    movetoQuranChapter(i+1);
             });
 
     }
 
 
+    private void movetoQuranChapter(int num){
+
+            if(checkConnection()){
+                Bundle bundle = new Bundle();
+                bundle.putInt("number",num);
+                Fragment fragment = new QuranChapter();
+                fragment.setArguments(bundle);
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.quranindex,fragment).addToBackStack("chapter");
+                fragmentTransaction.commit();
+            }
+            else { displayNoInternet("No Internet"); }
+    }
 
     private boolean checkConnection() {
 

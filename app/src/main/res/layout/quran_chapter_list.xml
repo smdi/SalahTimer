@@ -32,7 +32,6 @@
                 <TextView
                     android:layout_weight="1"
                     android:id="@+id/vno"
-                    android:paddingTop="7dp"
                     android:textColor="@color/back1"
                     android:layout_marginTop="5dp"
                     android:textSize="12dp"
@@ -49,6 +48,9 @@
 
 
                 <ImageView
+                    android:id="@+id/current"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
                     android:visibility="invisible"
                     android:layout_gravity="center"
                     android:src="@drawable/current"
@@ -58,6 +60,9 @@
 
 
                 <ImageView
+                    android:id="@+id/playpause"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
                     android:src="@drawable/playcolored"
                     android:layout_gravity="center"
@@ -65,6 +70,10 @@
                     android:layout_height="16dp" />
 
                 <ImageView
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/stop"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
                     android:src="@drawable/stopcolored"
                     android:layout_gravity="center"
@@ -74,13 +83,15 @@
             </LinearLayout>
 
             <TextView
+                android:layout_marginTop="10dp"
                 android:paddingTop="5dp"
-                android:textSize="12dp"
+                android:paddingRight="2dp"
+                android:paddingLeft="2dp"
+                android:textSize="16sp"
                 android:layout_marginBottom="5dp"
                 android:id="@+id/content"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="10dp"
+                android:lineSpacingExtra="3dp"
+                android:paddingBottom="2dp"
                 android:layout_marginLeft="@dimen/margin_20_dp"
                 android:layout_marginRight="@dimen/margin_20_dp"
                 android:textColor="@color/colorAccent"

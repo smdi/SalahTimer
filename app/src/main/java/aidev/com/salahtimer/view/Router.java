@@ -50,7 +50,7 @@ public class Router extends AppCompatActivity {
         SharedPreferences sh = getSharedPreferences("DB", Context.MODE_PRIVATE);
         int exe = sh.getInt("dbval", 0);
 
-        Toast.makeText(getApplicationContext(),""+exe,Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(),""+exe,Toast.LENGTH_SHORT).show();
 
         if(exe == 0){
             DataStore dataStore = new DataStore();

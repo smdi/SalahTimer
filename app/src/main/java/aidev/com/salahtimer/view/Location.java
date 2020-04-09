@@ -79,7 +79,7 @@ public class Location extends Fragment {
         quran = (LinearLayout) view.findViewById(R.id.quran);
         quran.setOnClickListener(view1 -> {
             startplayer();
-            loadFragmentWithNoInternet(new QuranIndexDisplay(),"index");
+            loadFragmentWithNoInternet(new QuranChapter(),"index");
         });
 
         hadith = (LinearLayout) view.findViewById(R.id.hadith);

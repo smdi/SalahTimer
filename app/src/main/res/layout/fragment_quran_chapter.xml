@@ -2,8 +2,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/quranchapter"
     android:background="@drawable/bottom_curve_white"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -36,6 +36,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/chaptername"
                         android:layout_weight="1"
                         android:layout_marginLeft="5dp"
                         android:gravity="left"
@@ -48,12 +49,14 @@
                         android:layout_height="match_parent" />
 
                     <ImageView
+                        android:id="@+id/playpause"
                         android:layout_marginRight="5dp"
                         android:src="@drawable/play"
                         android:layout_width="16dp"
                         android:layout_height="16dp" />
 
                     <ImageView
+                        android:id="@+id/stop"
                         android:layout_marginLeft="5dp"
                         android:src="@drawable/stop"
                         android:layout_width="16dp"
@@ -78,6 +81,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/arabic"
                         android:textAlignment="center"
                         android:layout_weight="1"
                         android:layout_marginLeft="5dp"
@@ -91,6 +95,7 @@
                         android:layout_height="match_parent" />
 
                     <TextView
+                        android:id="@+id/transliteration"
                         android:textAlignment="center"
                         android:layout_weight="1"
                         android:layout_marginLeft="5dp"
@@ -105,6 +110,7 @@
 
 
                     <TextView
+                        android:id="@+id/translation"
                         android:textAlignment="center"
                         android:layout_weight="1"
                         android:layout_marginLeft="5dp"
@@ -128,19 +134,17 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/head"
         android:id="@+id/quranverses"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginBottom="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:fastScrollEnabled="true"
         app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
         app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
         app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
         app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
 
 </RelativeLayout>

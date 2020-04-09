@@ -1,6 +1,9 @@
 package aidev.com.salahtimer.viewmodel;
 
 import android.content.Context;
+import android.widget.Toast;
+
+import java.util.List;
 
 import aidev.com.salahtimer.model.APIClientArabic;
 import aidev.com.salahtimer.model.APIClientTimings;
@@ -19,8 +22,8 @@ public class QuranViewModel extends ViewModel {
 
     private Context activity;
     private APITimingsInterface api_ar_en = null, api_trans = null;
-    private Quran_Ar_En arb;
-    private Quran_Ar_En eng;
+    private List<Quran_Ar_En> arb;
+    private List<Quran_Ar_En> eng;
     private Quran_Transliteration trans;
 
     public QuranViewModel(Context activity){
@@ -47,14 +50,16 @@ public class QuranViewModel extends ViewModel {
 
         if(arb == null ){
 
-            Call<Quran_Ar_En> call = getAPI_Ar_en().getQuranData(number);
-            call.enqueue(new Callback<Quran_Ar_En>() {
+            Call<List<Quran_Ar_En>> call = getAPI_Ar_en().getQuranData(number);
+            call.enqueue(new Callback<List<Quran_Ar_En>>() {
                 @Override
-                public void onResponse(Call<Quran_Ar_En> call, Response<Quran_Ar_En> response) {
+                public void onResponse(Call<List<Quran_Ar_En>> call, Response<List<Quran_Ar_En>> response) {
+
 
                     if(response.isSuccessful()){
                         arb = response.body();
-                        retrofitResponseListener.onSuccess(arb);
+                        retrofitResponseListener.onSuccess(arb.get(0));
+                        Toast.makeText(activity,""+arb.get(0).data.get(0).verseId,Toast.LENGTH_SHORT).show();
                     }else {
                         retrofitResponseListener.onFailure();
                     }
@@ -62,15 +67,16 @@ public class QuranViewModel extends ViewModel {
                 }
 
                 @Override
-                public void onFailure(Call<Quran_Ar_En> call, Throwable t) {
+                public void onFailure(Call<List<Quran_Ar_En>> call, Throwable t) {
                     call.cancel();
+                    Toast.makeText(activity,""+t,Toast.LENGTH_SHORT).show();
                     retrofitResponseListener.onFailure();
                 }
             });
 
         }
         else{
-            retrofitResponseListener.onSuccess(arb);
+            retrofitResponseListener.onSuccess(arb.get(0));
         }
     }
 
@@ -78,30 +84,31 @@ public class QuranViewModel extends ViewModel {
 
         if(eng == null ){
 
-            Call<Quran_Ar_En> call = getAPI_Ar_en().getQuranDataEnglishTranslation(number,"en");
-            call.enqueue(new Callback<Quran_Ar_En>() {
+            Call<List<Quran_Ar_En>> call = getAPI_Ar_en().getQuranDataEnglishTranslation(number);
+            call.enqueue(new Callback<List<Quran_Ar_En>>() {
                 @Override
-                public void onResponse(Call<Quran_Ar_En> call, Response<Quran_Ar_En> response) {
+                public void onResponse(Call<List<Quran_Ar_En>> call, Response<List<Quran_Ar_En>> response) {
 
                     if(response.isSuccessful()){
                         eng = response.body();
-                        retrofitResponseListener.onSuccess(eng);
+                        retrofitResponseListener.onSuccess(eng.get(0));
+                        Toast.makeText(activity,""+eng.get(0).data.get(0).verseId,Toast.LENGTH_SHORT).show();
                     }else {
                         retrofitResponseListener.onFailure();
                     }
-
                 }
-
                 @Override
-                public void onFailure(Call<Quran_Ar_En> call, Throwable t) {
+                public void onFailure(Call<List<Quran_Ar_En>> call, Throwable t) {
                     call.cancel();
+                    Toast.makeText(activity,""+t,Toast.LENGTH_SHORT).show();
                     retrofitResponseListener.onFailure();
                 }
             });
 
+
         }
         else{
-            retrofitResponseListener.onSuccess(eng);
+            retrofitResponseListener.onSuccess(eng.get(0));
         }
     }
 

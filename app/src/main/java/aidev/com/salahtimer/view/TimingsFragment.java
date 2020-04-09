@@ -72,12 +72,7 @@ public class TimingsFragment extends Fragment {
         tvmhanafi.getHanafiTimingsData(new RetrofitResponseListener() {
             @Override
             public void onFailure() {
-                TastyToast.makeText(getActivity(),"No data found",Toast.LENGTH_SHORT,TastyToast.ERROR).show();
-//                Fragment fragment = new Location();
-//                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-//                fragmentTransaction.replace(R.id.fragmentstimingsitem,fragment);
-//                fragmentTransaction.addToBackStack(null);
-//                fragmentTransaction.commit();
+                TastyToast.makeText(getActivity(),"No data found",TastyToast.LENGTH_SHORT,TastyToast.ERROR).show();
                 dialog.dismiss();
                 FragmentManager fm = getActivity()
                         .getSupportFragmentManager();
