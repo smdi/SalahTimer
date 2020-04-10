@@ -1,0 +1,16 @@
+package aidev.com.salahtimer.TransliterationData;
+
+
+
+public class Trans60 {
+
+    public static String[] getData() {
+
+
+        String data[] = {
+                "  Yaa ayyuhal lazeena aamanoo laa tattakhizoo 'aduwwee wa 'aduwaakum awliyaaa'a tulqoona ilaihim bilmawaddati wa qad kafaroo bima jaaa'akum minal haqq, yukhrijoonar Rasoola wa iyyaakum an tu'minoo billaahi rabbikum in kuntum kharajtum jihaadan fee sabeelee wabtighaaa'a mardaatee; tusirroona ilaihim bilma waddati wa ana a'alamu bimaaa akhfaitum wa maaa a'lantum; wa many yaf'alhu minkum faqad dalla sawaaa'as sabeel "   ,  "  Iny yasqafookum yakoonoo lakum a'daaa'anw wa yabsutooo ilaikum aydiyahum wa alsinatahum bissooo'i wa waddoo law takfuroon "   ,  "  Lan tanfa'akum arhaamukum wa laaa awlaadukum; yawmal qiyaamati yafsilu bainakum; wallaahu bimaa ta'maloon baseer "   ,  "  Qad kaanat lakum uswatun basanatun feee Ibraaheema wallazeena ma'ahoo iz qaaloo liqawmihim innaa bura'aaa'u minkum wa mimmaa ta'budoona min doonil laahi kafarnaa bikum wa badaa bainanaa wa bainakumul 'adaawatu wal baghdaaa'u abadan hattaa tu'minoo billaahi wahdahooo illaa qawla Ibraheema li abeehi la astaghfiranna laka wa maaa amliku laka minal laahi min shai; rabbanaa 'alaika tawakkalnaa wa ilaika anabnaa wa ilaikal maseer "   ,  "  Rabbana laa taj'alnaa fitnatal lillazeena kafaroo waghfir lanaa rabbanaa innaka antal azeezul hakeem "   ,  "  Laqad kaana lakum feehim uswatunhasanatul liman kaana yarjul laaha wal yawmal aakhir; wa many yatawalla fa innal laaha huwal ghaniyyul hameed "   ,  "  Asal laahu any yaj'ala bainakum wa bainal lazeena 'aadaitum minhum mawaddah; wallahu qadeer; wallahu ghafoorur raheem "   ,  "  Laa yanhaakumul laahu 'anil lazeena lam yuqaatilookum fid deeni wa lam yukhrijookum min diyaarikum an tabarroohum wa tuqsitooo ilaihim; innal laaha yuhibbul muqsiteen "   ,  "  Innamaa yanhaakumul laahu 'anil lazeena qaatalookum fid deeni wa akhrajookum min diyaarikum wa zaaharoo 'alaa ikhraajikum an tawallawhum; wa many yatawallahum faulaaa'ika humuz zaalimoon "   ,  "  Yaa ayyuhal lazeena aamanoo izaa jaaa'akumul mu'minaatu muhaajiraatin famtah inoohunna Allaahu a'lamu bieemaanihinna fa in 'alimtumoohunna mu'minaatin falaa tarji'oohunna ilal kuffaar; laa hunna hillul lahum wa laa hum uahilloona lahunna wa aatoohum maa anfaqoo wa laa junaaha 'alaikum an tankihoohunna izaaa aataitumoohunna ujoorahunn; wa laa tumsikoo bi 'isamil kawaafiri was'aloo maaa anfaqtum walyas'aloo maaa anfaqoo zaalikum hukmul laahi yahkumu bainakum wallaahu 'aleemun hakeem "   ,  "  Wa in faatakum shai'um min azwaajikum ilal kuffaari fa'aaqabtum fa aatul lazeena zahabat azwaajuhum misla maaa anfaqoo; wattaqul laahal lazeee antum bihee mu'minoon "   ,  "  Yaaa ayyuhan nabbiyyu izaa jaaa'akal mu'minaau yubaai naka 'alaaa allaa yushrikna billaahi shai 'anw wa laa yasriqna wa laa yazneena wa laa yaqtulna awlaadahunna wa laa yaateena bibuhtaaniny yaftaree nahoo baina aydeehinna wa arjulihinna wa laa ya'seenaka fee ma'roofin fabaayi'hunna wastaghfir lahunnal laaha innnal laaha ghafoorur raheem "   ,  "  Yaaa ayyuhal lazeena amanoo laa tatawallaw qawman ghadibal laahu 'alaihim qad ya'isoo minal aakhirati kamaa ya'isal kuffaaru min as haabil quboor "};
+
+      return data;
+    }
+
+}

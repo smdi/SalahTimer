@@ -1,0 +1,16 @@
+package aidev.com.salahtimer.TransliterationData;
+
+
+
+public class Trans49 {
+
+    public static String[] getData() {
+
+
+        String data[] = {
+                "  Yaa ayyuhal lazeena aamanoo la tuqaddimoo baina yada yil laahi wa Rasoolihee wattaqul laah; innal laaha samee'un 'Aleem "   ,  "  Yaa ayyuhal lazeena aamanoo laa tarfa'ooo aswaatakum fawqa sawtin Nabiyi wa laa tajharoo lahoo bilqawli kajahri ba'dikum liba 'din an tahbata a 'maalukum wa antum laa tash'uroon "   ,  "  Innal lazeena yaghud doona aswaatahum 'inda Rasoolil laahi ulaaa'ikal lazeenam tah anal laahu quloobahum littaqwaa; lahum maghfiratunw waajrun 'azeem "   ,  "  Innal lazeena yunaadoo naka minw waraaa'il hujuraati aksaruhum laa ya'qiloon "   ,  "  Wa law annahum sabaroo hatta takhruja ilaihim lakaana khairal lahum; wallaahu Ghafoorur Raheem "   ,  "  Yaaa ayyuhal lazeena aamanoo in jaaa'akum faasqum binaba in fatabaiyanooo an tuseeboo qawmam bijahalatin fatusbihoo 'alaa maa fa'altum naadimeen "   ,  "  Wa'lamooo anna feekum Rasoolal laah; law yutee'ukum fee kaseerim minal amrila'anittum wa laakinnal laaha habbaba ilaikumul eemaana wa zaiyanahoo fee quloobikum wa karraha ilaikumul kufra walfusooqa wal'isyaan; ulaaaika humur raashidoon "   ,  "  Fadlam minal laahi wa ni'mah; wallaahu 'Aleemun Hakeem "   ,  "  Wa in taaa'ifataani minal mu'mineenaq tataloo faaslihoo bainahumaa fa-im baghat ih daahumaa 'alal ukhraa faqaatilul latee tabhee hattaa tafeee'a ilaaa amril laah; fa-in faaa't fa aslihoo bainahumaa bil'adli wa aqsitoo innal laaha yuhibbul muqsiteen "   ,  "  Innamal mu'minoona ikhwatun fa aslihoo baina akhawaykum wattaqul laaha la'allakum tuhamoon (section 1) "   ,  "  Yaaa ayyuhal lazeena aamanoo laa yaskhar qawmum min qawmin 'asaaa anyyakoonoo khairam minhum wa laa nisaaa'um min nisaaa'in 'Asaaa ay yakunna khairam minhunna wa laa talmizooo bil alqaab; bi'sal ismul fusooqu ba'dal eemaan; wa mal-lam yatub fa-ulaaa'ika humuz zaalimoon "   ,  "  Yaaa ayyuhal lazeena aamanuj taniboo kaseeram minaz zanni inna ba'daz zanniismunw wa laa tajassasoo wa la yaghtab ba'dukum ba'daa; a yuhibbu ahadukum any yaakula lahma akheehi maitan fakarih tumooh; wattaqul laa; innal laaha tawwaabur Raheem "   ,  "  Yaaa ayyuhan naasu innaa khalaqnaakum min zakarinw wa unsaa wa ja'alnaakum shu'oobanw wa qabaaa'ila lita'aarafoo inna akramakum 'indal laahi atqaakum innal laaha 'Aleemun khabeer "   ,  "  Qaalatil-A 'raabu aamannaa qul lam tu'minoo wa laakin qoolooo aslamnaa wa lamma yadkhulil eemaanu fee quloobikum wa in tutee'ul laaha wa Rasoolahoo laa yalitkum min a'maalikum shai'aa; innal laaha Ghafoorur Raheem "   ,  "  Innamal muu'minoonal lazeena aamanoo billaahi wa Rasoolihee summa lam yartaaboo wa jaahadoo biamwaalihim wa anfusihim fee sabeelil laah; ulaaaika humus saadiqoon "   ,  "  Qul atu'allimoonal laaha bideenikum wallaahu ya'lamu maa fis samaawaati wa maa fil ard; wallaahu bikulli shai'in 'Aleem "   ,  "  Yamunnoona 'alaika an aslamoo qul laa tamunnoo 'alaiya Islaamakum balillaahu yamunnu 'alaikum an hadaakum lil eemaani in kuntum saadiqeen "   ,  "  Innal laaha ya'lamu ghaibas samaawaati wal ard; wallaahu baseerum bimaa ta'maloon (section 2) "};
+
+      return data;
+    }
+
+}

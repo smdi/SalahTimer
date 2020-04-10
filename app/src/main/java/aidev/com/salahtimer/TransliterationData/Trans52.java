@@ -1,0 +1,17 @@
+package aidev.com.salahtimer.TransliterationData;
+
+
+
+public class Trans52 {
+
+    public static String[] getData() {
+
+
+        String data[] = {
+
+                "  Wat-Toor "   ,  "  Wa kitaabim mastoor "   ,  "  Fee raqqim manshoor "   ,  "  Wal baitil ma'moor "   ,  "  Wassaqfil marfoo' "   ,  "  Wal bahril masjoor "   ,  "  Inna 'azaaba Rabbika lawaaqi' "   ,  "  Maa lahoo min daafi' "   ,  "  Yawma tamoorus samaaa'u mawraa "   ,  "  Wa taseerul jibaalu sairaa "   ,  "  Fawailuny yawma 'izil lil mukaazzibeen "   ,  "  Allazeena hum fee khawdiny yal'aboon "   ,  "  Yawma yuda'-'oona ilaa naari jahannama da'-'aa "   ,  "  Haazihin naarul latee kuntum bihaa tukazziboon "   ,  "  Afasihrun haazaaaa am antum laa tubsiroon "   ,  "  Islawhaa fasbirooo aw laa tasbiroo sawaaa'un 'alaikum innamaa tujzawna maa kuntum ta'maloon "   ,  "  Innal muttaqeena fee jannaatinw wa na'eem "   ,  "  Faakiheena bimaaa aataahum rabbuhum wa waqaahum rabbuhum 'azaabal jaheem "   ,  "  Kuloo washraboo haneee 'am bimaa kuntum ta'maloon "   ,  "  Muttaki'eena 'alaa sururim masfoofatinw wa zawwaj naahum bihoorin 'een "   ,  "  Wallazeena aamanoo wattaba'at hum zurriyyatuhum bieemaanin alhaqnaa bihim zurriyyatahum wa maaa alatnaahum min 'amalihim min shai'; kullum ri'im bimaa kasaba raheen "   ,  "  Wa amdadnaahum bifaa kihatinw wa lahmim mimmaa yashtahoon "   ,  "  Yatanaaza'oona feehaa kaasal laa laghwun feehaa wa laa taaseem "   ,  "  Wa yatoofu 'alaihim ghilmaanul lahum ka annahum lu'lu'um maknoon "   ,  "  Wa aqbala ba'duhum 'alaa ba'diny yatasaaa'aloon "   ,  "  Qaalooo innaa kunnaa qablu feee ahlinaa mushfiqeen "   ,  "  Famannnal laahu 'alainaa wa waqaanaa 'azaabas samoom "   ,  "  Innaa kunnaa min qablu nad'oohu innahoo huwal barrur raheem "   ,  "  Fazakkir famaaa anta bini'mati rabbika bikaahininw wa laa majnoon "   ,  "  Am yaqooloona shaa'irun natarabbasu bihee raibal manoon "   ,  "  Qul tarabbasoo fa innee ma'akum minal mutarabbiseen "   ,  "  Am taamuruhum ahlaamuhum bihaazaaa am hum qawmun taaghoon "   ,  "  Am yaqooloona taqawwalah; bal laa yu'minoon "   ,  "  Falyaatoo bihadeesim misliheee in kaanoo saadiqeen "   ,  "  Am khuliqoo min ghairi shai'in am humul khaaliqoon "   ,  "  Am khalaqus samaawaati wal ard; bal laa yooqinoon "   ,  "  Am'indahum khazaaa'inu rabbika am humul musaitiroon "   ,  "  Am lahum sullamuny yastami'oona feehi falyaati mustami'uhum bisultaanim mubeen "   ,  "  Am lahul banaatu wa lakumul banoon "   ,  "  Am tas'aluhum ajran fahum mim maghramim musqaloon "   ,  "  Am 'indahumul ghaibu fahum yaktuboon "   ,  "  Am yureedoona kaidan fallazeena kafaroo humul makeedoon "   ,  "  Am lahum ilaahun ghairul laa; subhaanal laahi 'ammaa yushrikoon "   ,  "  Wa iny yaraw kisfam minas samaaa'i saaqitany yaqooloo sahaabum markoom "   ,  "  Fazarhum hatta yulaaqoo yawmahumul lazee feehi yus'aqoon "   ,  "  Yawma laa yughnee 'anhum kaidumhum shai'anw wa laa hum yunsaroon "   ,  "  Wa inna lillazeena zalamoo 'azaaban doona zalika wa laakinna aksarahum laa ya'lamoon "   ,  "  Wasbir lihukmi rabbika fa innaka bi-a'yuninaa wa sabbih bihamdi rabbika heena taqoom "   ,  "  Wa minal laili fasabbihhu wa idbaaran nujoom "};
+
+      return data;
+    }
+
+}

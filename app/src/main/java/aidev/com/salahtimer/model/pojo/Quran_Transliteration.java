@@ -6,9 +6,6 @@ import java.util.List;
 
 public class Quran_Transliteration {
 
-
-    @SerializedName("data")
     public List<String> data;
-
 
 }

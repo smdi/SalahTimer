@@ -3,8 +3,13 @@ package aidev.com.salahtimer.viewmodel;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import aidev.com.salahtimer.TransliterationData.TransLIteration;
 import aidev.com.salahtimer.model.APIClientArabic;
 import aidev.com.salahtimer.model.APIClientTimings;
 import aidev.com.salahtimer.model.APIClientTransliteration;
@@ -116,27 +121,16 @@ public class QuranViewModel extends ViewModel {
 
         if(trans == null ){
 
-            Call<Quran_Transliteration> call = getAPI_Transliteration().getQuranDataEnglishTransliteration(number);
-            call.enqueue(new Callback<Quran_Transliteration>() {
-                @Override
-                public void onResponse(Call<Quran_Transliteration> call, Response<Quran_Transliteration> response) {
+            try{
 
-                    if(response.isSuccessful()){
-                        trans = response.body();
-                        retrofitResponseListener.onSuccess(trans);
-                    }else {
-                        retrofitResponseListener.onFailure();
-                    }
-
-                }
-
-                @Override
-                public void onFailure(Call<Quran_Transliteration> call, Throwable t) {
-                    call.cancel();
-                    retrofitResponseListener.onFailure();
-                }
-            });
-
+                Gson gson = new Gson();
+                trans =
+                        gson.fromJson(TransLIteration.getData(number).toString(), Quran_Transliteration.class);
+                retrofitResponseListener.onSuccess(trans);
+            }
+            catch (Exception e){
+                retrofitResponseListener.onFailure();
+            }
         }
         else{
             retrofitResponseListener.onSuccess(trans);

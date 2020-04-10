@@ -1,0 +1,17 @@
+package aidev.com.salahtimer.TransliterationData;
+
+
+
+public class Trans32 {
+
+    public static String[] getData() {
+
+
+        String data[] = {
+
+                "  Alif-Laaam-Meeem "   ,  "  Tanzeelul Kitaabi 'laaraiba feehi mir rabbil 'aalameen "   ,  "  Am yaqooloonaf taraahu bal huwal haqqu mir rabbika litunzira qawma maaa ataahum min nazeerim min qablika la'allahum yahtadoon "   ,  "  Allaahul lazee khalaqas samaawaati wal arda wa maa bainahumaa fee sittati ayyaam;Thummas tawaa 'alal 'arsh; maa lakum min doonihee minw-wwaliyyinw-wala shafee'; afala tatazakkaroon "   ,  "  Yudabbirul amra minas samaaa'i ilal ardi thumma ya'ruju ilaihi fee yawmin kaana miqdaaruhooo alfa sanatim mimmaa ta'uddoon "   ,  "  Zaalika 'aalimul ghaybi wa shahaadatil 'azeezur raheem "   ,  "  Allazee ahsana kulla shai in khalaqa; wa bada a khalqal insaani min teen "   ,  "  Thumma ja'ala naslahoo min sulaalatim mim maaa'immaheen "   ,  "  Thumma sawwaahu wa nafakha feehi mir roohihih; wa ja'ala lakumus sam'a wal-absaara wal-af'idah; taqaleelam maa tashkuroon "   ,  "  Wa qaalooo 'a-izaa dalalnaa fil ardi 'a-innaa lafee khalqin jadeed; bal hum biliqaaa'i rabbihim kaafirroon "   ,  "  Qul yatawaffaakum malakul mawtil lazee wukkila bikum Thumma ilaa rabbikum turja'oon (section 1) "   ,  "  Wa law taraaa izil mujrimoona naakisoo ru'oosihim 'inda rabbihim rabbanaaa absarnaa wa sami'naa farji'naa na'mal saalihan innaa mooqinoon "   ,  "  Wa law shi'naa la-aatainaa kulla nafsin hudaahaa wa laakin haqqal qawlu minnee la amla'anna jahannama minal jinnati wannaasi ajma'een "   ,  "  Fazooqoo bimaa naseetum liqaaa'a yawminkum haaza innaa naseenaakum wa zooqoo 'azaabal khuldi bimaa kuntum ta'maloon "   ,  "  Innamaa yu'minu bi aayaatinal lazeena izaa zukkiroo bihaa kharroo sujjadanw wa sabbahoo bihamdi rabbihim wa hum laa yastakbiroon (make sajda) "   ,  "  Tatajaafaa junoobuhum 'anil madaaji'i yad'oona rabbahum khawfanw wa tama'anw wa mimmaa razaqnaahum yunfiqoon "   ,  "  Falaa ta'lamu nafsum maaa ukhfiya lahum min qurrati a'yunin jazaaa'am bimaa kaanoo ya'maloon "   ,  "  Afaman kaana mu'minan kaman kaana faasiqaa; laa yasta woon "   ,  "  Ammal lazeena aamanoo wa 'amilus saalihaati falahum jannaatul maawa nuzulam bimaa kaanoo ya'maloon "   ,  "  Wa ammal lazeena fasaqoo fama awaahumun Naaru kullamaaa araadooo any yakhrujoo minhaaa u'eedoo feehaa wa qeela lahum zooqoo 'azaaaban Naaril lazee kuntum bihee tukazziboon "   ,  "  Wa lanuzeeqan nahum minal 'azaabil ladnaa doonal 'azaabil akbari la'allahum yarji'oon "   ,  "  Wa man azlamu mimman zukkira bi aayaati rabbihee summa a'rada 'anhaa; innaa minal mujrimeena muntaqimmon (section 2) "   ,  "  Wa laqad aatainaa Moosal Kitaaba falaa takun fee miryatim mil liqaaa'ihee wa ja'alnaahu hudal li Baneee Israaa'eel "   ,  "  Wa ja'alnaa minhum a'immatany yahdoona bi amrinaa lammaa sabaroo wa kaanoo bi aayaatinaa yooqinoon "   ,  "  Inna rabbaka huwa yafsilu bainahum yawmal qiyaamati feemaa kaanoo feehi yakhtalifoon "   ,  "  Awalam yahdi lahum kam ahlaknaa min qablihim minal qurooni yamshoona fee masaakinihim; inna fee zaalika la aayaatin afalaa yasma'oon "   ,  "  Awalam yaraw annaa nasooqul maaa'a ilal ardil juruzi fanukhriju bihee zar'an taakulu minhu an'aamuhum wa anfusuhum afalaa yubsiroon "   ,  "  Wa yaqooloona mataa haazal fat hu in kuntum saadiqeen "   ,  "  Qul yawmal fat hi laa yanfa'ul lazeena kafarooo eemaanuhum wa laa hum yunzaroon "   ,  "  Fa a'rid 'anhum wantazir innahum muntazirron (section 3) "};
+
+      return data;
+    }
+
+}

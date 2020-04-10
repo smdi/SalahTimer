@@ -1,6 +1,7 @@
 package aidev.com.salahtimer.view;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,9 +48,15 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
 
         if(use == 1){
+//            holder.content.setScaleX(1.1f);
+//            holder.content.setLineSpacing(8f,1f);
+            holder.content.setTypeface(Typeface.DEFAULT_BOLD);
             holder.content.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
         }
         if(use != 1){
+//            holder.content.setScaleX(0f);
+//            holder.content.setLineSpacing(2f,1f);
+            holder.content.setTypeface(Typeface.DEFAULT);
             holder.content.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
         }
 

@@ -1,12 +1,17 @@
 package aidev.com.salahtimer.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,12 +39,22 @@ public class QuranChapter extends Fragment {
     private QuranViewModel quranViewModel;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private TextView chapterName, arabic, translitertion, translation;
+    private TextView  arabic, translitertion, translation;
     private ImageView playpause, stop;
     private int num;
     private List<Quran_Ar_En.Datum> data1;
     private List<String> data2;
     private List<String > faker;
+    private ProgressDialog progressDialog;
+    int pplay = 0;
+    int length = 0;
+    private MediaPlayer mediaPlayer;
+    private static int onceMedia = 0;
+    private RelativeLayout head,quranchapter;
+    private SeekBar seekBar;
+    private Handler mSeekbarUpdateHandler;
+    private Runnable mUpdateSeekbar;
+
 
     @Nullable
     @Override
@@ -55,15 +70,14 @@ public class QuranChapter extends Fragment {
 
         initialiser(view);
 
-//        num = getArguments().getInt("number");
+        num = getArguments().getInt("number");
 
-        num = 1;
+//        num = 1;
 
         String message = QuranIndex.QuranIndexProfile.getIndexDisplay(num);
         String[] array = message.split("@");
 
-        chapterName.setText(""+array[5]);
-
+//        chapterName.setText(""+array[5]);
 
 
         quranViewModel = new ViewModelProvider(this, new QuranFactory(getActivity())).get(QuranViewModel.class);
@@ -90,6 +104,7 @@ public class QuranChapter extends Fragment {
             @Override
             public void onFailure() {
                 getPop();
+
             }
 
             @Override
@@ -103,6 +118,9 @@ public class QuranChapter extends Fragment {
                 data1 = body.data;
                 adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe);
                 recyclerView.setAdapter(adapter);
+//                recyclerView.scrollToPosition(data1.size() -1);
+                recyclerView.scrollToPosition(0);
+                progressDialog.dismiss();
             }
 
             @Override
@@ -138,6 +156,9 @@ public class QuranChapter extends Fragment {
                 data2 = body.data;
                 adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe);
                 recyclerView.setAdapter(adapter);
+//                recyclerView.scrollToPosition(data2.size() - 1);
+                recyclerView.scrollToPosition(0);
+                progressDialog.dismiss();
             }
         }, num);
     }
@@ -159,6 +180,9 @@ public class QuranChapter extends Fragment {
                     data1 = body.data;
                     adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe);
                     recyclerView.setAdapter(adapter);
+//                    recyclerView.scrollToPosition(data1.size() - 1);
+                    recyclerView.scrollToPosition(0);
+                    progressDialog.dismiss();
                 }
 
                 @Override
@@ -169,14 +193,21 @@ public class QuranChapter extends Fragment {
     }
 
     private void getPop() {
-        TastyToast.makeText(getActivity(),"No data found",TastyToast.LENGTH_SHORT,TastyToast.ERROR).show();
 
+        progressDialog.dismiss();
+        TastyToast.makeText(getActivity(),"No data found",TastyToast.LENGTH_SHORT,TastyToast.ERROR).show();
         FragmentManager fm = getActivity().getSupportFragmentManager();
         fm.popBackStack ("chapter", FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
 
 
     private void initialiser(View view) {
+
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("processing data!");
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
 
         recyclerView = (RecyclerView) view.findViewById(R.id.quranverses);
         recyclerView.setHasFixedSize(true);
@@ -186,11 +217,115 @@ public class QuranChapter extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setReverseLayout(false);
         linearLayoutManager.setStackFromEnd(true);
+
+
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        chapterName = (TextView) view.findViewById(R.id.chaptername);
+        head = view.findViewById(R.id.head);
+
+        head.setOnClickListener(view1 -> {
+
+        });
+
+        seekBar = view.findViewById(R.id.seekbar);
+
+        quranchapter = view.findViewById(R.id.quranchapter);
+
+        quranchapter.setOnClickListener(view1 -> {});
+
+//        chapterName = (TextView) view.findViewById(R.id.chaptername);
         playpause = (ImageView) view.findViewById(R.id.playpause);
         stop = (ImageView) view.findViewById(R.id.stop);
+
+
+        mSeekbarUpdateHandler = new Handler();
+        mUpdateSeekbar = new Runnable() {
+            @Override
+            public void run() {
+                seekBar.setProgress(mediaPlayer.getCurrentPosition());
+                mSeekbarUpdateHandler.postDelayed(this, 50);
+            }
+        };
+
+        playpause.setOnClickListener(view1 -> {
+
+            try{
+                if(onceMedia == 0){
+
+                    String copy = "";
+                    if(num >=1 && num <=9){
+                        copy = "s00"+num;
+                    }
+                    if(num >= 10 && num <= 99){
+                        copy = "s0"+num;
+                    }
+                    if(num >= 100  && num <= 114){
+                        copy = "s"+num;
+                    }
+
+                    mediaPlayer = MediaPlayer.create(getActivity(),
+                            getActivity().getResources().getIdentifier(copy, "raw", getActivity().getPackageName()));
+                    onceMedia = 1;
+
+                    seekBar.setMax(mediaPlayer.getDuration());
+
+                    mediaPlayer.setOnCompletionListener(mediaPlayer -> {
+                        pplay = 0;
+                        length  = 0;
+                        onceMedia = 0;
+                        mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
+                        seekBar.setProgress(0);
+                        playpause.setBackgroundResource(R.drawable.play);
+                        TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+                        mediaPlayer.stop();
+                    });
+                }
+
+                playSurah(mediaPlayer,  mUpdateSeekbar,mSeekbarUpdateHandler);
+
+
+            }
+            catch (Exception e){
+
+            }
+
+
+        });
+
+        stop.setOnClickListener(view1 -> {
+
+            if( mediaPlayer!= null && mediaPlayer.isPlaying()){
+                pplay = 0;
+                length  = 0;
+                onceMedia = 0;
+                seekBar.setProgress(0);
+                mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
+                playpause.setBackgroundResource(R.drawable.play);
+                TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+                mediaPlayer.stop();
+            }
+
+        });
+
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser && mediaPlayer != null)
+                    mediaPlayer.seekTo(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
 
         arabic = (TextView) view.findViewById(R.id.arabic);
         translation = (TextView) view.findViewById(R.id.translation);
@@ -222,11 +357,53 @@ public class QuranChapter extends Fragment {
 
     }
 
+    private void playSurah(MediaPlayer mediaPlayer, Runnable mUpdateSeekbar, Handler mSeekbarUpdateHandler) {
+
+        if (pplay == 0){
+
+            pplay = 1;
+            if(!mediaPlayer.isPlaying()&& length != 0){
+                TastyToast.makeText(getActivity(),"resume",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+                mediaPlayer.seekTo(length);
+                mediaPlayer.start();
+            }
+            else {
+                TastyToast.makeText(getActivity(),"play",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+                mediaPlayer.start();}
+            playpause.setBackgroundResource(R.drawable.pause);
+            mSeekbarUpdateHandler.postDelayed(mUpdateSeekbar, 0);
+        }
+        else{
+            TastyToast.makeText(getActivity(),"pause",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+            pplay = 0;
+            mediaPlayer.pause();
+            length = mediaPlayer.getCurrentPosition();
+            mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
+            playpause.setBackgroundResource(R.drawable.play);
+        }
+
+
+    }
+
     private void store(int i) {
+        progressDialog.show();
         SharedPreferences.Editor editor = getActivity().getSharedPreferences("DB", Context.MODE_PRIVATE).edit();
         editor.putInt("dataofquran", i);
         editor.apply();
     }
 
-
+    @Override
+    public void onPause() {
+        super.onPause();
+        if(mediaPlayer != null && mediaPlayer.isPlaying()){
+            pplay = 0;
+            length  = 0;
+            onceMedia = 0;
+            seekBar.setProgress(0);
+            mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
+            playpause.setBackgroundResource(R.drawable.play);
+            TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+            mediaPlayer.stop();
+        }
+    }
 }
