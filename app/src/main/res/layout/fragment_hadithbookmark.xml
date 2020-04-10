@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/nodata"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:src="@drawable/nodata"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

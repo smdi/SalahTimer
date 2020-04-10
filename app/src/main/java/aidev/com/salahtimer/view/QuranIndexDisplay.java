@@ -4,6 +4,7 @@ package aidev.com.salahtimer.view;
 
 import android.content.Context;
 
+import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -60,15 +61,21 @@ public class QuranIndexDisplay extends Fragment {
 
                 listView.setOnItemClickListener((adapterView, view1, i, l) -> {
                     //make a transaction to new fragment
+                    startplayer();
                     movetoQuranChapter(i+1);
             });
 
     }
 
+    private void startplayer() {
+
+        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
+        mp.start();
+    }
 
     private void movetoQuranChapter(int num){
 
-            if(checkConnection()){
+
                 Bundle bundle = new Bundle();
                 bundle.putInt("number",num);
                 Fragment fragment = new QuranChapter();
@@ -76,8 +83,6 @@ public class QuranIndexDisplay extends Fragment {
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.quranindex,fragment).addToBackStack("chapter");
                 fragmentTransaction.commit();
-            }
-            else { displayNoInternet("No Internet"); }
     }
 
     private boolean checkConnection() {

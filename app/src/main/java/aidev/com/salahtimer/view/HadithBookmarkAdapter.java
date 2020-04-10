@@ -2,6 +2,7 @@ package aidev.com.salahtimer.view;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,6 +56,7 @@ public class HadithBookmarkAdapter extends RecyclerView.Adapter<HadithBookmarkAd
 
         holder.delete.setOnClickListener(view1 -> {
 
+            startplayer();
             hadithBookmarkViewModel.insert(new HadithBookmarkDBTable(hadithBookmarkDBTable.getSerail_no_of_hadith(),
                     hadithBookmarkDBTable.getTitle(),hadithBookmarkDBTable.getContent(),0));
 
@@ -84,6 +86,12 @@ public class HadithBookmarkAdapter extends RecyclerView.Adapter<HadithBookmarkAd
 
 
         }
+    }
+
+    private void startplayer() {
+
+        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
+        mp.start();
     }
 
 }

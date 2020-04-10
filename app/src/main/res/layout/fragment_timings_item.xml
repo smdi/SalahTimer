@@ -521,12 +521,13 @@
                                 android:id="@+id/layout1"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:background="@color/littlewhite"
+                                android:background="@color/white"
                                 android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
                                 <LinearLayout
+                                    android:elevation="10dp"
                                     android:id="@+id/imsaklayout"
                                     android:layout_margin="5dp"
                                     android:layout_weight="1"
@@ -557,6 +558,7 @@
 
                                 </LinearLayout>
                                 <LinearLayout
+                                    android:elevation="10dp"
                                     android:id="@+id/fajrlayout"
                                     android:layout_weight="1"
                                     android:layout_margin="5dp"
@@ -594,12 +596,13 @@
                                 android:id="@+id/layout2"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:background="@color/littlewhite"
+                                android:background="@color/white"
                                 android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
                                 <LinearLayout
+                                    android:elevation="10dp"
                                     android:id="@+id/sunriselayout"
                                     android:layout_margin="5dp"
                                     android:layout_weight="1"
@@ -630,6 +633,7 @@
 
                                 </LinearLayout>
                                 <LinearLayout
+                                    android:elevation="10dp"
                                     android:id="@+id/dhuhrlayout"
                                     android:layout_weight="1"
                                     android:layout_margin="5dp"
@@ -669,13 +673,14 @@
                                 android:id="@+id/layout3"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:background="@color/littlewhite"
+                                android:background="@color/white"
                                 android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
 
                                 <LinearLayout
+                                    android:elevation="10dp"
                                     android:id="@+id/asrslayout"
                                     android:layout_weight="1"
                                     android:layout_margin="5dp"
@@ -707,6 +712,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:elevation="10dp"
                                     android:id="@+id/asrhlayout"
                                     android:layout_margin="5dp"
                                     android:layout_weight="1"
@@ -746,13 +752,14 @@
                                 android:id="@+id/layout4"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:background="@color/littlewhite"
+                                android:background="@color/white"
                                 android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
 
                                 <LinearLayout
+                                    android:elevation="10dp"
                                     android:id="@+id/sunsetlayout"
                                     android:layout_weight="1"
                                     android:layout_margin="5dp"
@@ -784,6 +791,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:elevation="10dp"
                                     android:id="@+id/maghriblayout"
                                     android:layout_margin="5dp"
                                     android:layout_weight="1"
@@ -824,13 +832,14 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_marginBottom="10dp"
-                                android:background="@color/littlewhite"
+                                android:background="@color/white"
                                 android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
 
                                 <LinearLayout
+                                    android:elevation="10dp"
                                     android:id="@+id/ishalayout"
                                     android:layout_weight="1"
                                     android:layout_margin="5dp"
@@ -862,6 +871,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:elevation="10dp"
                                     android:id="@+id/midnightlayout"
                                     android:layout_margin="5dp"
                                     android:layout_weight="1"

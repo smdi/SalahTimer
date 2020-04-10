@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/quranbookmark"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_curve_white">
+
+    <RelativeLayout
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:textColor="@color/colorPrimaryDarkOn"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textAllCaps="true"
+                        android:text="Quran Bookmark"
+                        android:textAlignment="center"
+                        android:layout_marginTop="@dimen/margin_20_dp"
+                        android:layout_marginBottom="@dimen/margin_20_dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+
+
+                            <TextView
+                                android:textColor="@color/back1"
+                                android:layout_weight="1"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/bookmark_text_size"
+                                android:text="Surah name"
+                                android:textAlignment="center"
+                                android:layout_marginTop="@dimen/bookmark_top_bottom"
+                                android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                                android:layout_marginLeft="@dimen/margin_20_dp"
+                                android:layout_marginRight="@dimen/margin_20_dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:textColor="@color/back1"
+                                android:layout_weight="1"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/bookmark_text_size"
+                                android:text="Surah number"
+                                android:textAlignment="center"
+                                android:layout_marginTop="@dimen/bookmark_top_bottom"
+                                android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                                android:layout_marginLeft="@dimen/margin_20_dp"
+                                android:layout_marginRight="@dimen/margin_20_dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+                            <TextView
+                                android:textColor="@color/back1"
+                                android:layout_weight="1"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/bookmark_text_size"
+                                android:text="Verse number"
+                                android:textAlignment="center"
+                                android:layout_marginTop="@dimen/bookmark_top_bottom"
+                                android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                                android:layout_marginLeft="@dimen/margin_20_dp"
+                                android:layout_marginRight="@dimen/margin_20_dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+                            <TextView
+                                android:textColor="@color/back1"
+                                android:layout_weight="1"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/bookmark_text_size"
+                                android:text="Total verses"
+                                android:textAlignment="center"
+                                android:layout_marginTop="@dimen/bookmark_top_bottom"
+                                android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                                android:layout_marginLeft="@dimen/margin_20_dp"
+                                android:layout_marginRight="@dimen/margin_20_dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:textColor="@color/back1"
+                                android:layout_weight="1"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/bookmark_text_size"
+                                android:text="Revealed at"
+                                android:textAlignment="center"
+                                android:layout_marginTop="@dimen/bookmark_top_bottom"
+                                android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                                android:layout_marginLeft="@dimen/margin_20_dp"
+                                android:layout_marginRight="@dimen/margin_20_dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/surahname"
+                                android:layout_weight="1"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/bookmark_text_size"
+                                android:text="Al - Fatiha"
+                                android:textColor="@color/back3"
+                                android:textAlignment="center"
+                                android:layout_marginTop="@dimen/bookmark_top_bottom"
+                                android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                                android:layout_marginLeft="@dimen/margin_20_dp"
+                                android:layout_marginRight="@dimen/margin_20_dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+                            <TextView
+                                android:id="@+id/surahno"
+                                android:layout_weight="1"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/bookmark_text_size"
+                                android:text="1"
+                                android:textColor="@color/back3"
+                                android:textAlignment="center"
+                                android:layout_marginTop="@dimen/bookmark_top_bottom"
+                                android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                                android:layout_marginLeft="@dimen/margin_20_dp"
+                                android:layout_marginRight="@dimen/margin_20_dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+                            <TextView
+                                android:id="@+id/verseno"
+                                android:layout_weight="1"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/bookmark_text_size"
+                                android:text="1"
+                                android:textColor="@color/back3"
+                                android:textAlignment="center"
+                                android:layout_marginTop="@dimen/bookmark_top_bottom"
+                                android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                                android:layout_marginLeft="@dimen/margin_20_dp"
+                                android:layout_marginRight="@dimen/margin_20_dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+
+
+
+
+                            <TextView
+                                android:id="@+id/totalverses"
+                                android:layout_weight="1"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/bookmark_text_size"
+                                android:text="6 verses"
+                                android:textColor="@color/back3"
+                                android:textAlignment="center"
+                                android:layout_marginTop="@dimen/bookmark_top_bottom"
+                                android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                                android:layout_marginLeft="@dimen/margin_20_dp"
+                                android:layout_marginRight="@dimen/margin_20_dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+
+
+                            <TextView
+                                android:id="@+id/revealed"
+                                android:layout_weight="1"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/bookmark_text_size"
+                                android:text="Makki"
+                                android:textColor="@color/back3"
+                                android:textAlignment="center"
+                                android:layout_marginTop="@dimen/bookmark_top_bottom"
+                                android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                                android:layout_marginLeft="@dimen/margin_20_dp"
+                                android:layout_marginRight="@dimen/margin_20_dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+
+
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_gravity="center"
+                            android:textColor="@color/back1"
+                            android:layout_weight="1"
+                            android:textStyle="normal"
+                            android:textSize="@dimen/bookmark_text_size"
+                            android:text="Bookmarked verse"
+                            android:textAlignment="center"
+                            android:layout_marginTop="@dimen/bookmark_top_bottom"
+                            android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                            android:layout_marginLeft="@dimen/margin_20_dp"
+                            android:layout_marginRight="@dimen/margin_20_dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/verse"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:text="Alhamdu lillahi Rabbil 'aalameen"
+                            android:textColor="@color/back3"
+                            android:textAlignment="center"
+                            android:layout_marginTop="@dimen/bookmark_top_bottom"
+                            android:layout_marginBottom="@dimen/margin_20_dp"
+                            android:layout_marginLeft="@dimen/margin_20_dp"
+                            android:layout_marginRight="@dimen/margin_20_dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/clickread"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="@dimen/bookmark_top_bottom"
+                        android:background="@drawable/white_border"
+                        android:padding="@dimen/text_size_15dp"
+                        android:textAllCaps="true"
+                        android:text="Click to read"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

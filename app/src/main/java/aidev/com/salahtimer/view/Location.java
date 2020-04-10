@@ -40,7 +40,7 @@ public class Location extends Fragment {
     private TextInputLayout country;
     private Button search;
     private TextView share;
-    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark, quran;
+    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark, quran, bookmark;
 
     @Nullable
     @Override
@@ -80,6 +80,13 @@ public class Location extends Fragment {
         quran.setOnClickListener(view1 -> {
             startplayer();
             loadFragmentWithNoInternet(new QuranIndexDisplay(),"index");
+        });
+
+
+        bookmark = (LinearLayout) view.findViewById(R.id.quranbookmark);
+        bookmark.setOnClickListener(view1 -> {
+            startplayer();
+            loadFragmentWithNoInternet(new QuranBookmark(),"quranbookmark");
         });
 
         hadith = (LinearLayout) view.findViewById(R.id.hadith);

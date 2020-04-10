@@ -45,40 +45,14 @@
                     android:paddingLeft="5dp"
                     />
 
-
-
                 <ImageView
-                    android:id="@+id/current"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
+                    android:id="@+id/bookmark"
                     android:visibility="invisible"
-                    android:layout_gravity="center"
-                    android:src="@drawable/current"
-                    android:layout_marginRight="5dp"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp" />
-
-
-                <ImageView
-                    android:id="@+id/playpause"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/playcolored"
-                    android:layout_gravity="center"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp" />
-
-                <ImageView
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/stop"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/stopcolored"
-                    android:layout_gravity="center"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp" />
+                    android:src="@drawable/selected"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp" />
 
             </LinearLayout>
 

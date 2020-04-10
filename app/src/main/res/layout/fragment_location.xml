@@ -345,6 +345,7 @@
 
                         </LinearLayout>
                         <LinearLayout
+                            android:id="@+id/quranbookmark"
                             android:elevation="5dp"
                             android:layout_weight="1"
                             android:background="@color/white"

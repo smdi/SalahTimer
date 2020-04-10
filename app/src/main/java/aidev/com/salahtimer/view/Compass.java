@@ -59,6 +59,7 @@ public class Compass extends Fragment {
 
         webView.setWebViewClient(new MyClient());
         webView.getSettings().setJavaScriptEnabled(true);
+
         webView.getSettings().getLoadsImagesAutomatically();
         webView.setWebChromeClient(new WebChromeClient(){
 
@@ -76,8 +77,6 @@ public class Compass extends Fragment {
 
             }
         });
-
-        webView.loadUrl(url);
 
         webView.loadUrl(url);
 
