@@ -74,6 +74,9 @@ public class QuranChapter extends Fragment {
 
         num = getArguments().getInt("number");
 
+
+
+
 //        num = 1;
 
         message = QuranIndex.QuranIndexProfile.getIndexDisplay(num);
@@ -121,7 +124,13 @@ public class QuranChapter extends Fragment {
                 adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe,message.split("@"));
                 recyclerView.setAdapter(adapter);
 //                recyclerView.scrollToPosition(data1.size() -1);
-                recyclerView.scrollToPosition(0);
+                if(getArguments().getString("bookmark") != null){
+                    recyclerView.scrollToPosition(getArguments().getInt("scroll"));
+                }
+                else{
+                    recyclerView.scrollToPosition(0);
+                }
+
                 progressDialog.dismiss();
             }
 
@@ -157,7 +166,14 @@ public class QuranChapter extends Fragment {
                 adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe, message.split("@"));
                 recyclerView.setAdapter(adapter);
 //                recyclerView.scrollToPosition(data2.size() - 1);
-                recyclerView.scrollToPosition(0);
+
+                if(getArguments().getString("bookmark") != null){
+                    recyclerView.scrollToPosition(getArguments().getInt("scroll"));
+                }
+                else{
+                    recyclerView.scrollToPosition(0);
+                }
+
                 progressDialog.dismiss();
             }
         }, num);

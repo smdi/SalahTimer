@@ -57,6 +57,7 @@ public class AlarmClass extends BroadcastReceiver {
 
 
         Intent i1 = new Intent(context, Router.class);
+        i1.putExtra("menuFragment", "hadith");
         PendingIntent pi1 = PendingIntent.getActivity(context, 1, i1, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.hadith);

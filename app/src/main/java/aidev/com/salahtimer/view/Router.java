@@ -23,7 +23,9 @@ import aidev.com.salahtimer.model.pojo.HadithBookmarkRepository;
 import aidev.com.salahtimer.viewmodel.RouterViewModel;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 
@@ -38,25 +40,35 @@ public class Router extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_router);
 
-        rvm = new ViewModelProvider(this,
-                new RouterFactory(getApplicationContext(),getFragementManagerObject(),Router.this)).get(RouterViewModel.class);
+
+        String menuFragment = getIntent().getStringExtra("menuFragment");
+
+
+        if(menuFragment!= null && menuFragment.equals("hadith")){
+            loadFragmentWithNoInternet(new Hadith(),"hadith");
+        }
+        else{
+
+            rvm = new ViewModelProvider(this,
+                    new RouterFactory(getApplicationContext(),getFragementManagerObject(),Router.this)).get(RouterViewModel.class);
 
 
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(rvm.getBottomNavbarObject());
-        navigation.setSelectedItemId(R.id.salahtimings);
+            BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+            navigation.setOnNavigationItemSelectedListener(rvm.getBottomNavbarObject());
+            navigation.setSelectedItemId(R.id.salahtimings);
 
-        SharedPreferences sh = getSharedPreferences("DB", Context.MODE_PRIVATE);
-        int exe = sh.getInt("dbval", 0);
+            SharedPreferences sh = getSharedPreferences("DB", Context.MODE_PRIVATE);
+            int exe = sh.getInt("dbval", 0);
 
 //        Toast.makeText(getApplicationContext(),""+exe,Toast.LENGTH_SHORT).show();
 
-        if(exe == 0){
-            DataStore dataStore = new DataStore();
-            dataStore.execute();
-        }
+            if(exe == 0){
+                DataStore dataStore = new DataStore();
+                dataStore.execute();
+            }
 
+        }
     }
 
     public  FragmentManager getFragementManagerObject(){
@@ -111,6 +123,18 @@ public class Router extends AppCompatActivity {
 
             return "";
         }
+    }
+
+    public boolean loadFragmentWithNoInternet(Fragment fragment, String tag) {
+
+        if(fragment!=null)
+        {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame, fragment).addToBackStack(tag);
+            ft.commitAllowingStateLoss();
+            return  true;
+        }
+        return false;
     }
 
 }

@@ -53,14 +53,16 @@ public class QuranBookmark  extends Fragment {
         versename.setText(sh.getString("verse","Alhamdu lillahi Rabbil 'aalameen"));
 
 
-        clicktoread.setOnClickListener(view1 -> movetoQuranChapter(sh.getInt("chapterno",1)));
+        clicktoread.setOnClickListener(view1 -> movetoQuranChapter(sh.getInt("chapterno",1),sh.getInt("verseno",1)));
     }
 
-    private void movetoQuranChapter(int num){
+    private void movetoQuranChapter(int num, int verseno){
 
         if(checkConnection()){
             Bundle bundle = new Bundle();
             bundle.putInt("number",num);
+            bundle.putString("bookmark","scroll");
+            bundle.putInt("scroll",verseno);
             Fragment fragment = new QuranChapter();
             fragment.setArguments(bundle);
             FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
