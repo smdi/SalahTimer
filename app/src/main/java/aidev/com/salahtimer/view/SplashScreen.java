@@ -23,16 +23,21 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
 
+
+
         new Handler().postDelayed(() -> {
             Intent i=new Intent(SplashScreen.this,
                     Router.class);
             //Intent is used to switch from one activity to another.
 
+
             startActivity(i);
-            //invoke the SecondActivity.
 
             finish();
+            //invoke the SecondActivity.
             //the current activity will get finished.
         }, SPLASH_SCREEN_TIME_OUT);
+
+
     }
 }

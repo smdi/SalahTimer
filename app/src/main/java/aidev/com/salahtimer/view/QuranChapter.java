@@ -84,7 +84,6 @@ public class QuranChapter extends Fragment {
 
 //        chapterName.setText(""+array[5]);
 
-
         quranViewModel = new ViewModelProvider(this, new QuranFactory(getActivity())).get(QuranViewModel.class);
 
         SharedPreferences sh = getActivity().getSharedPreferences("DB", Context.MODE_PRIVATE);

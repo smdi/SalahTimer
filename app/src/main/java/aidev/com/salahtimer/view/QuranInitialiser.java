@@ -3,12 +3,13 @@ package aidev.com.salahtimer.view;
 public class QuranInitialiser {
 
 
-    public String chapterNo;
-    public String nameOfChapter;
-    public String totalAyahs;
-    public String language;
-    public String place;
-    public String eChapName;
+    private String chapterNo;
+    private String nameOfChapter;
+    private String totalAyahs;
+    private String language;
+    private String place;
+    private String eChapName;
+
 
     public QuranInitialiser(String chapterNo, String nameOfChapter, String totalAyahs, String language, String place ,String eChapName) {
         this.chapterNo = chapterNo;

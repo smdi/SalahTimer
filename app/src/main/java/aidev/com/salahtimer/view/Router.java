@@ -45,7 +45,7 @@ public class Router extends AppCompatActivity {
 
 
         if(menuFragment!= null && menuFragment.equals("hadith")){
-            loadFragmentWithNoInternet(new Hadith(),"hadith");
+            loadFirstFragment(new Hadith());
         }
         else{
 
@@ -101,6 +101,18 @@ public class Router extends AppCompatActivity {
             message =Reference.InnerReference.hadeesCategory6;
         }
         return message;
+    }
+
+    private boolean loadFirstFragment(Fragment fragment){
+
+        if(fragment!=null)
+        {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame, fragment);
+            ft.commitAllowingStateLoss();
+            return  true;
+        }
+        return false;
     }
 
 

@@ -56,9 +56,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-
-
-
                             <TextView
                                 android:textColor="@color/back1"
                                 android:layout_weight="1"
@@ -131,9 +128,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" />
 
-
-
-
                         </LinearLayout>
 
 
@@ -192,10 +186,6 @@
                                 android:layout_height="wrap_content" />
 
 
-
-
-
-
                             <TextView
                                 android:id="@+id/totalverses"
                                 android:layout_weight="1"
@@ -210,9 +200,6 @@
                                 android:layout_marginRight="@dimen/margin_20_dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" />
-
-
-
 
                             <TextView
                                 android:id="@+id/revealed"
@@ -229,16 +216,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" />
 
-
-
-
-
                         </LinearLayout>
 
-
-
                     </LinearLayout>
-
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -247,7 +227,7 @@
 
                         <TextView
                             android:layout_gravity="center"
-                            android:textColor="@color/back1"
+                            android:textColor="@color/colorPrimaryDarkOn"
                             android:layout_weight="1"
                             android:textStyle="normal"
                             android:textSize="@dimen/bookmark_text_size"

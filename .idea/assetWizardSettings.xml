@@ -19,8 +19,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\bolt.png" />
-                                      <entry key="outputName" value="current" />
+                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\ghust.png" />
+                                      <entry key="outputName" value="ghust" />
                                       <entry key="theme" value="CUSTOM" />
                                       <entry key="themeColor" value="b721ff" />
                                     </map>
@@ -50,12 +50,21 @@
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="fffefd" />
-                                      <entry key="foregroundImage" value="C:\Users\Imran\Desktop\mosque.png" />
+                                      <entry key="backgroundLayerName" value="ic_launcher_background" />
+                                      <entry key="foregroundAssetType" value="TEXT" />
+                                      <entry key="foregroundImage" value="C:\Users\Imran\Desktop\allahswt.png" />
+                                      <entry key="foregroundLayerName" value="" />
+                                      <entry key="outputName" value="" />
                                     </map>
                                   </option>
                                 </PersistentState>
                               </value>
                             </entry>
+                          </map>
+                        </option>
+                        <option name="values">
+                          <map>
+                            <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
                       </PersistentState>

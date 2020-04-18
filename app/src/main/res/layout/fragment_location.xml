@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bottom_curve_white"
     android:id="@+id/location"
     android:layout_width="match_parent"
@@ -263,7 +264,7 @@
 
                     <LinearLayout
 
-                        android:background="@color/littlewhite"
+                        android:background="@color/white"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -386,6 +387,103 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:elevation="5dp"
+                            android:id="@+id/namazkdua"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="@dimen/size_of_card"
+                            android:layout_height="@dimen/size_of_card">
+
+                            <ImageView
+
+                                android:layout_weight="2"
+                                android:layout_gravity="center"
+                                android:src="@drawable/namaz"
+                                android:layout_width="@dimen/card_image"
+                                android:layout_height="@dimen/card_image" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:layout_weight="1"
+                                android:text="Namaz ke dua"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/names99"
+                            android:elevation="5dp"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="@dimen/size_of_card"
+                            android:layout_height="@dimen/size_of_card">
+
+                            <ImageView
+                                android:layout_weight="2"
+                                android:layout_gravity="center"
+                                android:src="@drawable/allahswt"
+                                android:layout_width="@dimen/card_image"
+                                android:layout_height="@dimen/card_image" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:layout_weight="1"
+                                android:text="99 Names"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/gustkadab"
+                            android:elevation="5dp"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="@dimen/size_of_card"
+                            android:layout_height="@dimen/size_of_card">
+
+                            <ImageView
+                                android:layout_weight="2"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ghust"
+                                android:layout_width="@dimen/card_image"
+                                android:layout_height="@dimen/card_image" />
+
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textAllCaps="false"
+                                android:layout_weight="1"
+                                android:text="Ghust ke adab"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_of_card_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
 
 
 

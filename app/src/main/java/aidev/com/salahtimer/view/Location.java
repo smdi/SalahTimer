@@ -40,7 +40,7 @@ public class Location extends Fragment {
     private TextInputLayout country;
     private Button search;
     private TextView share;
-    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark, quran, bookmark;
+    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark, quran, bookmark, names99, namazkdua;
 
     @Nullable
     @Override
@@ -68,13 +68,21 @@ public class Location extends Fragment {
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, "Salah Timer");
-            String sAux = "\nSalah Timer App link (Know salah timings, Qibla, Islamic Calendar,Quran - e - pak, Hadith, Tasbeeh counter," +
-                    "Unlawful gazes, Masjid finder Accurately)\n\n";
+            String sAux = "\nAssalamualaikum wa Rahamatullahi wa Barakaatuhu\n" +
+                    "\nKnow Namaz timings, Qibla, Islamic Calendar, Quran - e - pak, Hadith, Tasbeeh counter," +
+                    "Unlawful gazes, Masjid finder, Names of Allah s.w.t, Ghust ke adaab, Namaz ke dua with Islami Duniya application";
+
             sAux = sAux + "app link\n\n";
             i.putExtra(Intent.EXTRA_TEXT, sAux);
             startActivity(Intent.createChooser(i, "share application"));
+
         });
 
+        namazkdua = (LinearLayout) view.findViewById(R.id.namazkdua);
+        namazkdua.setOnClickListener(view1 -> {
+            startplayer();
+            loadFragmentWithNoInternet(new Namaz_me_dua(),"namaz ke dua");
+        });
 
         quran = (LinearLayout) view.findViewById(R.id.quran);
         quran.setOnClickListener(view1 -> {
@@ -88,6 +96,14 @@ public class Location extends Fragment {
             startplayer();
             loadFragmentWithNoInternet(new QuranBookmark(),"quranbookmark");
         });
+
+
+        names99 = (LinearLayout) view.findViewById(R.id.names99);
+        names99.setOnClickListener(view1 -> {
+            startplayer();
+            loadFragmentWithNoInternet(new AllahNames(),"AllahNames");
+        });
+
 
         hadith = (LinearLayout) view.findViewById(R.id.hadith);
         hadith.setOnClickListener(view1 -> {
@@ -126,36 +142,33 @@ public class Location extends Fragment {
     public void onStart() {
         super.onStart();
 
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startplayer();
+        search.setOnClickListener(view -> {
+            startplayer();
 
-                String cityText = city.getEditText().getText().toString();
-                String countryText = country.getEditText().getText().toString();
+            String cityText = city.getEditText().getText().toString();
+            String countryText = country.getEditText().getText().toString();
 
-                boolean cityb = false, countryb = false;
+            boolean cityb = false, countryb = false;
 
-                if(cityText.length() > 0){
-                    cityb = true;
-                }
-                else {
-                    city.setError("City name required");
-                }
-                if(countryText.length() > 0){
-                    countryb = true;
-                }
-                else {
-                    country.setError("Country name required");
-                }
-                if(cityb & countryb){
-
-                    disableError(city);
-                    disableError(country);
-                    setCityCountry(cityText,countryText);
-                }
-
+            if(cityText.length() > 0){
+                cityb = true;
             }
+            else {
+                city.setError("City name required");
+            }
+            if(countryText.length() > 0){
+                countryb = true;
+            }
+            else {
+                country.setError("Country name required");
+            }
+            if(cityb & countryb){
+
+                disableError(city);
+                disableError(country);
+                setCityCountry(cityText,countryText);
+            }
+
         });
 
     }

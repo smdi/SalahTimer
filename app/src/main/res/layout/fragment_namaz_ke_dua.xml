@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/quranindex"
+    android:background="@drawable/bottom_curve_white"
+    >
+
+
+    <ListView
+        android:dividerHeight="0dp"
+        android:divider="@color/white"
+        android:layout_marginBottom="21dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listview"
+        />
+
+</RelativeLayout>
