@@ -229,7 +229,7 @@
                             android:layout_gravity="center"
                             android:textColor="@color/colorPrimaryDarkOn"
                             android:layout_weight="1"
-                            android:textStyle="normal"
+                            android:textStyle="bold"
                             android:textSize="@dimen/bookmark_text_size"
                             android:text="Bookmarked verse"
                             android:textAlignment="center"

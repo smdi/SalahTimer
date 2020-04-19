@@ -16,6 +16,7 @@
     <color name="colorPrimary">#35005e</color>
     <color name="colorPrimaryDark">#35005e</color>
     <color name="colorPrimaryDarkOn">#440873</color>
+    <color name="littleblack">#413838</color>
     <color name="colorAccent">#000</color>
     <color name="pink">#ff0291</color>
     <color name="green">#06972a</color>

@@ -36,11 +36,13 @@
                 android:text="\nFew Tips for SafeGuarding OneSelf from Sin of the Eye \n \n UNLAWFUL GAZES \n\n"
                 android:id="@+id/heading"
                 android:textStyle="bold"
+                android:textColor="@color/back2"
                 android:textSize="30sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:textColor="@color/back2"
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:text="\nBY"
@@ -50,6 +52,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:textColor="@color/back2"
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:text="SHAYKH ZULFIQAR AHMAD NAQSHBANDI MUJADDIDI(DB)"
@@ -60,15 +63,18 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:textColor="@color/littleblack"
                 android:layout_marginTop="10dp"
                 android:id="@+id/matter"
                 android:layout_marginBottom="40dp"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:lineSpacingExtra="5dp"
-                android:textStyle="bold"
+                android:textStyle="normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\n\n This era is not easy one.It is an era of great distress full of tests and trails which a person is facing constantly in his life .\n\n
+                android:text="\n\n This era is not easy one. It is an era of great distress full of tests and trails which a person is facing constantly in his life.\n\n
 At present most of our population is in grievance due to immodesty and lack of moral values which is seen very commonly in our societies .\n\n
 To gaze at a substance which is not permitted in islam is called badh nazri in  urdu it is considered as an Unlawful gaze.\n\n
 This is an overwhelming difficulty and has become a problem of not just a one or two instances but a problem in every moment of our lives.\n\n

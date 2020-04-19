@@ -40,7 +40,7 @@ public class Location extends Fragment {
     private TextInputLayout country;
     private Button search;
     private TextView share;
-    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark, quran, bookmark, names99, namazkdua;
+    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark, quran, bookmark, names99, namazkdua, ghustkadaab;
 
     @Nullable
     @Override
@@ -72,10 +72,16 @@ public class Location extends Fragment {
                     "\nKnow Namaz timings, Qibla, Islamic Calendar, Quran - e - pak, Hadith, Tasbeeh counter," +
                     "Unlawful gazes, Masjid finder, Names of Allah s.w.t, Ghust ke adaab, Namaz ke dua with Islami Duniya application";
 
-            sAux = sAux + "app link\n\n";
+            sAux = sAux + "\n\n"  + "app link\n\n";
             i.putExtra(Intent.EXTRA_TEXT, sAux);
             startActivity(Intent.createChooser(i, "share application"));
 
+        });
+
+        ghustkadaab = (LinearLayout) view.findViewById(R.id.gustkadab);
+        ghustkadaab.setOnClickListener(view1 -> {
+            startplayer();
+            loadFragmentWithNoInternet(new GhustKeAdaab(),"ghust");
         });
 
         namazkdua = (LinearLayout) view.findViewById(R.id.namazkdua);

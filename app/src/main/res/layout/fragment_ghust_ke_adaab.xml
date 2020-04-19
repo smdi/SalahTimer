@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:paddingTop="5dp"
+    android:paddingBottom="30dp"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_curve_white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TextView
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="\n\n\nGhust ke adaab\n\n"
+                android:id="@+id/heading"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="@color/back2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+            <TextView
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/matter"
+                android:layout_marginBottom="40dp"
+                android:textSize="14sp"
+                android:lineSpacingExtra="5dp"
+                android:textStyle="normal"
+                android:textColor="@color/littleblack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n\n1) mere bhaioon, yeh Allah ka bada ahsaan aur fazal hua kay Allah nay hamein maghrib ki namazba jamat padhnay ki toufeeq ata farmayi aur thodi dair deen ki nisbat par jama farmaya.\n\n
+2) Hadees ka mafhoom hai kay -“thodi deer deen ki nisbat par ghour o’fikr karna 60 ya 70 saal nafil ibadat say afzal hai.\n\n
+3) Yahan baith kay hamay is baat ki fikr karna hai kay kaisay meri zindagi mein aur meray gharwalon ki zindagi mein aur saaray alam mein kaise deen aam ho jaye.\n\n
+4) Allah nay hum sub ki kamayabi apnay mubarak deen mein rakhi hai aur jis kisi ki zindagi mein deen hoga Allah usay duniya o’akhirat dono mein kamiyab farmayengay aur jis kisi ki zindagi mein deen na hoga usay duniya o’ akhirat mein na kamiyab farmayengay aur deen meray bhaioon zindagi mein mout say pehlay lana hai aur ek baar mout agayi to phir ekbaar subhanallah kehnay ka mouka na diya jayega.\n\n
+5) Aur deen 2 cheezo ka naam hai - Allah ka hukum aur Nabi (SAWS) ka tariqha.\n\n
+6) Jab kabhie bhi duniya mein deen ka bigaad aata to Allah apnay nabiyon ko is deen kay khatir duniya mein bheja, kum o’besh 1,24,000 nabi is duniya mein aaye aur har nabi nay ek Allahki taraf logon ko bulaya aur jo log unki baat manliye woh kamiyab ho gaye jo log unki baatna maani woh nakaam hue, aur jab tak nabiyon nay deen ki mehnat ki to logon ki zindagi mein deen aata aur jab nabi chalay jatay to phir bay deeni aam ho jati.\n\n
+7) Aur aapkay aur mere aaqha Hazrat Mohammed Mustafa (SAWS) aakhri nabi hai aur unkay baad koi nabi ya rasool aanay walay nahi hai (aaj say 1400 saal pehley Huzoor (SAWS) ki nabuwat kay zariye Allah nay is deen ko mukammal farmaya) aur yeh deen kay kaam ki zimmaydari(kaar e nubuwwat ka kaam) har emaan walay ka kaam hai kay khud bhi naik amal karay aur naik amal ki dawat day (amar bin maroof) aur khud bhi buraye say rukay aur dusron ko bhi rokain (nahi anil munkar)\n\n
+8) Adaab: ab jo aanay wala amal hai woh ghust wala amal hai is mein 4 aamal ho ek saathi yahan baith kar dawat ki baat chalaye\n\n
+ek saathi dua o’zikr mein rahein,\n\n
+Allah say talluk joday aur ijtemaye hidayat ki dua karein\n\n
+ek saathi istaghbaal mein rahein aur\n\n
+ek amal ghust ka ho jis mein 3 sathiuon ka hona ahem hai\n\n
+i) pehla ameer: jis ka kaam yeh hain ki jamaat ko dua kara kar ek baazo say rastay ka haq ada kartay hue layjaye, gali mein teesra kaleema aur bazar mein choutha kaleemay ka vird karay aur kise kay ghar par jaye to ek baazo ho kar khaday aur apnay nazron ki khaas hifazat karein\n\n
+ii) dusara rahbar : - jis ka kaam yah hai ki aapnay muslamaan emaan walay bhai ko acchay andaazmein mutakallim sahab say milaye.\n\n
+iii) teesra mutakallim :- jin ka kaam yeh hai kay muqtasar si emaan aur emaan walay ki qadar o’qeemat bata kar apnay bhai ko naghad lenay ki koshish karien. agar koi uzar pesh karein toussay dawat de kar choord-dein ke khud bhi aye aur apne bhaioon ko bhi saath laye.\n\n
+"
+                />
+
+
+            <TextView
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="\n\n\nIs rastay kay fazial\n\n"
+                android:id="@+id/fazail"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="@color/back2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+            <TextView
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/fazaildata"
+                android:layout_marginBottom="40dp"
+                android:textSize="14sp"
+                android:textColor="@color/littleblack"
+                android:lineSpacingExtra="5dp"
+                android:textStyle="normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n\n1) Is rasstey mein ek baar subhanallah kehein gay to 7 lakh bar subhanallah kehnay ka sawab milayga\n\n
+2) Aur is raastey mein ek baar kadam rakhegay to 700 kadam ka sawab milayga aur jo gard, mitti Allah kay raastay mein jis badan ko lagay uspar Allah nay jahanum ki aag haraam farmaye hai.\n\n
+3) Agar is gaav ko koi azaab aane waala hai to Allah s.w.t usko rok denge.\n\n
+4) Is raaste me nikalne walo ke lie saare maqhlook maghfirat ki dua katre hai.\n\n
+5) Aur wapisi mein nadamat kay saath isteghfaar kartay hue aaye kay jaisa kaam karna tha waisa na kar sakay aur naa hi us ka haq ada karsakay takey Allah hamay aaendah kay liye qubool farmaye to is key liye sab bhai taiyaar hai naa\n(insha-allah)\n
+"
+                />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

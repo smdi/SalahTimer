@@ -416,7 +416,7 @@
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textAllCaps="false"
                                 android:layout_weight="1"
-                                android:text="Namaz ke dua"
+                                android:text="Duaen"
                                 android:textAlignment="center"
                                 android:textSize="@dimen/size_of_card_text"
                                 android:layout_width="match_parent"

@@ -30,48 +30,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_margin="5dp"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <ImageView
-                            android:layout_marginLeft="5dp"
-                            android:id="@+id/playpause"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/play"
-                            android:layout_width="16dp"
-                            android:layout_height="16dp" />
-
-                        <SeekBar
-                            android:layout_weight="1"
-                            android:id="@+id/seekbar"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center" />
-
-
-                        <ImageView
-                            android:layout_marginRight="5dp"
-                            android:id="@+id/stop"
-                            android:layout_marginLeft="5dp"
-                            android:src="@drawable/stop"
-                            android:layout_width="16dp"
-                            android:layout_height="16dp" />
-
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -145,8 +103,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/head"
+        android:layout_below="@id/head"
         android:id="@+id/quranverses"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

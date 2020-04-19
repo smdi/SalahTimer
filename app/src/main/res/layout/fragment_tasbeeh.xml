@@ -119,13 +119,13 @@
 
 
                         <ImageView
-
                             android:padding="5dp"
                             android:layout_weight="1"
-                            android:src="@drawable/add"
-                            android:id="@+id/addtasbeehcount"
+                            android:src="@drawable/minus"
+                            android:id="@+id/subtasbeehcount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
+
 
 
                         <ImageView
@@ -137,11 +137,14 @@
                             android:layout_height="wrap_content" />
 
 
+
+
                         <ImageView
+
                             android:padding="5dp"
                             android:layout_weight="1"
-                            android:src="@drawable/minus"
-                            android:id="@+id/subtasbeehcount"
+                            android:src="@drawable/add"
+                            android:id="@+id/addtasbeehcount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 

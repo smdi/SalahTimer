@@ -1062,17 +1062,22 @@ public final class Reference {
                             "                    Khazana jama karta hai phir us mein se kharch nahi karta. ";
                     
                     break;
-                case 171:
+                case 170:
                     message="Hazrat Jundub R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad farmaaya : Jisne\n" +
                             "                    Quran Kareem (ki tafseer) mein apni raaye se kuch kaha aur wo haqeeqat mein sahi ho thab\n" +
                             "                    Bhi usne galti ki. ";
                     
                     break;
-                case 172:
+                case 171:
                     message="Hazrat Abu Zarr Gafari R.A. se riwayat hai ke Rasoolallah S.A.W ne irshaad farmaaya\n" +
                             "                    ke Tum log Allah Ta’ala ka qurb is cheez se badh kar kisi aur cheez se hasil nahi kar sakthe jo\n" +
                             "                    khud Allah Ta’ala se nikli hai yani Quran Kareem. ";
                     
+                    break;
+                case 172:
+                    message="Hazrat Omer Bin Absa R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
+                            "                    irshaad farmaaya : Jis ne ek din Allah Ta’ala ke raasthe mein roza rakha is se\n" +
+                            "                    jahanu ki aag sau saal ki masafat ke baqdr door hojayegi.";
                     break;
                 case 173:
                     message="Hazrat Abu Zarr R.A. riwayat karte hain ke Rasoolallah S.A.W ne mujhse irshaad\n" +
@@ -1100,7 +1105,19 @@ public final class Reference {
                             "                    Ko badha deti hai. ";
                     
                     break;
+                case 177:
+                    message="Hazrat Abu Huraira R.A. farmaate hain ke maine Rasoolalalh S.A.W se\n" +
+                            "                    zyada apne saathiyon se mashwara karne wala koi nahi dekha yani Aap bahut\n" +
+                            "                    zyada mashwara farmaya karthe the. ";
+
+                    break;
                 case 178:
+                    message="Hazrat Abu Sayed Khudri R.A. farmaate hain ke (hum ne ye dua padhni\n" +
+                            "                        shuru kardi jis ki barkat se) Allah Ta’ala ne sakht hawa bhej dushmanon ke chehre\n" +
+                            "                    kop hair diya (aur yun) Allah Ta’ala ne in ko hawa ke zariye shikast dedi. ";
+
+                    break;
+                case 179:
                     message="Hazrat Uqba Bin Aamir R.A. farmaate hai ke maine Rasoolallah S.A.W ko irshaad\n" +
                             "                    farmaate hue suna: Quan Kareem awaaz se padhne waale ka sawab alania sadqa karne wale ki\n" +
                             "                    tarah hai. Aur ahista padhne waale ka sawab chup kar sadqa karne waale ki tarah hai. ";
@@ -2237,23 +2254,8 @@ public final class Reference {
                             "                    ki jaye aur din mein roza rakha jaye. ";
 
                     break;
-                case 355:
-                    message="Hazrat Abu Huraira R.A. farmaate hain ke maine Rasoolalalh S.A.W se\n" +
-                            "                    zyada apne saathiyon se mashwara karne wala koi nahi dekha yani Aap bahut\n" +
-                            "                    zyada mashwara farmaya karthe the. ";
 
-                    break;
-                case 356:
-                    message="Hazrat Abu Sayed Khudri R.A. farmaate hain ke (hum ne ye dua padhni\n" +
-                            "                        shuru kardi jis ki barkat se) Allah Ta’ala ne sakht hawa bhej dushmanon ke chehre\n" +
-                            "                    kop hair diya (aur yun) Allah Ta’ala ne in ko hawa ke zariye shikast dedi. ";
 
-                    break;
-                case 357:
-                    message="Hazrat Omer Bin Absa R.A. riwayat karte hain ke Rasoolallah S.A.W ne\n" +
-                            "                    irshaad farmaaya : Jis ne ek din Allah Ta’ala ke raasthe mein roza rakha is se\n" +
-                            "                    jahanu ki aag sau saal ki masafat ke baqdr door hojayegi.";
-                    break;
 
             }
 

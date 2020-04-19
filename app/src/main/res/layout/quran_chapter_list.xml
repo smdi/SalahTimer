@@ -47,12 +47,33 @@
 
                 <ImageView
                     android:id="@+id/bookmark"
-                    android:visibility="invisible"
+                    android:visibility="visible"
                     android:layout_marginTop="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
                     android:src="@drawable/selected"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp" />
+                    android:layout_width="14dp"
+                    android:layout_height="14dp" />
+
+
+                <ImageView
+                    android:id="@+id/play"
+                    android:visibility="visible"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/playcolored"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp" />
+
+
+
+                <ImageView
+                    android:id="@+id/stop"
+                    android:visibility="visible"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/stopcolored"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp" />
 
             </LinearLayout>
 
