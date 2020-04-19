@@ -229,29 +229,47 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         if(num==1)
         {
 
-            url = "http://verse.mp3quran.net/arabic/saud_alshuraim/128/00100"+ (position+2) + ".mp3";
+            url = "http://verse.mp3quran.net/data/Abdul_Basit_Mujawwad_128kbps/00100"+ (position+2) + ".mp3";
 
         }
         else if(num>1&&num<10)
         {
             temp = "00"+num+"000";
             start = Integer.parseInt(temp);
-            url = "http://verse.mp3quran.net/arabic/saud_alshuraim/128/00"+ (start+position+1) + ".mp3";
+            url = "http://verse.mp3quran.net/data/Abdul_Basit_Mujawwad_128kbps/00"+ (start+position+1) + ".mp3";
 
         }
+        else if(num == 17){
 
+
+            if((position+1)==1 || (position+1)==2){
+                temp = "0" + num+ "000";
+                start = Integer.parseInt(temp);
+                url = "http://verse.mp3quran.net/data/Abdul_Basit_Mujawwad_128kbps/0"+ (start+position+1) + ".mp3";
+
+            }
+            if((position+1)>=3){
+                temp = "0" + num+ "000";
+                start = Integer.parseInt(temp);
+                url = "http://verse.mp3quran.net/data/Abdul_Basit_Mujawwad_128kbps/0"+ (start+position) + ".mp3";
+
+            }
+
+
+
+        }
         else if(num>=10 && num < 100)
         {
             temp = "0" + num+ "000";
             start = Integer.parseInt(temp);
-            url = "http://verse.mp3quran.net/arabic/saud_alshuraim/128/0"+ (start+position+1) + ".mp3";
+            url = "http://verse.mp3quran.net/data/Abdul_Basit_Mujawwad_128kbps/0"+ (start+position+1) + ".mp3";
 
         }
         else if (num>=100 && num<115)
         {
             temp = num+"000";
             start = Integer.parseInt(temp);
-            url = "http://verse.mp3quran.net/arabic/saud_alshuraim/128/"+ (start+position+1) + ".mp3";
+            url = "http://verse.mp3quran.net/data/Abdul_Basit_Mujawwad_128kbps/"+ (start+position+1) + ".mp3";
 
         }
 
