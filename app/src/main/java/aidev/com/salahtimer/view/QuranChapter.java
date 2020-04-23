@@ -44,6 +44,7 @@ public class QuranChapter extends Fragment {
     private List<String> data2;
     private List<String > faker;
     private ProgressDialog progressDialog;
+    private MediaPlayer mediaPlayer;
 //    int pplay = 0;
 //    int length = 0;
 //    private MediaPlayer mediaPlayer;
@@ -117,7 +118,7 @@ public class QuranChapter extends Fragment {
             public void onSuccess(Quran_Ar_En body) {
 
                 data1 = body.data;
-                adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe,message.split("@"),num,progressDialog);
+                adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe,message.split("@"),num,progressDialog,mediaPlayer);
                 recyclerView.setAdapter(adapter);
 //                recyclerView.scrollToPosition(data1.size() -1);
                 if(getArguments().getString("bookmark") != null){
@@ -159,7 +160,7 @@ public class QuranChapter extends Fragment {
             public void onSuccess(Quran_Transliteration body) {
 
                 data2 = body.data;
-                adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe, message.split("@"),num,progressDialog);
+                adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe, message.split("@"),num,progressDialog, mediaPlayer);
                 recyclerView.setAdapter(adapter);
 //                recyclerView.scrollToPosition(data2.size() - 1);
 
@@ -220,6 +221,8 @@ public class QuranChapter extends Fragment {
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.show();
+
+        mediaPlayer = new MediaPlayer();
 
         recyclerView = (RecyclerView) view.findViewById(R.id.quranverses);
         recyclerView.setHasFixedSize(true);
@@ -468,4 +471,13 @@ public class QuranChapter extends Fragment {
         mp.start();
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        if(mediaPlayer!= null && mediaPlayer.isPlaying()){
+            mediaPlayer.stop();
+        }
+
+    }
 }
