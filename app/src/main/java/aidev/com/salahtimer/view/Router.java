@@ -3,16 +3,24 @@ package aidev.com.salahtimer.view;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import aidev.com.salahtimer.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.onesignal.OSNotificationOpenResult;
+import com.onesignal.OneSignal;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -41,11 +49,28 @@ public class Router extends AppCompatActivity {
         setContentView(R.layout.activity_router);
 
 
+
         String menuFragment = getIntent().getStringExtra("menuFragment");
 
 
         if(menuFragment!= null && menuFragment.equals("hadith")){
             loadFirstFragment(new Hadith());
+        }
+        else if(menuFragment!= null && menuFragment.equals("notif")){
+            if(checkConnection()){
+                Bundle bundle = new Bundle();
+                bundle.putString("head",getIntent().getStringExtra("head"));
+                bundle.putString("body",getIntent().getStringExtra("body"));
+                bundle.putString("image",getIntent().getStringExtra("image"));
+                Fragment fragment = new Notify();
+                fragment.setArguments(bundle);
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frame,fragment);
+                fragmentTransaction.commit();
+            }
+            else {
+                displayNoInternet("No Internet");
+            }
         }
         else{
 
@@ -70,6 +95,9 @@ public class Router extends AppCompatActivity {
 
         }
     }
+
+
+
 
     public  FragmentManager getFragementManagerObject(){
         return  getSupportFragmentManager();
@@ -147,6 +175,22 @@ public class Router extends AppCompatActivity {
             return  true;
         }
         return false;
+    }
+
+    private boolean checkConnection() {
+
+
+        ConnectivityManager connectivityManager = (ConnectivityManager)  getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+            return true;
+
+        } else { return false; }
+
+    }
+
+    private void displayNoInternet(String msg) {
+        TastyToast.makeText(getApplicationContext(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
     }
 
 }

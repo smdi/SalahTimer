@@ -19,9 +19,9 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\ghust.png" />
-                                      <entry key="outputName" value="ghust" />
-                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\SalahTimer\mosque.png" />
+                                      <entry key="outputName" value="ic_stat_onesignal_default" />
+                                      <entry key="theme" value="HOLO_DARK" />
                                       <entry key="themeColor" value="b721ff" />
                                     </map>
                                   </option>
@@ -55,6 +55,30 @@
                                       <entry key="foregroundImage" value="C:\Users\Imran\Desktop\allahswt.png" />
                                       <entry key="foregroundLayerName" value="" />
                                       <entry key="outputName" value="" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
+                            <entry key="launcherLegacy">
+                              <value>
+                                <PersistentState>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="outputName" value="ic_stat_onesignal_default" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
+                            <entry key="notification">
+                              <value>
+                                <PersistentState>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="imageAsset" value="C:\Users\Imran\Desktop\SalahTimer\mosque.png" />
+                                      <entry key="outputName" value="ic_stat_onesignal_default" />
                                     </map>
                                   </option>
                                 </PersistentState>

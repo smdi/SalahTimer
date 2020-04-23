@@ -1,4 +1,23 @@
+
+
+
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.12.4, 0.99.99]'
+    }
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+
+
 apply plugin: 'com.android.application'
+
 
 
 
@@ -9,18 +28,23 @@ android {
     }
     compileSdkVersion 28
     defaultConfig {
+
+        manifestPlaceholders = [
+                onesignal_app_id: '4ca2a08d-1bd0-45b6-b26a-ac1bc7692495',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
+
         applicationId "aidev.com.salahtimer"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 202
+        versionName "2.02"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled true
-
-            shrinkResources true
+            minifyEnabled false
 
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -79,9 +103,17 @@ dependencies {
 
     implementation 'com.tomer:fadingtextview:2.5'
 
+    //onesignal
+    implementation 'com.onesignal:OneSignal:[3.13.0, 3.99.99]'
 
+
+    //firebase
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
 }
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
+
+apply plugin: 'com.google.gms.google-services'
+

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "20251542232",
+    "firebase_url": "https://islamiduniya-6e7cf.firebaseio.com",
+    "project_id": "islamiduniya-6e7cf",
+    "storage_bucket": "islamiduniya-6e7cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20251542232:android:b8983d23eabf5b51708dad",
+        "android_client_info": {
+          "package_name": "aidev.com.salahtimer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20251542232-3hgjgcfh7q601jss40ed9ndihm84v9g3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "aidev.com.salahtimer",
+            "certificate_hash": "8b104025ada9728f2734b5fa1161e923a30afb3a"
+          }
+        },
+        {
+          "client_id": "20251542232-kf1d08d4c0vjpfi9rgotobnhdp60k3d9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdE4g6CnJalsqh8hD6W5m7-b1lpvXLHTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20251542232-kf1d08d4c0vjpfi9rgotobnhdp60k3d9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
