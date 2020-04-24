@@ -38,8 +38,8 @@ android {
         applicationId "aidev.com.salahtimer"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 202
-        versionName "2.02"
+        versionCode 203
+        versionName "2.03"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
