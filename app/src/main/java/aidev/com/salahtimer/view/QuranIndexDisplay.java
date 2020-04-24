@@ -75,14 +75,14 @@ public class QuranIndexDisplay extends Fragment {
 
     private void movetoQuranChapter(int num){
 
-
-                Bundle bundle = new Bundle();
-                bundle.putInt("number",num);
-                Fragment fragment = new QuranChapter();
-                fragment.setArguments(bundle);
-                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.quranindex,fragment).addToBackStack("chapter");
-                fragmentTransaction.commit();
+        Bundle bundle = new Bundle();
+        bundle.putInt("number",num);
+        Fragment fragment = new QuranChapter();  //online
+//        Fragment fragment = new QuranOffline();  //offline
+        fragment.setArguments(bundle);
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.quranindex,fragment).addToBackStack("chapter");
+        fragmentTransaction.commit();
     }
 
     private boolean checkConnection() {

@@ -40,7 +40,7 @@ public class Notify extends Fragment {
             Glide.with(getActivity()).load(getArguments().getString("image")).into(imageView);
         }
         else {
-            Glide.with(getActivity()).load(R.drawable.islam).into(imageView);
+            Glide.with(getActivity()).load(R.drawable.mosque).into(imageView);
         }
 
         head.setText(getArguments().getString("head"));

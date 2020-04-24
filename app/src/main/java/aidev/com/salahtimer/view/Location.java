@@ -65,12 +65,15 @@ public class Location extends Fragment {
 
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
-            i.putExtra(Intent.EXTRA_SUBJECT, "Salah Timer");
+            i.putExtra(Intent.EXTRA_SUBJECT, "Islami Duniya");
             String sAux = "\nAssalamualaikum wa Rahamatullahi wa Barakaatuhu\n" +
                     "\nKnow Namaz timings, Qibla, Islamic Calendar, Quran - e - pak, Hadith, Tasbeeh counter," +
                     "Unlawful gazes, Masjid finder, Names of Allah s.w.t, Ghust ke adaab, Namaz ke dua with Islami Duniya application";
 
-            sAux = sAux + "\n\n"  + "app link\n\n";
+            sAux = sAux + "\n\nFor Online Quran follow this link\n\n"  + AppLInks.getPlaystore() + "\n\n";
+
+            sAux = sAux + "\n\nFor Offline Quran follow this link\n\n"  + AppLInks.getOfflineAppLink() + "\n\n";
+
             i.putExtra(Intent.EXTRA_TEXT, sAux);
             startActivity(Intent.createChooser(i, "share application"));
 
@@ -92,6 +95,7 @@ public class Location extends Fragment {
         quran.setOnClickListener(view1 -> {
             startplayer();
             loadFragmentWithNoInternet(new QuranIndexDisplay(),"index");
+
         });
 
 
@@ -199,8 +203,7 @@ public class Location extends Fragment {
         else { displayNoInternet("No Internet"); }
 
     }
-    public boolean loadFragment(Fragment fragment, String tag)
-    {
+    public boolean loadFragment(Fragment fragment, String tag) {
         final boolean check = checkConnection();
         if(check){if(fragment!=null)
         {
@@ -214,8 +217,7 @@ public class Location extends Fragment {
         return false;
     }
 
-    public boolean loadFragmentWithNoInternet(Fragment fragment,String tag)
-    {
+    public boolean loadFragmentWithNoInternet(Fragment fragment,String tag) {
 
         if(fragment!=null)
         {
