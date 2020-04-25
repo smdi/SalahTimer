@@ -63,7 +63,8 @@ public class QuranBookmark  extends Fragment {
             bundle.putInt("number",num);
             bundle.putString("bookmark","scroll");
             bundle.putInt("scroll",verseno);
-            Fragment fragment = new QuranChapter();
+            Fragment fragment = new QuranChapter();  //online
+//        Fragment fragment = new QuranOffline();  //offline
             fragment.setArguments(bundle);
             FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.quranbookmark,fragment).addToBackStack("chapter");

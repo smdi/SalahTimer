@@ -25,11 +25,11 @@
             <TextView
                 android:layout_gravity="center"
                 android:textAlignment="center"
-                android:text="\n\n\nGhust ke adaab\n\n"
+                android:text="\n\nGhust ke aadaab\n"
                 android:id="@+id/heading"
                 android:textStyle="bold"
                 android:textSize="30sp"
-                android:textColor="@color/back2"
+                android:textColor="@color/colorPrimaryDarkOn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -61,7 +61,7 @@ ek saathi istaghbaal mein rahein aur\n\n
 ek amal ghust ka ho jis mein 3 sathiuon ka hona ahem hai\n\n
 i) pehla ameer: jis ka kaam yeh hain ki jamaat ko dua kara kar ek baazo say rastay ka haq ada kartay hue layjaye, gali mein teesra kaleema aur bazar mein choutha kaleemay ka vird karay aur kise kay ghar par jaye to ek baazo ho kar khaday aur apnay nazron ki khaas hifazat karein\n\n
 ii) dusara rahbar : - jis ka kaam yah hai ki aapnay muslamaan emaan walay bhai ko acchay andaazmein mutakallim sahab say milaye.\n\n
-iii) teesra mutakallim :- jin ka kaam yeh hai kay muqtasar si emaan aur emaan walay ki qadar o’qeemat bata kar apnay bhai ko naghad lenay ki koshish karien. agar koi uzar pesh karein toussay dawat de kar choord-dein ke khud bhi aye aur apne bhaioon ko bhi saath laye.\n\n
+iii) teesra mutakallim :- jin ka kaam yeh hai kay muqtasar si emaan aur emaan walay ki qadar o’qeemat bata kar apnay bhai ko naghad lenay ki koshish karien. agar koi uzar pesh karein toussay dawat de kar choord-dein ke khud bhi aye aur apne bhaioon ko bhi saath laye.
 "
                 />
 
@@ -69,11 +69,11 @@ iii) teesra mutakallim :- jin ka kaam yeh hai kay muqtasar si emaan aur emaan wa
             <TextView
                 android:layout_gravity="center"
                 android:textAlignment="center"
-                android:text="\n\n\nIs rastay kay fazial\n\n"
+                android:text="Is rastay kay fazail"
                 android:id="@+id/fazail"
                 android:textStyle="bold"
                 android:textSize="30sp"
-                android:textColor="@color/back2"
+                android:textColor="@color/colorPrimaryDarkOn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

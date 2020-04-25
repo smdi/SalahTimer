@@ -109,7 +109,7 @@ public class AlarmClass extends BroadcastReceiver {
         {
             message =Reference.InnerReference.hadeesCategory5;
         }
-        else if(global>=294&&global<=358){
+        else if(global>=294&&global<=354){
             message =Reference.InnerReference.hadeesCategory6;
         }
         return message;

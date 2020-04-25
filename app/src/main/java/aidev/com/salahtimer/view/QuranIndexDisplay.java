@@ -61,7 +61,7 @@ public class QuranIndexDisplay extends Fragment {
 
                 listView.setOnItemClickListener((adapterView, view1, i, l) -> {
                     //make a transaction to new fragment
-                    startplayer();
+//                    startplayer();
                     movetoQuranChapter(i+1);
             });
 
@@ -77,8 +77,8 @@ public class QuranIndexDisplay extends Fragment {
 
         Bundle bundle = new Bundle();
         bundle.putInt("number",num);
-//        Fragment fragment = new QuranChapter();  //online
-        Fragment fragment = new QuranOffline();  //offline
+        Fragment fragment = new QuranChapter();  //online
+//        Fragment fragment = new QuranOffline();  //offline
         fragment.setArguments(bundle);
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.quranindex,fragment).addToBackStack("chapter");

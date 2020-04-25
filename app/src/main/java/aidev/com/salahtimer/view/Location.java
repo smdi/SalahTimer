@@ -11,36 +11,57 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.sdsmdg.tastytoast.TastyToast;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import aidev.com.salahtimer.R;
 
 
+import aidev.com.salahtimer.model.pojo.CountryCityDBTable;
+import aidev.com.salahtimer.model.pojo.CountryCityRepository;
 import aidev.com.salahtimer.viewmodel.RouterViewModel;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 
 public class Location extends Fragment {
 
 
-    private TextInputLayout city;
-    private TextInputLayout country;
+
     private Button search;
+    private AutoCompleteTextView cityac, conac;
     private TextView share;
     private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark, quran, bookmark, names99, namazkdua, ghustkadaab;
+    private TextView cityerr, conerr;
+
+    private CountryCityRepository mRepository;
+
+    private LiveData<List<CountryCityDBTable>> allCC;
+
+
+    List<CountryCityDBTable> list;
+    ArrayList<String> arrayList;
+    ArrayAdapter<String> arrayAdapter;
 
     @Nullable
     @Override
@@ -53,10 +74,17 @@ public class Location extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        cityac = (AutoCompleteTextView) view.findViewById(R.id.cityac);
+        conac = (AutoCompleteTextView) view.findViewById(R.id.conac);
+
         initialisers(view);
     }
 
     private void initialisers(View view) {
+
+
+        conerr = (TextView) view.findViewById(R.id.conerr);
+        cityerr = (TextView) view.findViewById(R.id.cityerr);
 
         share = (TextView) view.findViewById(R.id.share);
         share.setOnClickListener(view13 -> {
@@ -67,12 +95,14 @@ public class Location extends Fragment {
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, "Islami Duniya");
             String sAux = "\nAssalamualaikum wa Rahamatullahi wa Barakaatuhu\n" +
-                    "\nKnow Namaz timings, Qibla, Islamic Calendar, Quran - e - pak, Hadith, Tasbeeh counter," +
+                    "\nKnow Namaz timings, Qibla, Islamic Calendar, Quran in english transliteration and translation, Hadith, Tasbeeh counter," +
                     "Unlawful gazes, Masjid finder, Names of Allah s.w.t, Ghust ke adaab, Namaz ke dua with Islami Duniya application";
 
-            sAux = sAux + "\n\nFor Online Quran follow this link\n\n"  + AppLInks.getPlaystore() + "\n\n";
+            sAux = sAux + "\n\nPlay store link for the application\n\n"  + AppLInks.getPlaystore() + "\n\n\n";
 
-            sAux = sAux + "\n\nFor Offline Quran follow this link\n\n"  + AppLInks.getOfflineAppLink() + "\n\n";
+            sAux = sAux + "Download the app and share with your friends and family, give your ratings and reviews.";
+
+//            sAux = sAux + "\n\nDrive link for Offline Quran apk\n\n"  + AppLInks.getOfflineAppLink() + "\n\n";
 
             i.putExtra(Intent.EXTRA_TEXT, sAux);
             startActivity(Intent.createChooser(i, "share application"));
@@ -140,8 +170,6 @@ public class Location extends Fragment {
         });
 
 
-        city = view.findViewById(R.id.city);
-        country = view.findViewById(R.id.country);
         search = view.findViewById(R.id.get_The_Results);
     }
 
@@ -150,11 +178,33 @@ public class Location extends Fragment {
     public void onStart() {
         super.onStart();
 
+
+        arrayList = new ArrayList<>();
+
+
+        mRepository = new CountryCityRepository(getActivity().getApplication());
+        mRepository.getAllCC().observe(this, countryCityDBTables -> {
+
+            for(CountryCityDBTable countryCityDBTable:countryCityDBTables){
+                arrayList.add(countryCityDBTable.getNames());
+            }
+
+            arrayAdapter = new ArrayAdapter<>(getActivity(),R.layout.support_simple_spinner_dropdown_item,arrayList);
+
+            cityac.setThreshold(1);
+            conac.setThreshold(1);
+            cityac.setAdapter(arrayAdapter);
+            conac.setAdapter(arrayAdapter);
+
+        });
+
+
+
         search.setOnClickListener(view -> {
             startplayer();
 
-            String cityText = city.getEditText().getText().toString();
-            String countryText = country.getEditText().getText().toString();
+            String cityText = cityac.getText().toString();
+            String countryText = conac.getText().toString();
 
             boolean cityb = false, countryb = false;
 
@@ -162,31 +212,25 @@ public class Location extends Fragment {
                 cityb = true;
             }
             else {
-                city.setError("City name required");
+                cityerr.setVisibility(View.VISIBLE);
             }
             if(countryText.length() > 0){
                 countryb = true;
             }
             else {
-                country.setError("Country name required");
+                conerr.setVisibility(View.VISIBLE);
             }
             if(cityb & countryb){
-
-                disableError(city);
-                disableError(country);
+                cityerr.setVisibility(View.GONE);
+                conerr.setVisibility(View.GONE);
                 setCityCountry(cityText,countryText);
             }
+
 
         });
 
     }
 
-
-    private void disableError(TextInputLayout Wrapper) {
-        if(Wrapper.isErrorEnabled()){
-            Wrapper.setErrorEnabled(false);
-        }
-    }
 
     private void setCityCountry(String cityText, String countryText) {
 

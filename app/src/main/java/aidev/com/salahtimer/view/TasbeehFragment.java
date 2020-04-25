@@ -54,15 +54,19 @@ public class TasbeehFragment extends Fragment {
         counttv.setText(""+count);
 
         subtract.setOnClickListener(view13 -> {
-            if(tasbeehViewModel.getTasbeehCount()>0){ startplayer(R.raw.knock); counttv.setText(""+tasbeehViewModel.minus());}
+            if(tasbeehViewModel.getTasbeehCount()>0){
+//                startplayer(R.raw.knock);
+            counttv.setText(""+tasbeehViewModel.minus());}
         });
 
         add.setOnClickListener(view12 -> {
-            startplayer(R.raw.knock);
+//            startplayer(R.raw.knock);
             counttv.setText(""+tasbeehViewModel.addCount());
         });
         reset.setOnClickListener(view1 -> {
-            if(tasbeehViewModel.getTasbeehCount()>0){startplayer(R.raw.knock); counttv.setText(""+tasbeehViewModel.reset());}
+            if(tasbeehViewModel.getTasbeehCount()>0){
+//                startplayer(R.raw.knock);
+                counttv.setText(""+tasbeehViewModel.reset());}
         });
 
     }

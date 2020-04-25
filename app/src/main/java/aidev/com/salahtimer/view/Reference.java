@@ -2254,8 +2254,7 @@ public final class Reference {
                             "                    ki jaye aur din mein roza rakha jaye. ";
 
                     break;
-
-
+                    
 
             }
 

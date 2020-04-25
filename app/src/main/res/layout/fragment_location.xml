@@ -84,53 +84,64 @@
 
 
 
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/country"
-                        android:layout_width="match_parent"
-                        style="@style/InputLayoutStyle"
-                        app:boxBackgroundColor="@color/white"
-                        app:hintTextAppearance="@style/HintText"
+                    <AutoCompleteTextView
+                        android:id="@+id/conac"
+                        android:hint="country"
+                        android:inputType="text"
+                        android:layout_marginTop="10dp"
                         android:layout_marginLeft="@dimen/margin_20_dp"
                         android:layout_marginRight="@dimen/margin_20_dp"
-                        android:layout_marginTop="10dp"
-                        app:errorTextAppearance="@style/ErrorTextAppearance"
-                        android:layout_height="wrap_content">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:hint="country"
-                            android:inputType="text"
-                            android:paddingTop="20dp"
-                            android:textSize="@dimen/text_size_15dp"
-                            android:textColor="@color/back5"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/city"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="@dimen/margin_20_dp"
+                        android:textSize="@dimen/text_size_15dp"
                         android:layout_width="match_parent"
-                        style="@style/InputLayoutStyle"
-                        app:boxBackgroundColor="@color/white"
-                        app:hintTextAppearance="@style/HintText"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/back5"
+                        android:layout_centerHorizontal="true"
+                        >
+
+                        <requestFocus />
+                    </AutoCompleteTextView>
+                    <TextView
+                        android:id="@+id/conerr"
+                        android:visibility="gone"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/colorPrimaryDarkOn"
                         android:layout_marginLeft="@dimen/margin_20_dp"
                         android:layout_marginRight="@dimen/margin_20_dp"
-                        android:layout_marginTop="10dp"
-                        app:errorTextAppearance="@style/ErrorTextAppearance"
-                        android:layout_height="wrap_content">
+                        android:text="country name required"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:hint="city"
-                            android:inputType="text"
-                            android:paddingTop="20dp"
-                            android:textSize="@dimen/text_size_15dp"
-                            android:textColor="@color/back5"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                    <AutoCompleteTextView
+                        android:id="@+id/cityac"
+                        android:hint="city"
+                        android:inputType="text"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="@dimen/margin_20_dp"
+                        android:textSize="@dimen/text_size_15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/back5"
+                        android:layout_centerHorizontal="true"
+                        >
 
-                    </com.google.android.material.textfield.TextInputLayout>
+                        <requestFocus />
+                    </AutoCompleteTextView>
+                    <TextView
+                        android:id="@+id/cityerr"
+                        android:visibility="gone"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/colorPrimaryDarkOn"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:text="city name required"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
 
 
 

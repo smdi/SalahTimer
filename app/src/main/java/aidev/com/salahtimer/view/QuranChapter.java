@@ -218,8 +218,8 @@ public class QuranChapter extends Fragment {
 
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("processing data!");
-        progressDialog.setCancelable(false);
-        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.setCancelable(true);
+        progressDialog.setCanceledOnTouchOutside(true);
         progressDialog.show();
 
         mediaPlayer = new MediaPlayer();

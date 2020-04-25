@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,14 @@ import android.widget.Toast;
 
 import com.sdsmdg.tastytoast.TastyToast;
 
+import java.util.List;
+
 import aidev.com.salahtimer.model.ConfigurationFile;
 import aidev.com.salahtimer.R;
 import aidev.com.salahtimer.model.RetrofitResponseListener;
+import aidev.com.salahtimer.model.pojo.CountryCityDBTable;
+import aidev.com.salahtimer.model.pojo.CountryCityRepository;
+import aidev.com.salahtimer.model.pojo.HadithBookmarkRepository;
 import aidev.com.salahtimer.model.pojo.Quran_Ar_En;
 import aidev.com.salahtimer.model.pojo.Quran_Transliteration;
 import aidev.com.salahtimer.model.pojo.TimingsData;
@@ -27,6 +33,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -49,6 +56,9 @@ public class TimingsFragment extends Fragment {
 
     private ProgressDialog dialog;
 
+    private CountryCityRepository mRepository;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -61,6 +71,7 @@ public class TimingsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+        mRepository = new CountryCityRepository(getActivity().getApplication());
 
         cityText = getArguments().getString("city");
         countryText = getArguments().getString("country");
@@ -88,8 +99,11 @@ public class TimingsFragment extends Fragment {
                 String coni = ""+countryText.toString().charAt(0);
                 String citi = ""+cityText.toString().charAt(0);
 
-                citycountry.setText(coni.toUpperCase() + countryText.toString().substring(1,countryText.toString().length())
-                                    +" - " + citi.toUpperCase() + cityText.toString().substring(1,cityText.toString().length()));
+                String conName  = coni.toUpperCase() + countryText.toString().substring(1,countryText.toString().length());
+                String cityName = citi.toUpperCase() + cityText.toString().substring(1,cityText.toString().length());
+
+                citycountry.setText(conName +" - " + cityName);
+
                 timezone.setText(data.meta.timezone);
                 sunrise.setText(data.timings.sunrise);
                 sunset.setText(data.timings.sunset);
@@ -102,7 +116,15 @@ public class TimingsFragment extends Fragment {
                 isha.setText(data.timings.isha);
                 midnight.setText(data.timings.midnight);
 
+                try{
 
+                    mRepository.insert(new CountryCityDBTable(conName));
+                    mRepository.insert(new CountryCityDBTable(cityName));
+
+                }
+                catch (Exception e){
+                    Log.e("TimingsFragment","error in storing data",e);
+                }
 
                 sunriselv.setText(data.timings.sunrise);
                 sunsetlv.setText(data.timings.sunset);
@@ -113,6 +135,13 @@ public class TimingsFragment extends Fragment {
                 maghriblv.setText(data.timings.magrib);
                 ishalv.setText(data.timings.isha);
                 midnightlv.setText(data.timings.midnight);
+
+
+                try{
+
+                }catch (Exception e) {
+                    Log.e("TimingsFragment","error in timings fragment",e);
+                }
 
             }
 

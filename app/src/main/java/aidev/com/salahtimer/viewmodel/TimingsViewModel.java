@@ -3,12 +3,19 @@ package aidev.com.salahtimer.viewmodel;
 
 import com.sdsmdg.tastytoast.TastyToast;
 
+import java.util.List;
+
 import aidev.com.salahtimer.model.APIClientTimings;
 import aidev.com.salahtimer.model.APITimingsInterface;
 import aidev.com.salahtimer.model.RetrofitResponseListener;
+import aidev.com.salahtimer.model.pojo.CountryCityDBTable;
+import aidev.com.salahtimer.model.pojo.CountryCityRepository;
+import aidev.com.salahtimer.model.pojo.HadithBookmarkDBTable;
+import aidev.com.salahtimer.model.pojo.HadithBookmarkRepository;
 import aidev.com.salahtimer.model.pojo.TimingsData;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,6 +27,7 @@ public class TimingsViewModel extends ViewModel {
     private FragmentActivity application;
     private APITimingsInterface apiTimingsInterface = null;
     private TimingsData timingsData = null;
+
 
     public  TimingsViewModel(FragmentActivity application, String city, String country){
         this.application = application;

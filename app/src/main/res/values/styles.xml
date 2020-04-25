@@ -30,4 +30,10 @@
         <item name="colorAccent">@color/back3</item>
     </style>
 
+    <!--<style name="Autocomplete">-->
+        <!--<item name="android:colorControlNormal" >#FFF</item>-->
+        <!--<item name="android:colorControlActivated">#39A2B1</item>-->
+    <!--</style>-->
+
+
 </resources>

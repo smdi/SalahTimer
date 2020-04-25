@@ -127,7 +127,7 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
         holder.play.setOnClickListener(view -> {
 
-            startplayer();
+//            startplayer();
             if(checkConnection()){
                 if(onceMedia == 0 && position!= prevposition){
 
@@ -176,6 +176,7 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
             }
             else {
+                progressDialog.dismiss();
                 displayNoInternet("No Internet");
             }
 
@@ -183,7 +184,7 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
         holder.stop.setOnClickListener(view -> {
 
-            startplayer();
+//            startplayer();
             holder.play.setBackgroundResource(R.drawable.playcolored);
 
 
