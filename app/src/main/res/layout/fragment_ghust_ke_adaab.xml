@@ -69,7 +69,7 @@ iii) teesra mutakallim :- jin ka kaam yeh hai kay muqtasar si emaan aur emaan wa
             <TextView
                 android:layout_gravity="center"
                 android:textAlignment="center"
-                android:text="Is rastay kay fazail"
+                android:text="Is rastay kay fazaail"
                 android:id="@+id/fazail"
                 android:textStyle="bold"
                 android:textSize="30sp"

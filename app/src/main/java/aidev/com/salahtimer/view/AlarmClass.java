@@ -125,9 +125,9 @@ public class AlarmClass extends BroadcastReceiver {
     public int load(Context v) {
 
         SharedPreferences sh = v.getSharedPreferences("HadithDB", Context.MODE_PRIVATE);
-        int exe = sh.getInt("hno", 1);
+        int exe = sh.getInt("hno", 0);
 
-        if(exe == 358){
+        if(exe == 354){
             exe = 1;
         }
         else {
