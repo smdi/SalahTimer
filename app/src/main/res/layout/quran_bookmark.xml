@@ -3,9 +3,10 @@
     android:layout_width="match_parent"
     android:id="@+id/quranbookmark"
     android:layout_height="match_parent"
-    android:background="@drawable/bottom_curve_white">
+    android:background="@drawable/bottom_curve_littlewhite">
 
     <RelativeLayout
+        android:background="@color/white"
         android:layout_marginTop="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"

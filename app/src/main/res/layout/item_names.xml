@@ -85,6 +85,7 @@
             </LinearLayout>
 
             <TextView
+
                 android:paddingTop="10dp"
                 android:textSize="12dp"
                 android:layout_marginBottom="5dp"

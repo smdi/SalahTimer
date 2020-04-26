@@ -99,8 +99,8 @@ public class TimingsFragment extends Fragment {
                 String coni = ""+countryText.toString().charAt(0);
                 String citi = ""+cityText.toString().charAt(0);
 
-                String conName  = coni.toUpperCase() + countryText.toString().substring(1,countryText.toString().length());
-                String cityName = citi.toUpperCase() + cityText.toString().substring(1,cityText.toString().length());
+                String conName  = coni.toUpperCase() + countryText.toString().substring(1,countryText.toString().length()).toLowerCase();
+                String cityName = citi.toUpperCase() + cityText.toString().substring(1,cityText.toString().length()).toLowerCase();
 
                 citycountry.setText(conName +" - " + cityName);
 
@@ -120,6 +120,11 @@ public class TimingsFragment extends Fragment {
 
                     mRepository.insert(new CountryCityDBTable(conName));
                     mRepository.insert(new CountryCityDBTable(cityName));
+
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences("DB", Context.MODE_PRIVATE).edit();
+                    editor.putString("city", cityName);
+                    editor.putString("country", conName);
+                    editor.apply();
 
                 }
                 catch (Exception e){

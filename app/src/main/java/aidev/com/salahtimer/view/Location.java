@@ -2,6 +2,7 @@ package aidev.com.salahtimer.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -76,6 +77,8 @@ public class Location extends Fragment {
 
         cityac = (AutoCompleteTextView) view.findViewById(R.id.cityac);
         conac = (AutoCompleteTextView) view.findViewById(R.id.conac);
+
+
 
         initialisers(view);
     }
@@ -177,6 +180,16 @@ public class Location extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+
+
+        SharedPreferences sh = getActivity().getSharedPreferences("DB", Context.MODE_PRIVATE);
+        String ct = sh.getString("city", "no");
+        String con = sh.getString("country", "India");
+
+        if(!ct.equals("no")){
+            cityac.setText(ct);
+        }
+        conac.setText(con);
 
 
         arrayList = new ArrayList<>();

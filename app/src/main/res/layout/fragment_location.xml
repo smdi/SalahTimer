@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bottom_curve_white"
     android:id="@+id/location"
     android:layout_width="match_parent"
@@ -22,10 +21,11 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
 
                 <LinearLayout
+                    android:layout_weight="1"
                     android:id="@+id/line"
                     android:background="@drawable/back_relative_timings"
                     android:orientation="vertical"
@@ -34,6 +34,7 @@
 
 
                     <TextView
+                        android:layout_weight="1"
                         android:textColor="@color/colorAccent"
                         android:layout_marginTop="@dimen/margin_20_dp"
                         android:textSize="18sp"
@@ -49,6 +50,7 @@
                         />
 
                     <LinearLayout
+                        android:layout_weight="1"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -85,6 +87,7 @@
 
 
                     <AutoCompleteTextView
+                        android:layout_weight="1"
                         android:id="@+id/conac"
                         android:hint="country"
                         android:inputType="text"
@@ -114,6 +117,7 @@
                         android:layout_height="wrap_content" />
 
                     <AutoCompleteTextView
+                        android:layout_weight="1"
                         android:id="@+id/cityac"
                         android:hint="city"
                         android:inputType="text"
@@ -146,6 +150,7 @@
 
 
                     <Button
+                        android:layout_weight="1"
                         android:id="@+id/get_The_Results"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -163,10 +168,8 @@
                 </LinearLayout>
 
 
-
-
-
                 <LinearLayout
+                    android:layout_weight="1"
                     android:paddingTop="5dp"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
@@ -176,6 +179,7 @@
 
 
                     <LinearLayout
+                        android:layout_weight="1"
                         android:background="@color/white"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -274,7 +278,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-
+                        android:layout_weight="1"
                         android:background="@color/white"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -399,6 +403,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_weight="1"
                         android:background="@color/white"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"

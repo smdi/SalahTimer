@@ -81,7 +81,7 @@
                                 android:id="@+id/date"
                                 android:layout_marginTop="7dp"
                                 android:layout_marginLeft="10dp"
-                                android:text="01 Feb 2020"
+                                android:text="01 Apr 2020"
                                 android:textStyle="bold"
                                 android:layout_gravity="bottom"
                                 android:textColor="@color/colorPrimaryDark"
@@ -123,7 +123,7 @@
                             android:layout_marginTop="10dp"
                             android:id="@+id/listview"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_marginLeft="@dimen/margin_20_dp"
                             android:layout_marginRight="@dimen/margin_20_dp"
                             android:layout_marginBottom="8dp"
@@ -131,7 +131,7 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="50dp"
                                 android:layout_marginRight="50dp"
                                 android:layout_marginBottom="25dp"
@@ -140,6 +140,7 @@
 
 
                                 <LinearLayout
+                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="14dp"
@@ -147,8 +148,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:gravity="center_vertical"
                                         android:paddingLeft="5dp"
                                         android:paddingTop="5dp"
                                         android:paddingBottom="5dp"
@@ -164,10 +166,10 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="end"
-                                        android:paddingRight="5dp"
                                         android:paddingTop="5dp"
+                                        android:paddingRight="5dp"
                                         android:paddingBottom="5dp"
-                                        android:text="05 : 06"
+                                        android:text="05 : 16"
                                         android:textColor="@color/colorPrimaryDark"
                                         android:textSize="@dimen/listview_timings_text_size"
                                         android:textStyle="normal" />
@@ -176,6 +178,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="14dp"
@@ -184,8 +187,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:gravity="center_vertical"
                                         android:paddingLeft="5dp"
                                         android:paddingTop="5dp"
                                         android:paddingBottom="5dp"
@@ -213,6 +217,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="14dp"
@@ -220,8 +225,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:gravity="center_vertical"
                                         android:paddingLeft="5dp"
                                         android:paddingTop="5dp"
                                         android:paddingBottom="5dp"
@@ -229,7 +235,6 @@
                                         android:textColor="@color/timings_text_color"
                                         android:textSize="@dimen/listview_timings_text_size"
                                         android:textStyle="normal" />
-
 
                                     <TextView
                                         android:id="@+id/sunriselv"
@@ -249,6 +254,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:layout_weight="1"
                                     android:background="@color/gray"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -258,8 +264,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:gravity="center_vertical"
                                         android:paddingLeft="5dp"
                                         android:paddingTop="5dp"
                                         android:paddingBottom="5dp"
@@ -287,6 +294,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="14dp"
@@ -294,8 +302,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:gravity="center_vertical"
                                         android:paddingLeft="5dp"
                                         android:paddingTop="5dp"
                                         android:paddingBottom="5dp"
@@ -322,6 +331,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:layout_weight="1"
                                     android:background="@color/gray"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -331,8 +341,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:gravity="center_vertical"
                                         android:paddingLeft="5dp"
                                         android:paddingTop="5dp"
                                         android:paddingBottom="5dp"
@@ -360,6 +371,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="14dp"
@@ -367,8 +379,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:gravity="center_vertical"
                                         android:paddingLeft="5dp"
                                         android:paddingTop="5dp"
                                         android:paddingBottom="5dp"
@@ -376,7 +389,6 @@
                                         android:textColor="@color/timings_text_color"
                                         android:textSize="@dimen/listview_timings_text_size"
                                         android:textStyle="normal" />
-
 
                                     <TextView
                                         android:id="@+id/sunsetlv"
@@ -396,6 +408,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="14dp"
@@ -404,8 +417,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:gravity="center_vertical"
                                         android:paddingLeft="5dp"
                                         android:paddingTop="5dp"
                                         android:paddingBottom="5dp"
@@ -432,6 +446,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="14dp"
@@ -440,8 +455,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:gravity="center_vertical"
                                         android:paddingLeft="5dp"
                                         android:paddingTop="5dp"
                                         android:paddingBottom="5dp"
@@ -469,6 +485,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
+                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="14dp"
@@ -477,8 +494,9 @@
 
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:gravity="center_vertical"
                                         android:paddingLeft="5dp"
                                         android:paddingTop="5dp"
                                         android:paddingBottom="5dp"
@@ -518,6 +536,7 @@
                             android:layout_height="match_parent">
 
                             <LinearLayout
+                                android:layout_weight="1"
                                 android:id="@+id/layout1"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
@@ -593,6 +612,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:layout_weight="1"
                                 android:id="@+id/layout2"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
@@ -670,6 +690,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:layout_weight="1"
                                 android:id="@+id/layout3"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
@@ -749,6 +770,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:layout_weight="1"
                                 android:id="@+id/layout4"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
@@ -828,6 +850,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:layout_weight="1"
                                 android:id="@+id/layout5"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
