@@ -18,7 +18,7 @@ public class APIClientArabic {
             OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://quranapi.azurewebsites.net")
+                    .baseUrl("https://quranapi.azurewebsites.net")
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(client)
                     .build();

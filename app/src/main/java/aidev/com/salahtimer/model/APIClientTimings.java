@@ -18,7 +18,7 @@ public class APIClientTimings {
             OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://api.aladhan.com")
+                    .baseUrl("https://api.aladhan.com")
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(client)
                     .build();
