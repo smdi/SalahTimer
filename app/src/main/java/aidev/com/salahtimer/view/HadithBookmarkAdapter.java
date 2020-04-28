@@ -56,7 +56,7 @@ public class HadithBookmarkAdapter extends RecyclerView.Adapter<HadithBookmarkAd
 
         holder.delete.setOnClickListener(view1 -> {
 
-            startplayer();
+//            startplayer();
             hadithBookmarkViewModel.insert(new HadithBookmarkDBTable(hadithBookmarkDBTable.getSerail_no_of_hadith(),
                     hadithBookmarkDBTable.getTitle(),hadithBookmarkDBTable.getContent(),0));
 

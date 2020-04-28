@@ -112,6 +112,7 @@ public class AlarmClass extends BroadcastReceiver {
         else if(global>=294&&global<=354){
             message =Reference.InnerReference.hadeesCategory6;
         }
+
         return message;
     }
 
@@ -119,25 +120,28 @@ public class AlarmClass extends BroadcastReceiver {
 
         global = load(v);
 
-        return Reference.InnerReference.get(global);
+        String data = Reference.InnerReference.get(global);
+        store(global+1,v);
+        return data;
     }
 
     public int load(Context v) {
 
         SharedPreferences sh = v.getSharedPreferences("HadithDB", Context.MODE_PRIVATE);
-        int exe = sh.getInt("hno", 0);
-
-        if(exe == 354){
-            exe = 1;
-        }
-        else {
-            exe +=1;
-        }
-        SharedPreferences.Editor editor = v.getSharedPreferences("HadithDB", Context.MODE_PRIVATE).edit();
-        editor.putInt("hno", exe);
-        editor.apply();
+        int exe = sh.getInt("hno", 1);
 
         return exe;
+    }
+
+    private void store(int i,Context v) {
+        if(i == 355){
+            i = 1;
+        }
+
+        SharedPreferences.Editor editor = v.getSharedPreferences("HadithDB", Context.MODE_PRIVATE).edit();
+        editor.putInt("hno", i);
+        editor.apply();
+
     }
 
 }

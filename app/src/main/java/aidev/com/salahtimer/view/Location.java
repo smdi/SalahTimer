@@ -149,7 +149,13 @@ public class Location extends Fragment {
         hadith = (LinearLayout) view.findViewById(R.id.hadith);
         hadith.setOnClickListener(view1 -> {
             startplayer();
-            loadFragmentWithNoInternet(new Hadith(),"hadith");
+            Bundle bundle = new Bundle();
+            bundle.putString("data","read");
+            Fragment fragment = new Hadith();
+            fragment.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame,fragment).addToBackStack("hadith");
+            fragmentTransaction.commit();
         });
 
         tasbeeh = (LinearLayout) view.findViewById(R.id.tasbeehlayout);

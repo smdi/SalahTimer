@@ -54,7 +54,13 @@ public class Router extends AppCompatActivity {
 
 
         if(menuFragment!= null && menuFragment.equals("hadith")){
-            loadFirstFragment(new Hadith());
+            Bundle bundle = new Bundle();
+            bundle.putString("data","Notif");
+            Fragment fragment = new Hadith();
+            fragment.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame,fragment);
+            fragmentTransaction.commit();
         }
         else if(menuFragment!= null && menuFragment.equals("notif")){
             if(checkConnection()){

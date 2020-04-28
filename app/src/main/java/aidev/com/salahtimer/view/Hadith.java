@@ -37,7 +37,7 @@ public class Hadith extends Fragment {
     private RecyclerView.Adapter adapter;
     private HadithBookmarkViewModel hadithBookmarkViewModel;
     private List<HadithBookmarkDBTable> listView;
-
+    int exe = 0;
 
 
     @Nullable
@@ -55,13 +55,27 @@ public class Hadith extends Fragment {
 
         initialiser(view);
 
+
+
         hadithBookmarkViewModel = new ViewModelProvider(this).get(HadithBookmarkViewModel.class);
 
         hadithBookmarkViewModel.getAllHadiths().observe(this, hadithBookmarkDBTables -> {
 
             //set data to adapter
-            SharedPreferences sh = getActivity().getSharedPreferences("HadithSNO", Context.MODE_PRIVATE);
-            int exe = sh.getInt("hno", 1);
+
+            if(getArguments().getString("data")!=null ){
+
+                if(getArguments().getString("data").equals("Notif")){
+                    SharedPreferences sh = getActivity().getSharedPreferences("HadithDB", Context.MODE_PRIVATE);
+                    exe = sh.getInt("hno", 1);
+                }
+                else {
+                    SharedPreferences sh = getActivity().getSharedPreferences("HadithSNO", Context.MODE_PRIVATE);
+                    exe = sh.getInt("hno", 1);
+                }
+
+            }
+
             listView = hadithBookmarkDBTables;
             adapter = new HadithAdapter(getActivity(), listView, hadithBookmarkViewModel);
             recyclerView.setAdapter(adapter);

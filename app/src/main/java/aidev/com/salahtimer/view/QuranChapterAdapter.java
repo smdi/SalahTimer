@@ -1,5 +1,6 @@
 package aidev.com.salahtimer.view;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -20,6 +21,8 @@ import java.io.IOException;
 import java.util.List;
 
 import aidev.com.salahtimer.R;
+import aidev.com.salahtimer.model.pojo.QuranBookMarkDBTable;
+import aidev.com.salahtimer.model.pojo.QuranBookmarkRepository;
 import aidev.com.salahtimer.model.pojo.Quran_Ar_En;
 import aidev.com.salahtimer.viewmodel.QuranViewModel;
 import androidx.annotation.NonNull;
@@ -42,9 +45,10 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
     private int onceMedia = 0;
     private int prevposition = -1;
     private int length = 0 ;
+    private QuranBookmarkRepository quranBookmarkRepository;
 
 
-    public QuranChapterAdapter(Context ctx, List<Quran_Ar_En.Datum> listitem, List<String> listitem1
+    public QuranChapterAdapter(Activity ctx, List<Quran_Ar_En.Datum> listitem, List<String> listitem1
             , QuranViewModel quranViewModel, int exe, String[] split, int num, ProgressDialog progressDialog, MediaPlayer mediaPlayer) {
         this.listitem = listitem;
         this.ctx = ctx;
@@ -56,6 +60,7 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         this.progressDialog = progressDialog;
         sh = ctx.getSharedPreferences("QuranBookmark", Context.MODE_PRIVATE);
         this.mediaPlayer = mediaPlayer;
+        quranBookmarkRepository = new QuranBookmarkRepository(ctx.getApplication());
     }
 
     public QuranChapterAdapter(Context ctx, List<Quran_Ar_En.Datum> listitem, List<String> listitem1
@@ -97,9 +102,9 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
             holder.cardView.setOnClickListener(view -> {
 
-                startplayer();
-//                TastyToast.makeText(ctx,"Bookmarked",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-                setBookmark(holder,ctx,split,Integer.parseInt(data.verseId),data.text);
+                TastyToast.makeText(ctx,"Bookmarked",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+
+                quranBookmarkRepository.insert(new QuranBookMarkDBTable((num+""+data.verseId),split[5],split[1],""+data.verseId,""+num));
             });
 
             checkandSetBookmark(holder,data.verseId,split[0]);
@@ -114,13 +119,11 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
             holder.cardView.setOnClickListener(view -> {
 
+                TastyToast.makeText(ctx,"Bookmarked",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
 
-//                holder.bookmark.setVisibility(View.VISIBLE);
-//                TastyToast.makeText(ctx,"Bookmarked",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-                setBookmark(holder,ctx,split,ind,listitem1.get(position));
+                quranBookmarkRepository.insert(new QuranBookMarkDBTable((num+""+ind),split[5],split[1],""+ind,""+num));
+
             });
-
-            checkandSetBookmark(holder,""+ind,split[0]);
         }
 
         holder.stop.setEnabled(false);
@@ -290,7 +293,6 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
     }
 
-
     private void setBookmark(ViewHolder holder, Context ctx, String[] split, int ind, String s) {
 
 
@@ -310,9 +312,6 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         checkandSetBookmark(holder, ""+ind, split[0]);
     }
 
-
-
-
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView vno, content;
@@ -328,6 +327,8 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
             content = itemView.findViewById(R.id.content);
             cardView = itemView.findViewById(R.id.hadithbookmark);
             bookmark = itemView.findViewById(R.id.bookmark);
+
+            bookmark.setVisibility(View.GONE);
 
         }
     }
@@ -359,9 +360,9 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         } else { return false; }
 
     }
+
     private void displayNoInternet(String msg) {
         TastyToast.makeText(ctx,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
     }
-
 
 }
