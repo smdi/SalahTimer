@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sdsmdg.tastytoast.TastyToast;
 
@@ -72,7 +73,7 @@ public class QuranChapter extends Fragment {
 
         num = getArguments().getInt("number");
 
-
+//        Toast.makeText(getActivity(), ""+num, Toast.LENGTH_SHORT).show();
 
 
 //        num = 1;
