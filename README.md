@@ -17,4 +17,8 @@ Features
 
 ```
 
+<h2>
+  <a href="https://play.google.com/store/apps/details?id=aidev.com.salahtimer&hl=en&gl=US">Download Islami Duniya App from Play Store</a>
+</h2>
+
 ![Group 18](https://user-images.githubusercontent.com/30797411/175776956-fec4190c-b5aa-47e0-b7dd-1e624d00e341.png)
