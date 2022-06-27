@@ -7,7 +7,7 @@ Features
 2. Mosque near you
 3. Qibla Location
 4. Authenticated Hadith
-5. Hijri Calendar
+5. Islamic Calendar
 6. Tasbeeh Counter
 7. Protect yourself from Unlawful Gazes
 8. Important Dua's 
