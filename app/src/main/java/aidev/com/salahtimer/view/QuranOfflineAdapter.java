@@ -14,8 +14,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.sdsmdg.tastytoast.TastyToast;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -97,7 +95,7 @@ public class QuranOfflineAdapter extends RecyclerView.Adapter<QuranOfflineAdapte
 
             holder.cardView.setOnClickListener(view -> {
 
-                startplayer();
+//                startplayer();
 //                TastyToast.makeText(ctx,"Bookmarked",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
                 setBookmark(holder,ctx,split,Integer.parseInt(data.verseId),data.text);
             });
@@ -174,11 +172,11 @@ public class QuranOfflineAdapter extends RecyclerView.Adapter<QuranOfflineAdapte
         }
     }
 
-    private void startplayer() {
-
-        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
-        mp.start();
-    }
+//    private void startplayer() {
+//
+//        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
+//        mp.start();
+//    }
 
     @Override
     public int getItemCount() {

@@ -120,6 +120,7 @@
 
                         <androidx.cardview.widget.CardView
                             android:visibility="gone"
+                            app:cardCornerRadius="@dimen/card_radius"
                             android:layout_marginTop="10dp"
                             android:id="@+id/listview"
                             android:layout_width="match_parent"
@@ -546,11 +547,11 @@
                                 android:layout_height="wrap_content">
 
                                 <LinearLayout
-                                    android:elevation="10dp"
+                                    android:elevation="5dp"
                                     android:id="@+id/imsaklayout"
                                     android:layout_margin="5dp"
                                     android:layout_weight="1"
-                                    android:background="@color/white"
+                                    android:background="@drawable/linear_layout_menu_radius"
                                     android:layout_gravity="center"
                                     android:orientation="vertical"
                                     android:layout_width="@dimen/size_of_card"
@@ -577,11 +578,11 @@
 
                                 </LinearLayout>
                                 <LinearLayout
-                                    android:elevation="10dp"
+                                    android:elevation="5dp"
                                     android:id="@+id/fajrlayout"
                                     android:layout_weight="1"
                                     android:layout_margin="5dp"
-                                    android:background="@color/white"
+                                    android:background="@drawable/linear_layout_menu_radius"
                                     android:layout_gravity="center"
                                     android:orientation="vertical"
                                     android:layout_width="@dimen/size_of_card"
@@ -622,11 +623,11 @@
                                 android:layout_height="wrap_content">
 
                                 <LinearLayout
-                                    android:elevation="10dp"
+                                    android:elevation="5dp"
                                     android:id="@+id/sunriselayout"
                                     android:layout_margin="5dp"
                                     android:layout_weight="1"
-                                    android:background="@color/white"
+                                    android:background="@drawable/linear_layout_menu_radius"
                                     android:layout_gravity="center"
                                     android:orientation="vertical"
                                     android:layout_width="@dimen/size_of_card"
@@ -653,11 +654,11 @@
 
                                 </LinearLayout>
                                 <LinearLayout
-                                    android:elevation="10dp"
+                                    android:elevation="5dp"
                                     android:id="@+id/dhuhrlayout"
                                     android:layout_weight="1"
                                     android:layout_margin="5dp"
-                                    android:background="@color/white"
+                                    android:background="@drawable/linear_layout_menu_radius"
                                     android:layout_gravity="center"
                                     android:orientation="vertical"
                                     android:layout_width="@dimen/size_of_card"
@@ -701,11 +702,11 @@
 
 
                                 <LinearLayout
-                                    android:elevation="10dp"
+                                    android:elevation="5dp"
                                     android:id="@+id/asrslayout"
                                     android:layout_weight="1"
                                     android:layout_margin="5dp"
-                                    android:background="@color/white"
+                                    android:background="@drawable/linear_layout_menu_radius"
                                     android:layout_gravity="center"
                                     android:orientation="vertical"
                                     android:layout_width="@dimen/size_of_card"
@@ -733,11 +734,11 @@
                                 </LinearLayout>
 
                                 <LinearLayout
-                                    android:elevation="10dp"
+                                    android:elevation="5dp"
                                     android:id="@+id/asrhlayout"
                                     android:layout_margin="5dp"
                                     android:layout_weight="1"
-                                    android:background="@color/white"
+                                    android:background="@drawable/linear_layout_menu_radius"
                                     android:layout_gravity="center"
                                     android:orientation="vertical"
                                     android:layout_width="@dimen/size_of_card"
@@ -781,11 +782,11 @@
 
 
                                 <LinearLayout
-                                    android:elevation="10dp"
+                                    android:elevation="5dp"
                                     android:id="@+id/sunsetlayout"
                                     android:layout_weight="1"
                                     android:layout_margin="5dp"
-                                    android:background="@color/white"
+                                    android:background="@drawable/linear_layout_menu_radius"
                                     android:layout_gravity="center"
                                     android:orientation="vertical"
                                     android:layout_width="@dimen/size_of_card"
@@ -813,11 +814,11 @@
                                 </LinearLayout>
 
                                 <LinearLayout
-                                    android:elevation="10dp"
+                                    android:elevation="5dp"
                                     android:id="@+id/maghriblayout"
                                     android:layout_margin="5dp"
                                     android:layout_weight="1"
-                                    android:background="@color/white"
+                                    android:background="@drawable/linear_layout_menu_radius"
                                     android:layout_gravity="center"
                                     android:orientation="vertical"
                                     android:layout_width="@dimen/size_of_card"
@@ -862,11 +863,11 @@
 
 
                                 <LinearLayout
-                                    android:elevation="10dp"
+                                    android:elevation="5dp"
                                     android:id="@+id/ishalayout"
                                     android:layout_weight="1"
                                     android:layout_margin="5dp"
-                                    android:background="@color/white"
+                                    android:background="@drawable/linear_layout_menu_radius"
                                     android:layout_gravity="center"
                                     android:orientation="vertical"
                                     android:layout_width="@dimen/size_of_card"
@@ -894,11 +895,11 @@
                                 </LinearLayout>
 
                                 <LinearLayout
-                                    android:elevation="10dp"
+                                    android:elevation="5dp"
                                     android:id="@+id/midnightlayout"
                                     android:layout_margin="5dp"
                                     android:layout_weight="1"
-                                    android:background="@color/white"
+                                    android:background="@drawable/linear_layout_menu_radius"
                                     android:layout_gravity="center"
                                     android:orientation="vertical"
                                     android:layout_width="@dimen/size_of_card"
@@ -925,28 +926,16 @@
 
                                 </LinearLayout>
 
-
-
-
                             </LinearLayout>
 
                         </LinearLayout>
 
-
                     </RelativeLayout>
-
 
                 </ScrollView>
 
-
             </LinearLayout>
 
-
-
     </RelativeLayout>
-
-
-
-
 
 </RelativeLayout>

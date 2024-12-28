@@ -1,30 +1,17 @@
 package aidev.com.salahtimer.view;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.sdsmdg.tastytoast.TastyToast;
-
 import java.util.List;
-
 import aidev.com.salahtimer.R;
-import aidev.com.salahtimer.model.pojo.HadithBookmarkDBTable;
 import aidev.com.salahtimer.model.pojo.QuranBookMarkDBTable;
 import aidev.com.salahtimer.model.pojo.QuranBookmarkRepository;
-import aidev.com.salahtimer.viewmodel.HadithBookmarkViewModel;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -56,7 +43,7 @@ public class QuranBookmark  extends Fragment {
         quranBookmarkRepository = new QuranBookmarkRepository(getActivity().getApplication());
 
 
-        quranBookmarkRepository.getAllBookmarkedQuran().observe(this, quranBookMarkDBTables -> {
+        quranBookmarkRepository.getAllBookmarkedQuran().observe(getViewLifecycleOwner(), quranBookMarkDBTables -> {
 
             //set data to adapter
             listView = quranBookMarkDBTables;

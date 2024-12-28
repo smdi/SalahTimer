@@ -1,18 +1,6 @@
 package aidev.com.salahtimer.view;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +23,6 @@ public class Compass extends Fragment {
     private WebView webView;
     private static  String url = "" ;
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -48,10 +35,7 @@ public class Compass extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-
         url =  "https://qiblafinder.withgoogle.com/intl/en/finder/ar";
-
 
         progressBar = (ProgressBar) view.findViewById(R.id.qiblaprog);
 

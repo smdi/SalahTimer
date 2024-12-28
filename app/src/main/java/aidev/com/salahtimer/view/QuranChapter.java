@@ -1,5 +1,6 @@
 package aidev.com.salahtimer.view;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -10,15 +11,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.sdsmdg.tastytoast.TastyToast;
-
+import com.aidev.generictoast.GenericToast;
 import java.util.ArrayList;
 import java.util.List;
-
 import aidev.com.salahtimer.R;
 import aidev.com.salahtimer.model.RetrofitResponseListener;
 import aidev.com.salahtimer.model.pojo.Quran_Ar_En;
@@ -38,14 +36,15 @@ public class QuranChapter extends Fragment {
     private QuranViewModel quranViewModel;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private TextView  arabic, translitertion, translation;
-//    private ImageView playpause, stop;
+//    private TextView  arabic, translitertion, translation;
+    private ImageView playpause, stop;
     private int num;
     private List<Quran_Ar_En.Datum> data1;
     private List<String> data2;
-    private List<String > faker;
+    private List<String> faker;
     private ProgressDialog progressDialog;
     private MediaPlayer mediaPlayer;
+    private int tranliterationNumber = 3;
 //    int pplay = 0;
 //    int length = 0;
 //    private MediaPlayer mediaPlayer;
@@ -72,34 +71,20 @@ public class QuranChapter extends Fragment {
         initialiser(view);
 
         num = getArguments().getInt("number");
-
-//        Toast.makeText(getActivity(), ""+num, Toast.LENGTH_SHORT).show();
-
-
-//        num = 1;
-
         message = QuranIndex.QuranIndexProfile.getIndexDisplay(num);
-
-
-//        chapterName.setText(""+array[5]);
-
         quranViewModel = new ViewModelProvider(this, new QuranFactory(getActivity())).get(QuranViewModel.class);
 
-        SharedPreferences sh = getActivity().getSharedPreferences("DB", Context.MODE_PRIVATE);
-        int exe = sh.getInt("dataofquran", 3);
-
-
-//        if(exe == 1){
-//            fetcherArabic(exe);
+//        SharedPreferences sh = getActivity().getSharedPreferences("DB", Context.MODE_PRIVATE);
+//        int exe = sh.getInt("dataofquran", 3);
+//
+//        if(exe == 2){
+////            fetcherTranslation(exe,num);
 //        }
-        if(exe == 2){
-            fetcherTranslation(exe,num);
-        }
-        if(exe == 3){
-            fetcherTransliteration(exe,num);
-        }
+//        if(exe == 3){
+//            fetcherTransliteration(exe,num);
+//        }
 
-
+        fetcherTransliteration(tranliterationNumber,num);
     }
 
     private void fetcherTranslation(int exe, int num){
@@ -121,7 +106,6 @@ public class QuranChapter extends Fragment {
                 data1 = body.data;
                 adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe,message.split("@"),num,progressDialog,mediaPlayer);
                 recyclerView.setAdapter(adapter);
-//                recyclerView.scrollToPosition(data1.size() -1);
                 if(getArguments().getString("bookmark") != null){
                     recyclerView.scrollToPosition(getArguments().getInt("scroll"));
                 }
@@ -163,8 +147,6 @@ public class QuranChapter extends Fragment {
                 data2 = body.data;
                 adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe, message.split("@"),num,progressDialog, mediaPlayer);
                 recyclerView.setAdapter(adapter);
-//                recyclerView.scrollToPosition(data2.size() - 1);
-
                 if(getArguments().getString("bookmark") != null){
                     recyclerView.scrollToPosition(getArguments().getInt("scroll"));
                 }
@@ -177,39 +159,17 @@ public class QuranChapter extends Fragment {
         }, this.num);
     }
 
-//    private void fetcherArabic(int exe) {
-//        quranViewModel.getQuranArabicChapterwise(new RetrofitResponseListener() {
-//                @Override
-//                public void onFailure() {
-//                    getPop();
-//                }
-//
-//                @Override
-//                public void onSuccess(TimingsData body) {
-//
-//                }
-//
-//                @Override
-//                public void onSuccess(Quran_Ar_En body) {
-//                    data1 = body.data;
-//                    adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe, message.split("@"));
-//                    recyclerView.setAdapter(adapter);
-////                    recyclerView.scrollToPosition(data1.size() - 1);
-//                    recyclerView.scrollToPosition(0);
-//                    progressDialog.dismiss();
-//                }
-//
-//                @Override
-//                public void onSuccess(Quran_Transliteration body) {
-//
-//                }
-//            }, num);
-//    }
-
     private void getPop() {
 
         progressDialog.dismiss();
-        TastyToast.makeText(getActivity(),"slow Internet",TastyToast.LENGTH_SHORT,TastyToast.ERROR).show();
+//        TastyToast.makeText(getActivity(),"",TastyToast.LENGTH_SHORT,TastyToast.ERROR).show();
+        GenericToast.showToast(getActivity(),
+                "slow Internet connection",
+                GenericToast.LENGTH_SHORT,
+                GenericToast.INFO,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
         FragmentManager fm = getActivity().getSupportFragmentManager();
         fm.popBackStack ("chapter", FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
@@ -237,155 +197,31 @@ public class QuranChapter extends Fragment {
 
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        head = view.findViewById(R.id.head);
-
-        head.setOnClickListener(view1 -> {
-
-        });
-
-//        seekBar = view.findViewById(R.id.seekbar);
-//        seekBar.setEnabled(false);
-
+//        head = view.findViewById(R.id.head);
+//
+//        head.setOnClickListener(view1 -> {
+//
+//        });
         quranchapter = view.findViewById(R.id.quranchapter);
 
         quranchapter.setOnClickListener(view1 -> {});
-
-
-//        mediaPlayer = new MediaPlayer();
-
-//        playpause = (ImageView) view.findViewById(R.id.playpause);
-//        stop = (ImageView) view.findViewById(R.id.stop);
-
-
-//        mSeekbarUpdateHandler = new Handler();
-//        mUpdateSeekbar = new Runnable() {
-//            @Override
-//            public void run() {
-//                seekBar.setProgress(mediaPlayer.getCurrentPosition());
-//                mSeekbarUpdateHandler.postDelayed(this, 50);
-//            }
-//        };
-
-//        playpause.setOnClickListener(view1 -> {
-//
-//            startplayer();
-//
-//            try{
-//                if(onceMedia == 0){
-//
-//                    String copy = "";
-//                    if(num >=1 && num <=9){
-//                        copy = "s00"+num;
-//                    }
-//                    if(num >= 10 && num <= 99){
-//                        copy = "s0"+num;
-//                    }
-//                    if(num >= 100  && num <= 114){
-//                        copy = "s"+num;
-//                    }
-//
-//
-//                    onceMedia = 1;
-//
-//                    progressDialog.show();
-//                    mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-//                    mediaPlayer.setDataSource("");
-//                    mediaPlayer.prepareAsync();
-//
-//                    mediaPlayer.setOnPreparedListener(mediaPlayer -> {
-//                        progressDialog.dismiss();
-//                        mediaPlayer.start();
-//                    });
-//
-//
-//                    seekBar.setMax(mediaPlayer.getDuration());
-//
-//                    mediaPlayer.setOnCompletionListener(mediaPlayer -> {
-//                        pplay = 0;
-//                        length  = 0;
-//                        onceMedia = 0;
-//                        mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
-//                        seekBar.setProgress(0);
-//                        seekBar.setEnabled(false);
-//                        playpause.setBackgroundResource(R.drawable.play);
-//                        TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-//                        mediaPlayer.stop();
-//                    });
-//                }
-//
-//                playSurah(mediaPlayer,  mUpdateSeekbar,mSeekbarUpdateHandler);
-//
-//
-//            }
-//            catch (Exception e){
-//
-//            }
-//
-//
+//        translation = (TextView) view.findViewById(R.id.translation);
+//        translitertion = (TextView) view.findViewById(R.id.transliteration);
+//        translitertion.setOnClickListener(view1 -> {
+////            startplayer();
+//            store(3);
+//            fetcherTransliteration(3, num);
 //        });
-//
-//        stop.setOnClickListener(view1 -> {
-//
-//            startplayer();
-//            if( mediaPlayer!= null && mediaPlayer.isPlaying()){
-//                pplay = 0;
-//                length  = 0;
-//                onceMedia = 0;
-//                seekBar.setProgress(0);
-//                seekBar.setEnabled(false);
-//                mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
-//                playpause.setBackgroundResource(R.drawable.play);
-//                TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-//                mediaPlayer.stop();
+//        translation.setOnClickListener(view1 -> {
+////            startplayer();
+//            if(checkConnection()){
+//                store(2);
+//                fetcherTranslation(2, num);
 //            }
-//
-//        });
-
-
-//        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-//            @Override
-//            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-//                if (fromUser && mediaPlayer != null)
-//                    mediaPlayer.seekTo(progress);
-//            }
-//
-//            @Override
-//            public void onStartTrackingTouch(SeekBar seekBar) {
-//
-//            }
-//
-//            @Override
-//            public void onStopTrackingTouch(SeekBar seekBar) {
-//
+//            else {
+//                displayNoInternet("No Internet connection");
 //            }
 //        });
-
-
-//        arabic = (TextView) view.findViewById(R.id.arabic);
-        translation = (TextView) view.findViewById(R.id.translation);
-        translitertion = (TextView) view.findViewById(R.id.transliteration);
-
-//        arabic.setOnClickListener(view1 -> {
-//           store(1);
-//           fetcherArabic(1);
-//        });
-
-        translitertion.setOnClickListener(view1 -> {
-            startplayer();
-            store(3);
-            fetcherTransliteration(3, num);
-        });
-
-        translation.setOnClickListener(view1 -> {
-            startplayer();
-            if(checkConnection()){
-                store(2);
-                fetcherTranslation(2, num);
-            }
-            else {
-                displayNoInternet("No Internet");
-            }
-        });
 
         faker = new ArrayList<>();
         faker.add("Fetching Data");
@@ -396,37 +232,6 @@ public class QuranChapter extends Fragment {
 
 
     }
-
-//    private void playSurah(MediaPlayer mediaPlayer, Runnable mUpdateSeekbar, Handler mSeekbarUpdateHandler) {
-//
-//        if (pplay == 0){
-//
-//            pplay = 1;
-//            if(!mediaPlayer.isPlaying()&& length != 0){
-//                TastyToast.makeText(getActivity(),"resume",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-//                mediaPlayer.seekTo(length);
-//                mediaPlayer.start();
-//            }
-//            else {
-//                TastyToast.makeText(getActivity(),"play",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-//                mediaPlayer.start();}
-//            playpause.setBackgroundResource(R.drawable.pause);
-//            mSeekbarUpdateHandler.postDelayed(mUpdateSeekbar, 0);
-//            seekBar.setEnabled(true);
-//        }
-//        else{
-//            TastyToast.makeText(getActivity(),"pause",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-//            pplay = 0;
-//            mediaPlayer.pause();
-//            length = mediaPlayer.getCurrentPosition();
-//            mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
-//            playpause.setBackgroundResource(R.drawable.play);
-//            seekBar.setEnabled(true);
-//        }
-//
-//
-//    }
-
     private void store(int i) {
         progressDialog.show();
         SharedPreferences.Editor editor = getActivity().getSharedPreferences("DB", Context.MODE_PRIVATE).edit();
@@ -434,23 +239,7 @@ public class QuranChapter extends Fragment {
         editor.apply();
     }
 
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//        if(mediaPlayer != null && mediaPlayer.isPlaying()){
-//            pplay = 0;
-//            length  = 0;
-//            onceMedia = 0;
-//            seekBar.setProgress(0);
-//            seekBar.setEnabled(false);
-//            mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
-//            playpause.setBackgroundResource(R.drawable.play);
-//            TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-//            mediaPlayer.stop();
-//        }
-//    }
-
-
+    @SuppressLint("MissingPermission")
     private boolean checkConnection() {
 
 
@@ -463,14 +252,22 @@ public class QuranChapter extends Fragment {
 
     }
     private void displayNoInternet(String msg) {
-        TastyToast.makeText(getActivity(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+//        TastyToast.makeText(getActivity(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+        GenericToast.showToast(getActivity(),
+                msg,
+                GenericToast.LENGTH_SHORT,
+                GenericToast.ERROR,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
+
     }
 
-    private void startplayer() {
-
-        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
-        mp.start();
-    }
+//    private void startplayer() {
+//
+//        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
+//        mp.start();
+//    }
 
     @Override
     public void onStop() {

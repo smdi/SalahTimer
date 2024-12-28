@@ -7,19 +7,14 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TimePicker;
-import android.widget.Toast;
-
-import com.sdsmdg.tastytoast.TastyToast;
-
+import com.aidev.generictoast.GenericToast;
 import aidev.com.salahtimer.R;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import java.util.Calendar;
 import androidx.fragment.app.Fragment;
 
@@ -38,9 +33,7 @@ public class HadithNotifier extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         initialiser(view);
-
     }
 
     private void initialiser(View view) {
@@ -50,7 +43,7 @@ public class HadithNotifier extends Fragment {
 
         b1.setOnClickListener(view1 -> {
 
-            getMedia();
+//            getMedia();
 
             Calendar cl = Calendar.getInstance();
             if(Build.VERSION.SDK_INT >= 23) {
@@ -66,7 +59,6 @@ public class HadithNotifier extends Fragment {
             }
             else
             {
-
                 cl.set(
                         cl.get(Calendar.YEAR),
                         cl.get(Calendar.MONTH),
@@ -76,7 +68,6 @@ public class HadithNotifier extends Fragment {
                         0
 
                 );
-
             }
             setAlarm(cl.getTimeInMillis() , view1);
         });
@@ -85,9 +76,7 @@ public class HadithNotifier extends Fragment {
 
     private void setAlarm(long timeInMillis , View view) {
 
-
-
-        AlarmManager al = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        AlarmManager al = (AlarmManager) view.getContext().getSystemService(Context.ALARM_SERVICE);
 
         Intent i = new Intent(getActivity(), AlarmClass.class);
 
@@ -95,13 +84,20 @@ public class HadithNotifier extends Fragment {
 
         al.setRepeating(AlarmManager.RTC_WAKEUP ,timeInMillis, 86400000 , pi);
 
-        TastyToast.makeText(getActivity(),"Hadith Notification set",Toast.LENGTH_LONG,TastyToast.SUCCESS).show();
+//        TastyToast.makeText(getActivity(),"Hadith Notification set", Toast.LENGTH_LONG,TastyToast.SUCCESS).show();
+        GenericToast.showToast(getActivity(),
+                "Hadith notification set!",
+                GenericToast.LENGTH_SHORT,
+                GenericToast.SUCCESS,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
     }
 
 
-    private void getMedia() {
-        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
-        mp.start();
-    }
+//    private void getMedia() {
+//        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.bell);
+//        mp.start();
+//    }
 
 }

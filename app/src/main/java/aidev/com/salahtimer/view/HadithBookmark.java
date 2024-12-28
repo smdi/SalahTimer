@@ -1,21 +1,16 @@
 package aidev.com.salahtimer.view;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import java.util.List;
-
 import aidev.com.salahtimer.R;
 import aidev.com.salahtimer.model.pojo.HadithBookmarkDBTable;
 import aidev.com.salahtimer.viewmodel.HadithBookmarkViewModel;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;

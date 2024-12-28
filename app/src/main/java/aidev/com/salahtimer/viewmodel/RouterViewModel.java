@@ -1,6 +1,7 @@
 package aidev.com.salahtimer.viewmodel;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 
@@ -9,11 +10,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 
-import android.view.MenuItem;
-import android.widget.Toast;
-
+import com.aidev.generictoast.GenericToast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.sdsmdg.tastytoast.TastyToast;
+import com.google.android.material.navigation.NavigationBarView;
 
 import aidev.com.salahtimer.R;
 import aidev.com.salahtimer.view.Compass;
@@ -21,7 +20,7 @@ import aidev.com.salahtimer.view.HadithNotifier;
 import aidev.com.salahtimer.view.HijriCalendar;
 import aidev.com.salahtimer.view.Location;
 import aidev.com.salahtimer.view.Router;
-import androidx.annotation.NonNull;
+
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModel;
 import androidx.fragment.app.Fragment;
@@ -34,46 +33,43 @@ public class RouterViewModel extends ViewModel {
     private FragmentManager fragmentManager;
     private Router router;
 
-
     public RouterViewModel(Context activity, FragmentManager fragementManager, Router router){
         this.activity = activity;
         this.fragmentManager = fragementManager;
         this.router = router;
     }
+    public NavigationBarView.OnItemSelectedListener getBottomNavbarObject(){
 
-    public BottomNavigationView.OnNavigationItemSelectedListener getBottomNavbarObject(){
+//        int once = getCompassValue(activity,0);
 
-          BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-                  = new BottomNavigationView.OnNavigationItemSelectedListener() {
+           NavigationBarView.OnItemSelectedListener mOnNavigationItemSelectedListener
+                  = item -> {
 
-              @Override
-              public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                  switch (item.getItemId()) {
-                      case R.id.salahtimings:
-                          loadFirstFragment(new Location());
-                          break;
-                      case R.id.qibla:
-                          loadFragment(new Compass(), "qibla");
-                          break;
-                      case R.id.hijricalendar:
-                          loadFragment(new HijriCalendar(), "hijricalendar");
-                          break;
-                      case R.id.hadithnotifier:
-                          loadFragmentWithNoInternet(new HadithNotifier(),"HadithNotifier");
-                          break;
-                      case R.id.masjidfinder:
-                          if(checkConnection()){
-                              getMasjidFinder();
-                          }
-                          else {
-                              displayNoInternet("No Internet");
-                          }
-                          break;
-                  }
-                  return true;
-              }
-          };
+                        loadFirstFragment(new Location());
+//                      switch (item.getItemId()) {
+//                          case R.id.salahtimings:
+//                              loadFirstFragment(new Location());
+//                              break;
+//                          case R.id.qibla:
+//                              loadFragment(new Compass(), "qibla");
+//                              break;
+//                          case R.id.hijricalendar:
+//                              loadFragment(new HijriCalendar(), "hijricalendar");
+//                              break;
+//                          case R.id.hadithnotifier:
+//                              loadFragmentWithNoInternet(new HadithNotifier(),"HadithNotifier");
+//                              break;
+//                          case R.id.masjidfinder:
+//                              if(checkConnection()){
+//                                  getMasjidFinder();
+//                              }
+//                              else {
+//                                  displayNoInternet("No Internet connection");
+//                              }
+//                              break;
+//                      }
+                      return true;
+                  };
 
           return mOnNavigationItemSelectedListener;
       }
@@ -94,7 +90,9 @@ public class RouterViewModel extends ViewModel {
                         router.startActivity(intent);
                     }
                     else {
-                        TastyToast.makeText(activity, "Unable to process", Toast.LENGTH_LONG,TastyToast.CONFUSING).show();
+//                        TastyToast.makeText(activity, "Unable to process", Toast.LENGTH_LONG,TastyToast.CONFUSING).show();
+                        GenericToast.showToast(activity, "Unable to process your request!",
+                                GenericToast.LENGTH_SHORT, GenericToast.ERROR, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
                     }
                 })
                 .setNegativeButton("No", (dialogInterface, i) -> dialogInterface.cancel());
@@ -132,7 +130,14 @@ public class RouterViewModel extends ViewModel {
         }
 
     private void displayNoInternet(String msg) {
-        TastyToast.makeText(activity,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+//        TastyToast.makeText(activity,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+        GenericToast.showToast(activity,
+                msg,
+                GenericToast.LENGTH_SHORT,
+                GenericToast.ERROR,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
     }
 
     private boolean loadFragment(Fragment fragment, String tag) {
@@ -144,11 +149,12 @@ public class RouterViewModel extends ViewModel {
                 ft.commitAllowingStateLoss();
                 return  true;
             }}
-            else { displayNoInternet("No Internet"); }
+            else { displayNoInternet("No Internet connection"); }
 
         return false;
         }
 
+    @SuppressLint("MissingPermission")
     private boolean checkConnection() {
 
 

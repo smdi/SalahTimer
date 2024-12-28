@@ -1,7 +1,9 @@
 package aidev.com.salahtimer.view;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -11,15 +13,10 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.os.Vibrator;
-import android.preference.PreferenceManager;
-import android.view.WindowManager;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.os.Build;
 
-import com.sdsmdg.tastytoast.TastyToast;
+import com.aidev.generictoast.GenericToast;
 
 import aidev.com.salahtimer.R;
 import androidx.core.app.NotificationCompat;
@@ -28,28 +25,38 @@ import androidx.core.app.NotificationCompat;
 public class AlarmClass extends BroadcastReceiver {
 
     private int global;
-
+    private static final String CHANNEL_ID = "ID100";
+    private static final int NOTIFICATION_ID = 100;
+    private static final String CHANNEL_NAME = "ISLAMIDUNIYA";
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
-
-     try {
         MediaPlayer  mp = MediaPlayer.create(context, R.raw.bell);
-        mp.start();
-     }
-     catch (Exception e){
+         try {
+            mp.start();
+         }
+         catch (Exception e){
+             e.printStackTrace();
+         }
+         finally {
+             mp.stop();
+         }
 
-         e.printStackTrace();
-     }
+//     TastyToast.makeText(context, "", Toast.LENGTH_LONG, TastyToast.SUCCESS).show();
+        GenericToast.showToast(context,
+                "Its hadith time",
+                GenericToast.LENGTH_SHORT,
+                GenericToast.SUCCESS,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
 
-     TastyToast.makeText(context, "its Hadith Time", Toast.LENGTH_LONG, TastyToast.SUCCESS).show();
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
 
         String title = category(context);
@@ -58,6 +65,7 @@ public class AlarmClass extends BroadcastReceiver {
 
         Intent i1 = new Intent(context, Router.class);
         i1.putExtra("menuFragment", "hadith");
+        @SuppressLint("UnspecifiedImmutableFlag")
         PendingIntent pi1 = PendingIntent.getActivity(context, 1, i1, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.hadith);
@@ -67,11 +75,11 @@ public class AlarmClass extends BroadcastReceiver {
         bigTextStyle.setBigContentTitle(title);
 
         NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(context)
+                new NotificationCompat.Builder(context, CHANNEL_ID)
                         .setSmallIcon(R.drawable.hadith)
                         .setColor(Color.WHITE)
                         .setLights(1,1,1)
-                        .setContentText(" Slide down to read completely ")
+                        .setContentText("Slide down to read completely")
                         .setAutoCancel(true)
                         .setTicker(title)
                         .setLargeIcon(bitmap)
@@ -80,9 +88,18 @@ public class AlarmClass extends BroadcastReceiver {
 
 
 
-        NotificationManager nf = (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
-        nf.notify(0, mBuilder.build());
+        NotificationManager nf = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        createChannel(nf);
+        nf.notify(NOTIFICATION_ID, mBuilder.build());
 
+    }
+
+    public void createChannel(NotificationManager notificationManager){
+        if (Build.VERSION.SDK_INT < 26) {
+            return;
+        }
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID,CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
+        notificationManager.createNotificationChannel(channel);
     }
 
     private String category(Context v) {

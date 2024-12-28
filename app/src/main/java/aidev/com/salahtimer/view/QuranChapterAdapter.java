@@ -1,5 +1,6 @@
 package aidev.com.salahtimer.view;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -9,13 +10,16 @@ import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.sdsmdg.tastytoast.TastyToast;
+import com.aidev.generictoast.GenericToast;
 
 import java.io.IOException;
 import java.util.List;
@@ -46,6 +50,8 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
     private int prevposition = -1;
     private int length = 0 ;
     private QuranBookmarkRepository quranBookmarkRepository;
+    private static final long DOUBLE_CLICK_TIME_DELTA = 300; // milliseconds
+    private long lastClickTime = 0;
 
 
     public QuranChapterAdapter(Activity ctx, List<Quran_Ar_En.Datum> listitem, List<String> listitem1
@@ -81,8 +87,9 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         return new ViewHolder(v);
     }
 
+
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
 
         if(use == 0){
@@ -100,12 +107,38 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
             holder.content.setText(data.text);
 
-            holder.cardView.setOnClickListener(view -> {
+            holder.cardView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    GenericToast.showToast(ctx,
+                            "Quran verse bookmarked!",
+                            GenericToast.LENGTH_SHORT,
+                            GenericToast.SUCCESS,
+                            GenericToast.LITE,
+                            GenericToast.DEFAULT_FONT,
+                            GenericToast.DEFAULT_FONT);
 
-                TastyToast.makeText(ctx,"Bookmarked",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-
-                quranBookmarkRepository.insert(new QuranBookMarkDBTable((num+""+data.verseId),split[5],split[1],""+data.verseId,""+num));
+                    quranBookmarkRepository.insert(new QuranBookMarkDBTable((num+""+data.verseId),split[5],split[1],""+data.verseId,""+num));
+                    return true;
+                }
             });
+
+//            holder.cardView.setOnClickListener(view -> {
+//
+////                TastyToast.makeText(ctx,"Bookmarked",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+//                GenericToast.showToast(ctx,
+//                        "Quran verse bookmarked!",
+//                        GenericToast.LENGTH_SHORT,
+//                        GenericToast.SUCCESS,
+//                        GenericToast.LITE,
+//                        GenericToast.DEFAULT_FONT,
+//                        GenericToast.DEFAULT_FONT);
+//
+//                quranBookmarkRepository.insert(new QuranBookMarkDBTable((num+""+data.verseId),split[5],split[1],""+data.verseId,""+num));
+//            });
+
+
+
 
             checkandSetBookmark(holder,data.verseId,split[0]);
         }
@@ -117,25 +150,45 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
             holder.content.setText(listitem1.get(position));
 
-            holder.cardView.setOnClickListener(view -> {
-
-                TastyToast.makeText(ctx,"Bookmarked",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-
-                quranBookmarkRepository.insert(new QuranBookMarkDBTable((num+""+ind),split[5],split[1],""+ind,""+num));
-
-            });
+//            holder.cardView.setOnClickListener(view -> {
+//
+//
+//
+//                GenericToast.showToast(ctx,
+//                        "Quran verse bookmarked!",
+//                        GenericToast.LENGTH_SHORT,
+//                        GenericToast.SUCCESS,
+//                        GenericToast.LITE,
+//                        GenericToast.DEFAULT_FONT,
+//                        GenericToast.DEFAULT_FONT);
+//
+//                quranBookmarkRepository.insert(new QuranBookMarkDBTable((num+""+ind),split[5],split[1],""+ind,""+num));
+//
+//            });
         }
 
-        holder.stop.setEnabled(false);
+        if((position+1)%2==0){
+            holder.cardView.setBackgroundColor(ctx.getResources().getColor(R.color.gray));
+        }else{
+            holder.cardView.setBackgroundColor(ctx.getResources().getColor(R.color.white));
+        }
 
-        holder.play.setOnClickListener(view -> {
+        holder.cardView.setOnClickListener(view -> {
 
-//            startplayer();
+//            notifyItemChanged(prevposition);
+            GenericToast.showToast(ctx,
+                    prevposition+"",
+                    GenericToast.LENGTH_SHORT,
+                    GenericToast.INFO,
+                    GenericToast.LITE,
+                    GenericToast.DEFAULT_FONT,
+                    GenericToast.DEFAULT_FONT);
             if(checkConnection()){
                 if(onceMedia == 0 && position!= prevposition){
 
 //                mediaPlayer = new MediaPlayer();
-                    holder.play.setBackgroundResource(R.drawable.pausecolored);
+                  holder.play.setBackgroundResource(R.drawable.pausecolored);
+                  holder.play.setVisibility(View.VISIBLE);
                     onceMedia = 1;
                     mediaPlayer.reset();
                     prevposition = position;
@@ -143,15 +196,21 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
                     String url = getStringUrl(position,num);
 
+
                     gotoMediaPlayer(url,holder);
 
                     mediaPlayer.setOnCompletionListener(mediaPlayer -> {
-                        holder.play.setBackgroundResource(R.drawable.playcolored);
-
+                      holder.play.setBackgroundResource(R.drawable.playcolored);
+                      holder.play.setVisibility(View.INVISIBLE);
                         mediaPlayer.stop();
                         mediaPlayer.reset();
-//                    mediaPlayer.release();
-                        TastyToast.makeText(ctx,"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+                    GenericToast.showToast(ctx,
+                            "Quran verse audio stopped!",
+                            GenericToast.LENGTH_SHORT,
+                            GenericToast.INFO,
+                            GenericToast.LITE,
+                            GenericToast.DEFAULT_FONT,
+                            GenericToast.DEFAULT_FONT);
                         length = 0;
                         onceMedia = 0;
                         prevposition = -1;
@@ -159,17 +218,63 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
                     });
 
                 }
+                else if(onceMedia == 1 && position!= prevposition){
+                    holder.play.setBackgroundResource(R.drawable.pausecolored);
+                    holder.play.setVisibility(View.VISIBLE);
+                    onceMedia = 1;
+                    mediaPlayer.reset();
+                    prevposition = position;
+                    progressDialog.show();
+
+                    String url = getStringUrl(position,num);
+
+
+                    gotoMediaPlayer(url,holder);
+
+                    mediaPlayer.setOnCompletionListener(mediaPlayer -> {
+                      holder.play.setBackgroundResource(R.drawable.playcolored);
+                      holder.play.setVisibility(View.INVISIBLE);
+                        mediaPlayer.stop();
+                        mediaPlayer.reset();
+//                        mediaPlayer.release();
+//
+                    GenericToast.showToast(ctx,
+                            "Quran verse audio stopped!",
+                            GenericToast.LENGTH_SHORT,
+                            GenericToast.INFO,
+                            GenericToast.LITE,
+                            GenericToast.DEFAULT_FONT,
+                            GenericToast.DEFAULT_FONT);
+                        length = 0;
+                        onceMedia = 0;
+                        prevposition = -1;
+                        holder.stop.setEnabled(false);
+                    });
+                }
                 else{
 
-
                     if(length!=0 && !mediaPlayer.isPlaying()){
-                        TastyToast.makeText(ctx,"resume",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+
+                        GenericToast.showToast(ctx,
+                                "Quran verse audio resumed!",
+                                GenericToast.LENGTH_SHORT,
+                                GenericToast.INFO,
+                                GenericToast.LITE,
+                                GenericToast.DEFAULT_FONT,
+                                GenericToast.DEFAULT_FONT);
                         holder.play.setBackgroundResource(R.drawable.pausecolored);
                         mediaPlayer.seekTo(length);
                         mediaPlayer.start();
                     }
                     else if(mediaPlayer.isPlaying()) {
-                        TastyToast.makeText(ctx,"pause",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+
+                        GenericToast.showToast(ctx,
+                                "Quran verse audio paused!",
+                                GenericToast.LENGTH_SHORT,
+                                GenericToast.INFO,
+                                GenericToast.LITE,
+                                GenericToast.DEFAULT_FONT,
+                                GenericToast.DEFAULT_FONT);
                         holder.play.setBackgroundResource(R.drawable.playcolored);
                         mediaPlayer.pause();
                         length = mediaPlayer.getCurrentPosition();
@@ -180,27 +285,109 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
             }
             else {
                 progressDialog.dismiss();
-                displayNoInternet("No Internet");
+                displayNoInternet("No Internet connection");
             }
 
         });
-
-        holder.stop.setOnClickListener(view -> {
-
-//            startplayer();
-            holder.play.setBackgroundResource(R.drawable.playcolored);
-
-
-            mediaPlayer.stop();
-            mediaPlayer.reset();
-//            mediaPlayer.release();
-            TastyToast.makeText(ctx,"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
-            length = 0;
-            onceMedia = 0;
-            prevposition = -1;
-            holder.stop.setEnabled(false);
-
-        });
+//        holder.stop.setEnabled(false);
+//
+//        holder.play.setOnClickListener(view -> {
+//
+////            startplayer();
+//            if(checkConnection()){
+//                if(onceMedia == 0 && position!= prevposition){
+//
+////                mediaPlayer = new MediaPlayer();
+//                    holder.play.setBackgroundResource(R.drawable.pausecolored);
+//                    onceMedia = 1;
+//                    mediaPlayer.reset();
+//                    prevposition = position;
+//                    progressDialog.show();
+//
+//                    String url = getStringUrl(position,num);
+//
+//                    gotoMediaPlayer(url,holder);
+//
+//                    mediaPlayer.setOnCompletionListener(mediaPlayer -> {
+//                        holder.play.setBackgroundResource(R.drawable.playcolored);
+//
+//                        mediaPlayer.stop();
+//                        mediaPlayer.reset();
+////                        mediaPlayer.release();
+////                        TastyToast.makeText(ctx,"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+////                        GenericToast.showToast(ctx,
+////                                "Quran verse audio stopped!",
+////                                GenericToast.LENGTH_SHORT,
+////                                GenericToast.INFO,
+////                                GenericToast.LITE,
+////                                GenericToast.DEFAULT_FONT,
+////                                GenericToast.DEFAULT_FONT);
+//                        length = 0;
+//                        onceMedia = 0;
+//                        prevposition = -1;
+//                        holder.stop.setEnabled(false);
+//                    });
+//
+//                }
+//                else{
+//
+//
+//                    if(length!=0 && !mediaPlayer.isPlaying()){
+////                        TastyToast.makeText(ctx,"resume",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+////                        GenericToast.showToast(ctx,
+////                                "Quran verse audio resumed!",
+////                                GenericToast.LENGTH_SHORT,
+////                                GenericToast.INFO,
+////                                GenericToast.LITE,
+////                                GenericToast.DEFAULT_FONT,
+////                                GenericToast.DEFAULT_FONT);
+//                        holder.play.setBackgroundResource(R.drawable.pausecolored);
+//                        mediaPlayer.seekTo(length);
+//                        mediaPlayer.start();
+//                    }
+//                    else if(mediaPlayer.isPlaying()) {
+////                        TastyToast.makeText(ctx,"pause",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+////                        GenericToast.showToast(ctx,
+////                                "Quran verse audio paused!",
+////                                GenericToast.LENGTH_SHORT,
+////                                GenericToast.INFO,
+////                                GenericToast.LITE,
+////                                GenericToast.DEFAULT_FONT,
+////                                GenericToast.DEFAULT_FONT);
+//                        holder.play.setBackgroundResource(R.drawable.playcolored);
+//                        mediaPlayer.pause();
+//                        length = mediaPlayer.getCurrentPosition();
+//                    }
+//                    onceMedia = 0;
+//                }
+//
+//            }
+//            else {
+//                progressDialog.dismiss();
+//                displayNoInternet("No Internet connection");
+//            }
+//
+//        });
+//
+//        holder.stop.setOnClickListener(view -> {
+//
+//            holder.play.setBackgroundResource(R.drawable.playcolored);
+//            mediaPlayer.stop();
+//            mediaPlayer.reset();
+////            TastyToast.makeText(ctx,"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+////            GenericToast.showToast(ctx,
+////                    "Quran verse audio stopped!",
+////                    GenericToast.LENGTH_SHORT,
+////                    GenericToast.INFO,
+////                    GenericToast.LITE,
+////                    GenericToast.DEFAULT_FONT,
+////                    GenericToast.DEFAULT_FONT);
+//            length = 0;
+//            onceMedia = 0;
+//            prevposition = -1;
+//            holder.stop.setEnabled(false);
+//
+//        });
 
     }
 
@@ -217,7 +404,13 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         mediaPlayer.setOnPreparedListener(mediaPlayer -> {
             progressDialog.dismiss();
             holder.stop.setEnabled(true);
-            TastyToast.makeText(ctx,"play",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+            GenericToast.showToast(ctx,
+                    "Quran verse audio playing!",
+                    GenericToast.LENGTH_SHORT,
+                    GenericToast.INFO,
+                    GenericToast.LITE,
+                    GenericToast.DEFAULT_FONT,
+                    GenericToast.DEFAULT_FONT);
             mediaPlayer.start();
         });
 
@@ -233,14 +426,14 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         if(num==1)
         {
 
-            url = "http://verse.mp3quran.net/arabic/saud_alshuraim/128/00100"+ (position+2) + ".mp3";
+            url = "https://verse.mp3quran.net/arabic/saud_alshuraim/128/00100"+ (position+2) + ".mp3";
 
         }
         else if(num>1&&num<10)
         {
             temp = "00"+num+"000";
             start = Integer.parseInt(temp);
-            url = "http://verse.mp3quran.net/arabic/saud_alshuraim/128/00"+ (start+position+1) + ".mp3";
+            url = "https://verse.mp3quran.net/arabic/saud_alshuraim/128/00"+ (start+position+1) + ".mp3";
 
         }
         else if(num == 17){
@@ -249,31 +442,28 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
             if((position+1)==1 || (position+1)==2){
                 temp = "0" + num+ "000";
                 start = Integer.parseInt(temp);
-                url = "http://verse.mp3quran.net/arabic/saud_alshuraim/128/0"+ (start+position+1) + ".mp3";
+                url = "https://verse.mp3quran.net/arabic/saud_alshuraim/128/0"+ (start+position+1) + ".mp3";
 
             }
             if((position+1)>=3){
                 temp = "0" + num+ "000";
                 start = Integer.parseInt(temp);
-                url = "http://verse.mp3quran.net/arabic/saud_alshuraim/128/0"+ (start+position) + ".mp3";
+                url = "https://verse.mp3quran.net/arabic/saud_alshuraim/128/0"+ (start+position) + ".mp3";
 
             }
-
-
-
         }
         else if(num>=10 && num < 100)
         {
             temp = "0" + num+ "000";
             start = Integer.parseInt(temp);
-            url = "http://verse.mp3quran.net/arabic/saud_alshuraim/128/0"+ (start+position+1) + ".mp3";
+            url = "https://verse.mp3quran.net/arabic/saud_alshuraim/128/0"+ (start+position+1) + ".mp3";
 
         }
         else if (num>=100 && num<115)
         {
             temp = num+"000";
             start = Integer.parseInt(temp);
-            url = "http://verse.mp3quran.net/arabic/saud_alshuraim/128/"+ (start+position+1) + ".mp3";
+            url = "https://verse.mp3quran.net/arabic/saud_alshuraim/128/"+ (start+position+1) + ".mp3";
 
         }
 
@@ -297,8 +487,6 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
 
         holder.bookmark.setVisibility(View.INVISIBLE);
-
-
 
         editor = ctx.getSharedPreferences("QuranBookmark", Context.MODE_PRIVATE).edit();
         editor.putInt("chapterno", Integer.parseInt(split[0]));
@@ -327,17 +515,16 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
             content = itemView.findViewById(R.id.content);
             cardView = itemView.findViewById(R.id.hadithbookmark);
             bookmark = itemView.findViewById(R.id.bookmark);
-
             bookmark.setVisibility(View.GONE);
 
         }
     }
 
-    private void startplayer() {
-
-        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
-        mp.start();
-    }
+//    private void startplayer() {
+//
+//        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
+//        mp.start();
+//    }
 
     @Override
     public int getItemCount() {
@@ -349,9 +536,8 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         }
     }
 
+    @SuppressLint("MissingPermission")
     private boolean checkConnection() {
-
-
         ConnectivityManager connectivityManager = (ConnectivityManager)  ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
@@ -362,7 +548,14 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
     }
 
     private void displayNoInternet(String msg) {
-        TastyToast.makeText(ctx,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+//        TastyToast.makeText(ctx,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+        GenericToast.showToast(ctx,
+                msg,
+                GenericToast.LENGTH_SHORT,
+                GenericToast.ERROR,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
     }
 
 }

@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/hadithbookmark"
         app:cardElevation="10dp"
-        android:background="@color/white"
+        app:cardCornerRadius="@dimen/card_radius"
         android:layout_marginBottom="@dimen/margin_20_dp"
         android:layout_marginLeft="@dimen/margin_20_dp"
         android:layout_marginRight="@dimen/margin_20_dp"
@@ -35,7 +35,7 @@
                     android:paddingTop="7dp"
                     android:textColor="@color/back1"
                     android:layout_marginTop="5dp"
-                    android:textSize="12dp"
+                    android:textSize="12sp"
                     android:text="Hadith title"
                     android:textStyle="bold"
                     android:textAllCaps="true"
@@ -60,7 +60,7 @@
 
             <TextView
                 android:paddingTop="5dp"
-                android:textSize="12dp"
+                android:textSize="16sp"
                 android:layout_marginBottom="5dp"
                 android:id="@+id/content"
                 android:paddingLeft="5dp"

@@ -11,12 +11,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
-import com.sdsmdg.tastytoast.TastyToast;
-
-import java.util.List;
-
 import aidev.com.salahtimer.model.ConfigurationFile;
 import aidev.com.salahtimer.R;
 import aidev.com.salahtimer.model.RetrofitResponseListener;
@@ -36,6 +30,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
+
+import com.aidev.generictoast.GenericToast;
 
 public class TimingsFragment extends Fragment {
 
@@ -83,7 +79,14 @@ public class TimingsFragment extends Fragment {
         tvmhanafi.getHanafiTimingsData(new RetrofitResponseListener() {
             @Override
             public void onFailure() {
-                TastyToast.makeText(getActivity(),"No data found",TastyToast.LENGTH_SHORT,TastyToast.ERROR).show();
+//                TastyToast.makeText(getActivity(),"No data found",TastyToast.LENGTH_SHORT,TastyToast.ERROR).show();
+                GenericToast.showToast(getActivity(),
+                        "No data found!",
+                        GenericToast.LENGTH_SHORT,
+                        GenericToast.ERROR,
+                        GenericToast.LITE,
+                        GenericToast.DEFAULT_FONT,
+                        GenericToast.DEFAULT_FONT);
                 dialog.dismiss();
                 FragmentManager fm = getActivity()
                         .getSupportFragmentManager();
@@ -235,7 +238,7 @@ public class TimingsFragment extends Fragment {
 
 
         i = getDataFromSharedPref(view);
-        Toast.makeText(getActivity(), ""+i ,Toast.LENGTH_SHORT);
+//        Toast.makeText(getActivity(), ""+i ,Toast.LENGTH_SHORT);
 
         setVisibilityToViews(i);
 

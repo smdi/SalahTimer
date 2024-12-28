@@ -1,5 +1,7 @@
 package aidev.com.salahtimer.view;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,7 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.sdsmdg.tastytoast.TastyToast;
+import com.aidev.generictoast.GenericToast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -172,39 +174,17 @@ public class QuranOffline extends Fragment {
         }, this.num);
     }
 
-//    private void fetcherArabic(int exe) {
-//        quranViewModel.getQuranArabicChapterwise(new RetrofitResponseListener() {
-//                @Override
-//                public void onFailure() {
-//                    getPop();
-//                }
-//
-//                @Override
-//                public void onSuccess(TimingsData body) {
-//
-//                }
-//
-//                @Override
-//                public void onSuccess(Quran_Ar_En body) {
-//                    data1 = body.data;
-//                    adapter = new QuranChapterAdapter(getActivity(),data1,data2,quranViewModel,exe, message.split("@"));
-//                    recyclerView.setAdapter(adapter);
-////                    recyclerView.scrollToPosition(data1.size() - 1);
-//                    recyclerView.scrollToPosition(0);
-//                    progressDialog.dismiss();
-//                }
-//
-//                @Override
-//                public void onSuccess(Quran_Transliteration body) {
-//
-//                }
-//            }, num);
-//    }
-
     private void getPop() {
 
         progressDialog.dismiss();
-        TastyToast.makeText(getActivity(),"slow Internet",TastyToast.LENGTH_SHORT,TastyToast.ERROR).show();
+//        TastyToast.makeText(getActivity(),"slow Internet",TastyToast.LENGTH_SHORT,TastyToast.ERROR).show();
+        GenericToast.showToast(getActivity(),
+                "slow Internet connection",
+                GenericToast.LENGTH_SHORT,
+                GenericToast.INFO,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
         FragmentManager fm = getActivity().getSupportFragmentManager();
         fm.popBackStack ("chapter", FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
@@ -263,7 +243,7 @@ public class QuranOffline extends Fragment {
 
         playpause.setOnClickListener(view1 -> {
 
-            startplayer();
+//            startplayer();
 
             try{
                 if(onceMedia == 0){
@@ -292,15 +272,19 @@ public class QuranOffline extends Fragment {
                         mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
                         seekBar.setProgress(0);
                         playpause.setBackgroundResource(R.drawable.play);
-                        TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+//                        TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+                        GenericToast.showToast(getActivity(),
+                                "Quran verse audio stopped!",
+                                GenericToast.LENGTH_SHORT,
+                                GenericToast.INFO,
+                                GenericToast.LITE,
+                                GenericToast.DEFAULT_FONT,
+                                GenericToast.DEFAULT_FONT);
                         mediaPlayer.stop();
                         seekBar.setEnabled(false);
                     });
                 }
-
                 playSurah(mediaPlayer,  mUpdateSeekbar,mSeekbarUpdateHandler);
-
-
             }
             catch (Exception e){
 
@@ -311,7 +295,7 @@ public class QuranOffline extends Fragment {
 
         stop.setOnClickListener(view1 -> {
 
-            startplayer();
+//            startplayer();
             if( mediaPlayer!= null && mediaPlayer.isPlaying()){
                 pplay = 0;
                 length  = 0;
@@ -320,7 +304,14 @@ public class QuranOffline extends Fragment {
                 seekBar.setEnabled(false);
                 mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
                 playpause.setBackgroundResource(R.drawable.play);
-                TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+//                TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+                GenericToast.showToast(getActivity(),
+                        "Quran verse audio stopped!",
+                        GenericToast.LENGTH_SHORT,
+                        GenericToast.INFO,
+                        GenericToast.LITE,
+                        GenericToast.DEFAULT_FONT,
+                        GenericToast.DEFAULT_FONT);
                 mediaPlayer.stop();
             }
 
@@ -356,19 +347,19 @@ public class QuranOffline extends Fragment {
 //        });
 
         translitertion.setOnClickListener(view1 -> {
-            startplayer();
+//            startplayer();
             store(3);
             fetcherTransliteration(3, num);
         });
 
         translation.setOnClickListener(view1 -> {
-            startplayer();
+//            startplayer();
             if(checkConnection()){
                 store(2);
                 fetcherTranslation(2, num);
             }
             else {
-                displayNoInternet("No Internet");
+                displayNoInternet("No Internet connection");
             }
         });
 
@@ -388,19 +379,40 @@ public class QuranOffline extends Fragment {
 
             pplay = 1;
             if(!mediaPlayer.isPlaying()&& length != 0){
-                TastyToast.makeText(getActivity(),"resume",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+//                TastyToast.makeText(getActivity(),"resume",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+                GenericToast.showToast(getActivity(),
+                        "Quran verse audio resumed!",
+                        GenericToast.LENGTH_SHORT,
+                        GenericToast.INFO,
+                        GenericToast.LITE,
+                        GenericToast.DEFAULT_FONT,
+                        GenericToast.DEFAULT_FONT);
                 mediaPlayer.seekTo(length);
                 mediaPlayer.start();
             }
             else {
-                TastyToast.makeText(getActivity(),"play",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+//                TastyToast.makeText(getActivity(),"play",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+                GenericToast.showToast(getActivity(),
+                        "Quran verse audio playing!",
+                        GenericToast.LENGTH_SHORT,
+                        GenericToast.INFO,
+                        GenericToast.LITE,
+                        GenericToast.DEFAULT_FONT,
+                        GenericToast.DEFAULT_FONT);
                 mediaPlayer.start();}
             playpause.setBackgroundResource(R.drawable.pause);
             mSeekbarUpdateHandler.postDelayed(mUpdateSeekbar, 0);
             seekBar.setEnabled(true);
         }
         else{
-            TastyToast.makeText(getActivity(),"pause",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+//            TastyToast.makeText(getActivity(),"pause",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+            GenericToast.showToast(getActivity(),
+                    "Quran verse audio paused!",
+                    GenericToast.LENGTH_SHORT,
+                    GenericToast.INFO,
+                    GenericToast.LITE,
+                    GenericToast.DEFAULT_FONT,
+                    GenericToast.DEFAULT_FONT);
             pplay = 0;
             mediaPlayer.pause();
             length = mediaPlayer.getCurrentPosition();
@@ -430,15 +442,21 @@ public class QuranOffline extends Fragment {
             seekBar.setEnabled(false);
             mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
             playpause.setBackgroundResource(R.drawable.play);
-            TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+//            TastyToast.makeText(getActivity(),"stop",TastyToast.LENGTH_SHORT,TastyToast.INFO).show();
+            GenericToast.showToast(getActivity(),
+                    "Quran verse audio stopped!",
+                    GenericToast.LENGTH_SHORT,
+                    GenericToast.INFO,
+                    GenericToast.LITE,
+                    GenericToast.DEFAULT_FONT,
+                    GenericToast.DEFAULT_FONT);
             mediaPlayer.stop();
         }
     }
 
 
+    @SuppressLint("MissingPermission")
     private boolean checkConnection() {
-
-
         ConnectivityManager connectivityManager = (ConnectivityManager)  getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
@@ -448,13 +466,14 @@ public class QuranOffline extends Fragment {
 
     }
     private void displayNoInternet(String msg) {
-        TastyToast.makeText(getActivity(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
-    }
-
-    private void startplayer() {
-
-        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
-        mp.start();
+//        TastyToast.makeText(getActivity(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+        GenericToast.showToast(getActivity(),
+                msg,
+                GenericToast.LENGTH_SHORT,
+                GenericToast.ERROR,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
     }
 
 }

@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/linear_layout_menu_radius.xml" value="0.135" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/navigation_back.xml" value="0.1825" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/activity_router.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_allah_names.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_compass.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_ghust_ke_adaab.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_hadith.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_hadithbookmark.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_hadithnotifier.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_location.xml" value="0.264" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_namaz_ke_dua.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_notify.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_offline_quran_chapter.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_quran_chapter.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_quran_index.xml" value="0.536" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_quranbookmark.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_tasbeeh.xml" value="0.536" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_timings_item.xml" value="0.264" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_unlawfulgazes.xml" value="0.264" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/hadith_bookmark_list.xml" value="0.536" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/hadithlist.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/item_namaz_ke_dua.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/item_names.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/offlie_quran_chapter_list.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/quran_bookmark.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/quran_chapter_list.xml" value="0.25" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/read.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/menu/navigation.xml" value="0.27447916666666666" />
+      </map>
+    </option>
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />

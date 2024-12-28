@@ -17,11 +17,9 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import aidev.com.salahtimer.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.onesignal.OSNotificationOpenResult;
-import com.onesignal.OneSignal;
-import com.sdsmdg.tastytoast.TastyToast;
 
+import com.aidev.generictoast.GenericToast;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -75,7 +73,7 @@ public class Router extends AppCompatActivity {
                 fragmentTransaction.commit();
             }
             else {
-                displayNoInternet("No Internet");
+                displayNoInternet("No Internet connection");
             }
         }
         else{
@@ -84,9 +82,8 @@ public class Router extends AppCompatActivity {
                     new RouterFactory(getApplicationContext(),getFragementManagerObject(),Router.this)).get(RouterViewModel.class);
 
 
-
             BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-            navigation.setOnNavigationItemSelectedListener(rvm.getBottomNavbarObject());
+            navigation.setOnItemSelectedListener(rvm.getBottomNavbarObject());
             navigation.setSelectedItemId(R.id.salahtimings);
 
             SharedPreferences sh = getSharedPreferences("DB", Context.MODE_PRIVATE);
@@ -185,7 +182,6 @@ public class Router extends AppCompatActivity {
 
     private boolean checkConnection() {
 
-
         ConnectivityManager connectivityManager = (ConnectivityManager)  getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
@@ -196,7 +192,14 @@ public class Router extends AppCompatActivity {
     }
 
     private void displayNoInternet(String msg) {
-        TastyToast.makeText(getApplicationContext(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+//        TastyToast.makeText(ctx,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+        GenericToast.showToast(getApplicationContext(),
+                msg,
+                GenericToast.LENGTH_SHORT,
+                GenericToast.ERROR,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
     }
 
 }

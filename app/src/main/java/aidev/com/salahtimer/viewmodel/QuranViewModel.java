@@ -50,41 +50,6 @@ public class QuranViewModel extends ViewModel {
         }
         else return api_trans;
     }
-
-//    public void getQuranArabicChapterwise(final RetrofitResponseListener retrofitResponseListener, int number){
-//
-//        if(arb == null ){
-//
-//            Call<List<Quran_Ar_En>> call = getAPI_Ar_en().getQuranData(number);
-//            call.enqueue(new Callback<List<Quran_Ar_En>>() {
-//                @Override
-//                public void onResponse(Call<List<Quran_Ar_En>> call, Response<List<Quran_Ar_En>> response) {
-//
-//
-//                    if(response.isSuccessful()){
-//                        arb = response.body();
-//                        retrofitResponseListener.onSuccess(arb.get(0));
-//                        Toast.makeText(activity,""+arb.get(0).data.get(0).verseId,Toast.LENGTH_SHORT).show();
-//                    }else {
-//                        retrofitResponseListener.onFailure();
-//                    }
-//
-//                }
-//
-//                @Override
-//                public void onFailure(Call<List<Quran_Ar_En>> call, Throwable t) {
-//                    call.cancel();
-//                    Toast.makeText(activity,""+t,Toast.LENGTH_SHORT).show();
-//                    retrofitResponseListener.onFailure();
-//                }
-//            });
-//
-//        }
-//        else{
-//            retrofitResponseListener.onSuccess(arb.get(0));
-//        }
-//    }
-
     public void getQuranEnglishChapterwise(final RetrofitResponseListener retrofitResponseListener, int number){
 
         if(eng == null ){

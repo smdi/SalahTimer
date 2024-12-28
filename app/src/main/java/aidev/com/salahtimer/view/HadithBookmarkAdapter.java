@@ -1,25 +1,18 @@
 package aidev.com.salahtimer.view;
 
-import android.app.Fragment;
+
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebViewFragment;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-
 import java.util.List;
-
 import aidev.com.salahtimer.R;
 import aidev.com.salahtimer.model.pojo.HadithBookmarkDBTable;
 import aidev.com.salahtimer.viewmodel.HadithBookmarkViewModel;
-import androidx.cardview.widget.CardView;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 public class HadithBookmarkAdapter extends RecyclerView.Adapter<HadithBookmarkAdapter.ViewHolder>{
@@ -49,7 +42,7 @@ public class HadithBookmarkAdapter extends RecyclerView.Adapter<HadithBookmarkAd
 
         HadithBookmarkDBTable hadithBookmarkDBTable = listitem.get(position);
 
-        holder.title.setText(hadithBookmarkDBTable.getSerail_no_of_hadith()+"\t"+hadithBookmarkDBTable.getTitle());
+        holder.title.setText(hadithBookmarkDBTable.getSerail_no_of_hadith()+"\t\t"+hadithBookmarkDBTable.getTitle());
 
         holder.content.setText(hadithBookmarkDBTable.getContent());
 
@@ -88,10 +81,10 @@ public class HadithBookmarkAdapter extends RecyclerView.Adapter<HadithBookmarkAd
         }
     }
 
-    private void startplayer() {
-
-        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
-        mp.start();
-    }
+//    private void startplayer() {
+//
+//        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
+//        mp.start();
+//    }
 
 }

@@ -2,6 +2,7 @@ package aidev.com.salahtimer.view;
 
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import android.media.MediaPlayer;
@@ -15,9 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.sdsmdg.tastytoast.TastyToast;
+import com.aidev.generictoast.GenericToast;
 
 
 import java.util.ArrayList;
@@ -67,11 +67,11 @@ public class QuranIndexDisplay extends Fragment {
 
     }
 
-    private void startplayer() {
-
-        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
-        mp.start();
-    }
+//    private void startplayer() {
+//
+//        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
+//        mp.start();
+//    }
 
     private void movetoQuranChapter(int num){
 
@@ -85,8 +85,8 @@ public class QuranIndexDisplay extends Fragment {
         fragmentTransaction.commit();
     }
 
+    @SuppressLint("MissingPermission")
     private boolean checkConnection() {
-
 
         ConnectivityManager connectivityManager = (ConnectivityManager)  getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
@@ -95,8 +95,5 @@ public class QuranIndexDisplay extends Fragment {
 
         } else { return false; }
 
-    }
-    private void displayNoInternet(String msg) {
-        TastyToast.makeText(getActivity(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
     }
 }

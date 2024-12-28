@@ -1,5 +1,6 @@
 package aidev.com.salahtimer.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,42 +8,26 @@ import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-
-import com.google.android.material.textfield.TextInputLayout;
-import com.sdsmdg.tastytoast.TastyToast;
-
-import org.w3c.dom.Text;
-
+import com.aidev.generictoast.GenericToast;
 import java.util.ArrayList;
 import java.util.List;
-
 import aidev.com.salahtimer.R;
-
-
 import aidev.com.salahtimer.model.pojo.CountryCityDBTable;
 import aidev.com.salahtimer.model.pojo.CountryCityRepository;
-import aidev.com.salahtimer.viewmodel.RouterViewModel;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModelProvider;
+
 
 
 public class Location extends Fragment {
@@ -52,7 +37,7 @@ public class Location extends Fragment {
     private Button search;
     private AutoCompleteTextView cityac, conac;
     private TextView share;
-    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark, quran, bookmark, names99, namazkdua, ghustkadaab;
+    private LinearLayout tasbeeh, unlawfulgazes, hadith, hadithBookmark, quran, bookmark, names99, namazkdua;
     private TextView cityerr, conerr;
 
     private CountryCityRepository mRepository;
@@ -92,18 +77,18 @@ public class Location extends Fragment {
         share = (TextView) view.findViewById(R.id.share);
         share.setOnClickListener(view13 -> {
 
-            startplayer();
+//            startplayer();
 
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, "Islami Duniya");
-            String sAux = "\nAssalamualaikum wa Rahamatullahi wa Barakaatuhu\n" +
-                    "\nKnow Namaz timings, Qibla, Islamic Calendar, Quran in english transliteration and translation, Hadith, Tasbeeh counter," +
-                    "Unlawful gazes, Masjid finder, Names of Allah s.w.t, Ghust ke adaab, Namaz ke dua with Islami Duniya application";
+            String sAux = "\nAssalamualaikum wa rahamatullahi wa barakaatuhu\n" +
+                    "\nKnow salah timings,\nQuran in english transliteration and translation,\nHadith,\nTasbeeh counter,\n" +
+                    "Names of Allah s.w.t,\nDuaen with Islami Duniya application";
 
             sAux = sAux + "\n\nPlay store link for the application\n\n"  + AppLInks.getPlaystore() + "\n\n\n";
 
-            sAux = sAux + "Download the app and share with your friends and family, give your ratings and reviews.";
+//            sAux = sAux + "Download and share the app";
 
 //            sAux = sAux + "\n\nDrive link for Offline Quran apk\n\n"  + AppLInks.getOfflineAppLink() + "\n\n";
 
@@ -112,21 +97,21 @@ public class Location extends Fragment {
 
         });
 
-        ghustkadaab = (LinearLayout) view.findViewById(R.id.gustkadab);
-        ghustkadaab.setOnClickListener(view1 -> {
-            startplayer();
-            loadFragmentWithNoInternet(new GhustKeAdaab(),"ghust");
-        });
+//        ghustkadaab = (LinearLayout) view.findViewById(R.id.gustkadab);
+//        ghustkadaab.setOnClickListener(view1 -> {
+//            startplayer();
+//            loadFragmentWithNoInternet(new GhustKeAdaab(),"ghust");
+//        });
 
         namazkdua = (LinearLayout) view.findViewById(R.id.namazkdua);
         namazkdua.setOnClickListener(view1 -> {
-            startplayer();
+//            startplayer();
             loadFragmentWithNoInternet(new Namaz_me_dua(),"namaz ke dua");
         });
 
         quran = (LinearLayout) view.findViewById(R.id.quran);
         quran.setOnClickListener(view1 -> {
-            startplayer();
+//            startplayer();
             loadFragmentWithNoInternet(new QuranIndexDisplay(),"index");
 
         });
@@ -134,21 +119,21 @@ public class Location extends Fragment {
 
         bookmark = (LinearLayout) view.findViewById(R.id.quranbookmark);
         bookmark.setOnClickListener(view1 -> {
-            startplayer();
+//            startplayer();
             loadFragmentWithNoInternet(new QuranBookmark(),"quranbookmark");
         });
 
 
         names99 = (LinearLayout) view.findViewById(R.id.names99);
         names99.setOnClickListener(view1 -> {
-            startplayer();
+//            startplayer();
             loadFragmentWithNoInternet(new AllahNames(),"AllahNames");
         });
 
 
         hadith = (LinearLayout) view.findViewById(R.id.hadith);
         hadith.setOnClickListener(view1 -> {
-            startplayer();
+//            startplayer();
             Bundle bundle = new Bundle();
             bundle.putString("data","read");
             Fragment fragment = new Hadith();
@@ -160,21 +145,21 @@ public class Location extends Fragment {
 
         tasbeeh = (LinearLayout) view.findViewById(R.id.tasbeehlayout);
         tasbeeh.setOnClickListener(view1 -> {
-            startplayer();
+//            startplayer();
             loadFragmentWithNoInternet(new TasbeehFragment(),"tasbeeh");
         });
 
 
-        unlawfulgazes = (LinearLayout) view.findViewById(R.id.unlawfulgazes);
-        unlawfulgazes.setOnClickListener(view1 -> {
-            startplayer();
-            loadFragmentWithNoInternet(new UnlawfulGazes(),"unlawfulgazes");
-
-        });
+//        unlawfulgazes = (LinearLayout) view.findViewById(R.id.unlawfulgazes);
+//        unlawfulgazes.setOnClickListener(view1 -> {
+////            startplayer();
+//            loadFragmentWithNoInternet(new UnlawfulGazes(),"unlawfulgazes");
+//
+//        });
 
         hadithBookmark = (LinearLayout) view.findViewById(R.id.hadithbookmark);
         hadithBookmark.setOnClickListener(view1 -> {
-            startplayer();
+//            startplayer();
             loadFragmentWithNoInternet(new HadithBookmark(),"HadithBookmark");
         });
 
@@ -220,7 +205,7 @@ public class Location extends Fragment {
 
 
         search.setOnClickListener(view -> {
-            startplayer();
+//            startplayer();
 
             String cityText = cityac.getText().toString();
             String countryText = conac.getText().toString();
@@ -263,7 +248,7 @@ public class Location extends Fragment {
             fragmentTransaction.replace(R.id.location,fragment).addToBackStack("timings");
             fragmentTransaction.commit();
         }
-        else { displayNoInternet("No Internet"); }
+        else { displayNoInternet("No Internet connection"); }
 
     }
     public boolean loadFragment(Fragment fragment, String tag) {
@@ -275,7 +260,7 @@ public class Location extends Fragment {
             ft.commitAllowingStateLoss();
             return  true;
         }}
-        else { displayNoInternet("No Internet"); }
+        else { displayNoInternet("No Internet connection"); }
 
         return false;
     }
@@ -293,17 +278,24 @@ public class Location extends Fragment {
     }
 
     private void displayNoInternet(String msg) {
-        TastyToast.makeText(getActivity(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+//        TastyToast.makeText(getActivity(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+        GenericToast.showToast(getActivity(),
+                msg,
+                GenericToast.LENGTH_SHORT,
+                GenericToast.ERROR,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
     }
 
-    private void startplayer() {
+//    private void startplayer() {
+//
+//        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
+//        mp.start();
+//    }
 
-        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
-        mp.start();
-    }
-
+    @SuppressLint("MissingPermission")
     private boolean checkConnection() {
-
 
         ConnectivityManager connectivityManager = (ConnectivityManager)  getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||

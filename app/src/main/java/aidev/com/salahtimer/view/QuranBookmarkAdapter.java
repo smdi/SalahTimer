@@ -1,5 +1,7 @@
 package aidev.com.salahtimer.view;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
@@ -8,19 +10,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.sdsmdg.tastytoast.TastyToast;
-
+import com.aidev.generictoast.GenericToast;
 import java.util.List;
-import java.util.concurrent.TimeoutException;
-
 import aidev.com.salahtimer.R;
-import aidev.com.salahtimer.model.pojo.HadithBookmarkDBTable;
 import aidev.com.salahtimer.model.pojo.QuranBookMarkDBTable;
 import aidev.com.salahtimer.model.pojo.QuranBookmarkRepository;
-import aidev.com.salahtimer.viewmodel.HadithBookmarkViewModel;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -89,11 +84,11 @@ public class QuranBookmarkAdapter extends RecyclerView.Adapter<QuranBookmarkAdap
             fragmentTransaction.replace(R.id.quranbookmark,fragment).addToBackStack("chapter");
             fragmentTransaction.commit();
         }
-        else { displayNoInternet("No Internet"); }
+        else { displayNoInternet("No Internet connection"); }
     }
 
+    @SuppressLint("MissingPermission")
     private boolean checkConnection() {
-
 
         ConnectivityManager connectivityManager = (ConnectivityManager)  ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
@@ -104,7 +99,14 @@ public class QuranBookmarkAdapter extends RecyclerView.Adapter<QuranBookmarkAdap
 
     }
     private void displayNoInternet(String msg) {
-        TastyToast.makeText(ctx,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+//        TastyToast.makeText(ctx,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+        GenericToast.showToast(ctx,
+                msg,
+                GenericToast.LENGTH_SHORT,
+                GenericToast.ERROR,
+                GenericToast.LITE,
+                GenericToast.DEFAULT_FONT,
+                GenericToast.DEFAULT_FONT);
     }
 
     @Override
@@ -131,10 +133,10 @@ public class QuranBookmarkAdapter extends RecyclerView.Adapter<QuranBookmarkAdap
         }
     }
 
-    private void startplayer() {
-
-        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
-        mp.start();
-    }
+//    private void startplayer() {
+//
+//        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
+//        mp.start();
+//    }
 
 }

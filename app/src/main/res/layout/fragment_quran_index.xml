@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/hadithbookmark"
         app:cardElevation="10dp"
-        android:background="@color/white"
+        app:cardCornerRadius="@dimen/card_radius"
         android:layout_marginBottom="@dimen/margin_20_dp"
         android:layout_marginLeft="@dimen/margin_20_dp"
         android:layout_marginRight="@dimen/margin_20_dp"
@@ -140,18 +140,10 @@
                     android:textSize="14sp"
                     />
 
-
-
-
-
             </LinearLayout>
-
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-
-
 
 </RelativeLayout>

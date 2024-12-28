@@ -9,15 +9,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import android.widget.AdapterView;
-import android.widget.ListView;
-
-import com.sdsmdg.tastytoast.TastyToast;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import aidev.com.salahtimer.R;
@@ -55,13 +46,9 @@ public class Hadith extends Fragment {
 
         initialiser(view);
 
-
-
         hadithBookmarkViewModel = new ViewModelProvider(this).get(HadithBookmarkViewModel.class);
 
         hadithBookmarkViewModel.getAllHadiths().observe(this, hadithBookmarkDBTables -> {
-
-            //set data to adapter
 
             if(getArguments().getString("data")!=null ){
 

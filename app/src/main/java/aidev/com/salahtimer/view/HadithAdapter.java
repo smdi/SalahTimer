@@ -1,23 +1,14 @@
 package aidev.com.salahtimer.view;
 
-import android.app.Fragment;
+
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebViewFragment;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
-
-import java.util.Collections;
 import java.util.List;
-
 import aidev.com.salahtimer.R;
 import aidev.com.salahtimer.model.pojo.HadithBookmarkDBTable;
 import aidev.com.salahtimer.viewmodel.HadithBookmarkViewModel;
@@ -51,7 +42,7 @@ public class HadithAdapter extends RecyclerView.Adapter<HadithAdapter.ViewHolder
 
         HadithBookmarkDBTable hadithBookmarkDBTable = listitem.get(position);
 
-        holder.title.setText(hadithBookmarkDBTable.getSerail_no_of_hadith()+"\t"+hadithBookmarkDBTable.getTitle());
+        holder.title.setText(hadithBookmarkDBTable.getSerail_no_of_hadith()+"\t\t"+hadithBookmarkDBTable.getTitle());
 
         holder.content.setText(hadithBookmarkDBTable.getContent());
 

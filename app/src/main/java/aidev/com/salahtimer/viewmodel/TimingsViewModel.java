@@ -1,10 +1,5 @@
 package aidev.com.salahtimer.viewmodel;
 
-
-import com.sdsmdg.tastytoast.TastyToast;
-
-import java.util.List;
-
 import aidev.com.salahtimer.model.APIClientTimings;
 import aidev.com.salahtimer.model.APITimingsInterface;
 import aidev.com.salahtimer.model.RetrofitResponseListener;
