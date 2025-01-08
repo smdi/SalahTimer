@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/quranchapter"
-    android:background="@drawable/bottom_curve_white"
+    android:background="@color/dark_mode_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -111,7 +111,6 @@
         android:id="@+id/quranverses"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="22dp"
         app:fastScrollEnabled="true"
         app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
         app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"

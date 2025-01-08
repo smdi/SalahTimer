@@ -83,7 +83,7 @@ public class Location extends Fragment {
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, "Islami Duniya");
             String sAux = "\nAssalamualaikum wa rahamatullahi wa barakaatuhu\n" +
-                    "\nKnow salah timings,\nQuran in english transliteration and translation,\nHadith,\nTasbeeh counter,\n" +
+                    "\nKnow salah timings,\nQuran in english transliteration,\nHadith,\nTasbeeh counter,\n" +
                     "Names of Allah s.w.t,\nDuaen with Islami Duniya application";
 
             sAux = sAux + "\n\nPlay store link for the application\n\n"  + AppLInks.getPlaystore() + "\n\n\n";

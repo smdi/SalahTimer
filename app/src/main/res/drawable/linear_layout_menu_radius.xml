@@ -4,16 +4,17 @@
     android:shape="rectangle"   >
 
     <solid
-        android:color="#FFFFFF" >
+        android:color="@color/dark_mode_background" >
     </solid>
 
     <stroke
         android:width="2dp"
-        android:color="#FFFFFF" >
+        android:color="@color/dark_mode_background_dark" >
     </stroke>
 
     <corners
-        android:radius="6dp"   >
+        android:radius="6dp"
+        android:color="@color/dark_mode_background_dark">
     </corners>
 
 </shape>

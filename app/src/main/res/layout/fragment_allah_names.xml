@@ -4,17 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/quranindex"
-    android:background="@drawable/bottom_curve_white"
+    android:background="@color/dark_mode_background"
     >
 
 
     <ListView
-        android:dividerHeight="0dp"
-        android:divider="@color/white"
-        android:layout_marginBottom="21dp"
+        android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listview"
-        />
+        android:dividerHeight="0dp" />
 
 </RelativeLayout>

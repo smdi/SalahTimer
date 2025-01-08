@@ -196,7 +196,7 @@ public class TimingsFragment extends Fragment {
 
     private void initializer(View view) {
 
-        dialog = new ProgressDialog(getActivity());
+        dialog = new ProgressDialog(getActivity(), R.style.CustomProgressDialog);
         dialog.setMessage("processing data!");
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);

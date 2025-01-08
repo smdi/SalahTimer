@@ -89,7 +89,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="imagePath" value="C:\Users\Shaik Mohammad Imran\Downloads\Group 6.png" />
+                                                <entry key="imagePath" value="C:\Users\Shaik Mohammad Imran\Downloads" />
                                                 <entry key="scalingPercent" value="48" />
                                               </map>
                                             </option>
@@ -101,6 +101,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
+                                                <entry key="color" value="000000" />
                                                 <entry key="imagePath" value="C:\Users\SHAIKM~1\AppData\Local\Temp\ic_android_black_24dp.xml" />
                                               </map>
                                             </option>
@@ -113,7 +114,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\Shaik Mohammad Imran\Downloads\Group 6 (1).png" />
+                                                <entry key="imagePath" value="C:\Users\Shaik Mohammad Imran\Downloads\undraw_no-data_ig65 (1).svg" />
                                                 <entry key="scalingPercent" value="46" />
                                               </map>
                                             </option>
@@ -149,7 +150,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="ffffff" />
+                                      <entry key="backgroundColor" value="181818" />
+                                      <entry key="outputName" value="no_data_dark" />
                                     </map>
                                   </option>
                                 </PersistentState>

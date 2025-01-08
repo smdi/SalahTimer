@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/hadith"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bottom_curve_white"
+    android:background="@color/dark_mode_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,7 +12,6 @@
         android:id="@+id/recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:fastScrollEnabled="true"
         app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:background="#FFF"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -16,19 +16,21 @@
         android:layout_marginRight="@dimen/margin_20_dp"
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/margin_20_dp"
+        app:cardBackgroundColor="@color/dark_mode_background_dark"
         android:layout_height="80dp">
 
 
         <LinearLayout
             android:layout_gravity="center"
             android:id="@+id/top"
+            android:background="@color/dark_mode_background"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
 
             <LinearLayout
-                android:layout_marginTop="2dp"
+                android:background="@color/dark_mode_background"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
@@ -49,7 +51,7 @@
                     />
 
                 <TextView
-                    android:layout_marginBottom="2dp"
+
                     android:layout_marginTop="2dp"
                     android:layout_gravity="center_vertical"
                     android:id="@+id/totalayahs"
@@ -58,7 +60,7 @@
                     android:layout_weight="1"
                     android:text="6 Ayahs"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDarkOn"
+                    android:textColor="@color/dark_mode_text"
                     android:textSize="14sp"
                     />
 
@@ -68,7 +70,7 @@
 
 
             <LinearLayout
-                android:layout_marginTop="2dp"
+                android:background="@color/dark_mode_background"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
@@ -89,7 +91,7 @@
 
 
                 <TextView
-                    android:layout_marginBottom="2dp"
+
                     android:layout_marginTop="2dp"
                     android:layout_gravity="center_vertical"
                     android:id="@+id/language"
@@ -98,7 +100,7 @@
                     android:layout_weight="1"
                     android:text="arabic"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDarkOn"
+                    android:textColor="@color/dark_mode_text"
                     android:textSize="14dp"
                     />
 
@@ -107,7 +109,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="2dp"
+                android:background="@color/dark_mode_background"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
@@ -127,7 +129,6 @@
                     />
 
                 <TextView
-                    android:layout_marginBottom="2dp"
                     android:layout_marginTop="2dp"
                     android:layout_gravity="center_vertical"
                     android:id="@+id/place"
@@ -136,7 +137,7 @@
                     android:layout_weight="1"
                     android:text="makki"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDarkOn"
+                    android:textColor="@color/dark_mode_text"
                     android:textSize="14sp"
                     />
 

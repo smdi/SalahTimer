@@ -6,7 +6,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
+import android.net.NetworkRequest;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -177,7 +180,7 @@ public class QuranChapter extends Fragment {
 
     private void initialiser(View view) {
 
-        progressDialog = new ProgressDialog(getActivity());
+        progressDialog = new ProgressDialog(getActivity(), R.style.CustomProgressDialog);
         progressDialog.setMessage("processing data!");
         progressDialog.setCancelable(true);
         progressDialog.setCanceledOnTouchOutside(true);

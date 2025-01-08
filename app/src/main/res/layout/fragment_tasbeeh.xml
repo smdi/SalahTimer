@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tasbeehfrag"
     android:orientation="vertical"
-    android:background="@drawable/bottom_curve_white"
+    android:background="@color/dark_mode_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -28,7 +28,7 @@
 
 
                 <TextView
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/darkgray"
                     android:layout_marginTop="@dimen/margin_20_dp"
                     android:textSize="18sp"
                     android:text="Assalamualaikum son of adam(a.s)"
@@ -61,7 +61,7 @@
 
             <androidx.cardview.widget.CardView
                 app:cardElevation="10dp"
-                app:cardBackgroundColor="@color/back1"
+                app:cardBackgroundColor="@color/back5"
                 android:layout_marginLeft="@dimen/margin_20_dp"
                 android:layout_marginRight="@dimen/margin_20_dp"
                 android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                         <TextView
                             android:layout_marginTop="5dp"
                             android:gravity="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/dark_mode_text"
                             android:textAllCaps="true"
                             android:layout_weight="1"
                             android:text="dhikr count"
@@ -99,7 +99,7 @@
                             android:layout_margin="10dp"
                             android:layout_gravity="center"
                             android:id="@+id/counttasbeeh"
-                            android:textColor="@color/white"
+                            android:textColor="@color/dark_mode_text"
                             android:textAllCaps="false"
                             android:layout_weight="1"
                             android:text="0"
@@ -164,10 +164,13 @@
                 android:layout_width="match_parent"
                 android:layout_marginTop="@dimen/margin_20_dp"
                 app:cardCornerRadius="8dp"
+                android:background="@color/dark_mode_background"
+                app:cardBackgroundColor="@color/dark_mode_background_dark"
                 android:layout_height="wrap_content">
 
 
                 <LinearLayout
+                    android:background="@color/dark_mode_background"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -198,7 +201,7 @@
                         android:paddingBottom="10dp"
                         android:layout_marginLeft="@dimen/margin_20_dp"
                         android:layout_marginRight="@dimen/margin_20_dp"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/dark_mode_text"
                         android:text="Abu Huraira reported: The Messenger of Allah, peace and blessings be upon him, said,\n\n“To declare the glory of Allah, the praise of Allah, the oneness of Allah, and the greatness of Allah is more beloved to me than anything over which the sun rises.”"
                         android:textAllCaps="false"
                         android:layout_width="match_parent"

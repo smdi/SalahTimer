@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name='dark_mode_background'>#181818</color>
+    <color name='dark_mode_background_dark'>#202020</color>
+    <color name='dark_mode_background_light'>#302F2F</color>
+    <color name='dark_mode_text'>#CCCCCC</color>
     <color name="gray">#eaeaea</color>
     <color name="little_gray">#b4b4b4</color>
     <color name="darkgray">#878787</color>

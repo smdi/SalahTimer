@@ -1,7 +1,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bottom_curve_white"
+    android:background="@color/dark_mode_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/nodata"
         android:visibility="invisible"
-        android:src="@drawable/nodata"
+        android:src="@drawable/no_data_dark_foreground"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -19,7 +19,7 @@
         android:id="@+id/recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="22dp"
+        android:background="@color/dark_mode_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
