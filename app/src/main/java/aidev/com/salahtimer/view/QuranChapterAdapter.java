@@ -10,22 +10,15 @@ import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
-import android.net.NetworkInfo;
-import android.net.NetworkRequest;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.aidev.generictoast.GenericToast;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import java.util.List;
 
 import aidev.com.salahtimer.R;
@@ -195,55 +188,58 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
                 return; // Exit early to avoid further execution
             }
 
-            if (position != prevposition) {
-                // Reset UI for the previously selected verse
-                if (previousViewHolder != null) {
-                    previousViewHolder.play.setBackgroundResource(R.drawable.playcolored);
-                    previousViewHolder.play.setVisibility(View.INVISIBLE);
-                    previousViewHolder.stop.setEnabled(false);
-                }
-
-                // Start playing the new verse
-                holder.play.setBackgroundResource(R.drawable.pausecolored);
-                holder.play.setVisibility(View.VISIBLE);
-                onceMedia = 1;
-                mediaPlayer.reset();
-                prevposition = position;
-                previousViewHolder = holder;
-                progressDialog.show();
-
-                String url = getStringUrl(position, num);
-                gotoMediaPlayer(url, holder);
-
-                mediaPlayer.setOnCompletionListener(mediaPlayer -> {
-                    holder.play.setBackgroundResource(R.drawable.playcolored);
-                    holder.play.setVisibility(View.INVISIBLE); // Hide play button on completion
-                    mediaPlayer.stop();
-                    mediaPlayer.reset();
-
-                    length = 0;
-                    onceMedia = 0;
-                    prevposition = -1;
-                    holder.stop.setEnabled(false);
-                    previousViewHolder = null;
-                });
-            } else {
-                // Toggle pause/resume for the currently playing verse
-                if (mediaPlayer.isPlaying()) {
-                    mediaPlayer.pause();
-                    length = mediaPlayer.getCurrentPosition();
-                    holder.play.setBackgroundResource(R.drawable.playcolored); // Update to play icon
-                } else {
-                    mediaPlayer.seekTo(length);
-                    mediaPlayer.start();
-                    holder.play.setBackgroundResource(R.drawable.pausecolored); // Update to pause icon
-                }
-                holder.play.setVisibility(View.VISIBLE);
-            }
+            playSingleVerse(position, holder, mediaPlayer);
         });
 
     }
 
+    private void playSingleVerse(int position, ViewHolder holder, MediaPlayer mediaPlayer){
+        if (position != prevposition) {
+            // Reset UI for the previously selected verse
+            if (previousViewHolder != null) {
+                previousViewHolder.play.setBackgroundResource(R.drawable.playcolored);
+                previousViewHolder.play.setVisibility(View.INVISIBLE);
+                previousViewHolder.stop.setEnabled(false);
+            }
+
+            // Start playing the new verse
+            holder.play.setBackgroundResource(R.drawable.pausecolored);
+            holder.play.setVisibility(View.VISIBLE);
+            onceMedia = 1;
+            mediaPlayer.reset();
+            prevposition = position;
+            previousViewHolder = holder;
+            progressDialog.show();
+
+            String url = getStringUrl(position, num);
+            gotoMediaPlayer(url, holder);
+
+            mediaPlayer.setOnCompletionListener(mp -> {
+                holder.play.setBackgroundResource(R.drawable.playcolored);
+                holder.play.setVisibility(View.INVISIBLE); // Hide play button on completion
+                mediaPlayer.stop();
+                mediaPlayer.reset();
+
+                length = 0;
+                onceMedia = 0;
+                this.prevposition = -1;
+                holder.stop.setEnabled(false);
+                this.previousViewHolder = null;
+            });
+        } else {
+            // Toggle pause/resume for the currently playing verse
+            if (this.mediaPlayer.isPlaying()) {
+                this.mediaPlayer.pause();
+                length = this.mediaPlayer.getCurrentPosition();
+                holder.play.setBackgroundResource(R.drawable.playcolored); // Update to play icon
+            } else {
+                this.mediaPlayer.seekTo(length);
+                this.mediaPlayer.start();
+                holder.play.setBackgroundResource(R.drawable.pausecolored); // Update to pause icon
+            }
+            holder.play.setVisibility(View.VISIBLE);
+        }
+    }
     private void gotoMediaPlayer(String url, ViewHolder holder) {
 
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
