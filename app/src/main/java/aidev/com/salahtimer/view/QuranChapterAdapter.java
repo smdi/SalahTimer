@@ -5,6 +5,9 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
@@ -31,6 +34,7 @@ import aidev.com.salahtimer.model.pojo.Quran_Ar_En;
 import aidev.com.salahtimer.viewmodel.QuranViewModel;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -57,6 +61,8 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
     private final InternetChecker internetChecker;
     private boolean isConnectionAvailable = false;
     private final String UNAVAILABLE_AT_THE_MOMENT = "Unavailable at the moment!";
+    private RecyclerView recyclerView;
+    private int violet = Color.rgb(163, 28, 235); //Color.rgb(183, 33, 255);  // RGB value for #B721FF
 
     public QuranChapterAdapter(Activity ctx, List<Quran_Ar_En.Datum> listitem, List<String> listitem1
             , QuranViewModel quranViewModel, int exe, String[] split, int num, ProgressDialog progressDialog, MediaPlayer mediaPlayer) {
@@ -64,13 +70,71 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         this.ctx = ctx;
         this.listitem1 = listitem1;
         this.quranViewModel = quranViewModel;
-        this.use  =exe;
-        this.num= num;
+        this.use = exe;
+        this.num = num;
         this.split = split;
         this.progressDialog = progressDialog;
         sh = ctx.getSharedPreferences("QuranBookmark", Context.MODE_PRIVATE);
         this.mediaPlayer = mediaPlayer;
+        recyclerView = ((Activity) ctx).findViewById(R.id.quranverses);
         quranBookmarkRepository = new QuranBookmarkRepository(ctx.getApplication());
+
+        ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false; // No move operation in this case
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                // Get the position of the item
+                playSwipe();
+                int position = viewHolder.getAdapterPosition();
+                position = position + 1;
+                GenericToast.showToast(ctx, "Quran verse bookmarked!", GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
+                quranBookmarkRepository.insert(new QuranBookMarkDBTable((num + "" + position), split[5], split[1], "" + position, "" + num));
+                notifyItemChanged(position-1);
+            }
+            @Override
+            public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView,
+                                    @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+
+                if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+                    // Customize the swipe effect if needed (optional)
+                    float alpha = 1.0f - Math.abs(dX) / recyclerView.getWidth();
+                    viewHolder.itemView.setAlpha(alpha); // Fade out the item as it swipes
+                    viewHolder.itemView.setTranslationX(dX); // Translate the item
+                } else {
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+                }
+                // Get the item view
+                View itemView = viewHolder.itemView;
+
+                // Set the background color depending on swipe direction
+                Paint paint = new Paint();
+                if (dX > 0) {
+                    // Swipe right
+                    paint.setColor(violet); // Example: Green color for swipe right
+                } else if (dX < 0) {
+                    // Swipe left
+                    paint.setColor(violet); // Example: Red color for swipe left
+                }
+
+                // Apply the background color to the item view
+                if (dX != 0) {
+                    c.drawRect(itemView.getLeft(), itemView.getTop(), itemView.getRight(), itemView.getBottom(), paint);
+                }
+            }
+
+            @Override
+            public float getSwipeThreshold(@NonNull RecyclerView.ViewHolder viewHolder) {
+                return 0.7f; // Adjust swipe threshold if needed (e.g., 70% of item width)
+            }
+        };
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
 
         internetChecker = new InternetChecker(ctx);
         internetChecker.setNetworkStateListener(new InternetChecker.NetworkStateListener() {
@@ -157,7 +221,7 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
                 // Start recursive playback from the current verse
                 playVersesSequentially(position, mediaPlayer);
             }catch(Exception e){
-                GenericToast.showToast(ctx, UNAVAILABLE_AT_THE_MOMENT, GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
+                GenericToast.showToast(ctx, UNAVAILABLE_AT_THE_MOMENT, GenericToast.LENGTH_SHORT, GenericToast.CUSTOM, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
             }
 
 //            GenericToast.showToast(ctx, "Quran verse bookmarked!", GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
@@ -187,7 +251,7 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
                 playSingleVerse(position, holder, mediaPlayer);
             }catch(Exception e){
-                GenericToast.showToast(ctx, UNAVAILABLE_AT_THE_MOMENT, GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
+                GenericToast.showToast(ctx, UNAVAILABLE_AT_THE_MOMENT, GenericToast.LENGTH_SHORT, GenericToast.CUSTOM, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
             }
 
         });
@@ -261,7 +325,7 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         }
 
         // Get the RecyclerView instance
-        RecyclerView recyclerView = ((Activity) ctx).findViewById(R.id.quranverses); // Replace with actual RecyclerView ID
+//        RecyclerView recyclerView = ((Activity) ctx).findViewById(R.id.quranverses); // Replace with actual RecyclerView ID
 
         // Scroll to the current verse
         scrollToNextBatch(position, recyclerView);
@@ -342,6 +406,15 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         });
     }
 
+    private void playSwipe() {
+        MediaPlayer playSwipe;
+        try{
+            playSwipe = MediaPlayer.create(ctx, R.raw.swipe);
+            playSwipe.start();
+        }catch (Exception e){
+
+        }
+    }
     private String getStringUrl(int position, int num) {
 
 
