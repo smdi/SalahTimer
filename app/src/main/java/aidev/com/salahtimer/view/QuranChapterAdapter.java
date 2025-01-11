@@ -10,11 +10,13 @@ import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aidev.generictoast.GenericToast;
 
@@ -29,6 +31,7 @@ import aidev.com.salahtimer.model.pojo.Quran_Ar_En;
 import aidev.com.salahtimer.viewmodel.QuranViewModel;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapter.ViewHolder> {
@@ -53,6 +56,7 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
     private ViewHolder previousViewHolder = null; // Keep track of the previous ViewHolder
     private final InternetChecker internetChecker;
     private boolean isConnectionAvailable = false;
+    private final String UNAVAILABLE_AT_THE_MOMENT = "Unavailable at the moment!";
 
     public QuranChapterAdapter(Activity ctx, List<Quran_Ar_En.Datum> listitem, List<String> listitem1
             , QuranViewModel quranViewModel, int exe, String[] split, int num, ProgressDialog progressDialog, MediaPlayer mediaPlayer) {
@@ -137,28 +141,30 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        if (use == 0) {
-            holder.vno.setText("Data");
-            holder.content.setText("" + listitem1.get(position));
-        }
 
-        if (use == 2) {
-            Quran_Ar_En.Datum data = listitem.get(position);
-            holder.vno.setText(data.verseId);
-            holder.content.setText(data.text);
-            checkandSetBookmark(holder, data.verseId, split[0]);
-        }
+        int ind = position + 1;
+        holder.vno.setText("" + ind);
+        holder.content.setText(listitem1.get(position));
+        holder.cardView.setOnLongClickListener(v -> {
 
-        if (use == 3) {
-            int ind = position + 1;
-            holder.vno.setText("" + ind);
-            holder.content.setText(listitem1.get(position));
-            holder.cardView.setOnLongClickListener(v -> {
-                GenericToast.showToast(ctx, "Quran verse bookmarked!", GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
-                quranBookmarkRepository.insert(new QuranBookMarkDBTable((num + "" + ind), split[5], split[1], "" + ind, "" + num));
-                return true;
-            });
-        }
+            try{
+                if (!isConnectionAvailable) {
+                    progressDialog.dismiss();
+                    displayNoInternet("No Internet connection");
+                    return true;
+                }
+
+                // Start recursive playback from the current verse
+                playVersesSequentially(position, mediaPlayer);
+            }catch(Exception e){
+                GenericToast.showToast(ctx, UNAVAILABLE_AT_THE_MOMENT, GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
+            }
+
+//            GenericToast.showToast(ctx, "Quran verse bookmarked!", GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
+//            quranBookmarkRepository.insert(new QuranBookMarkDBTable((num + "" + ind), split[5], split[1], "" + ind, "" + num));
+            return true;
+        });
+
 
         // Alternate background color for rows
         if ((position + 1) % 2 == 0) {
@@ -167,79 +173,157 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
             holder.cardView.setBackgroundColor(ctx.getResources().getColor(R.color.white));
         }
 
-        // Manage play/pause button visibility
-        if (position == prevposition) {
-            // Show buttons for the currently playing verse
-            holder.play.setVisibility(View.VISIBLE);
-            holder.stop.setEnabled(true);
-            holder.play.setBackgroundResource(mediaPlayer.isPlaying() ? R.drawable.pausecolored : R.drawable.playcolored);
-        } else {
-            // Hide buttons for all other verses
-            holder.play.setVisibility(View.INVISIBLE);
-            holder.stop.setEnabled(false);
-        }
+
 
         // Click listener for each verse
         holder.cardView.setOnClickListener(view -> {
-            if (!isConnectionAvailable) {
-                // Show the "No Internet connection" message and exit
-                progressDialog.dismiss();
-                displayNoInternet("No Internet connection");
-                return; // Exit early to avoid further execution
+            try {
+                if (!isConnectionAvailable) {
+                    // Show the "No Internet connection" message and exit
+                    progressDialog.dismiss();
+                    displayNoInternet("No Internet connection");
+                    return; // Exit early to avoid further execution
+                }
+
+                playSingleVerse(position, holder, mediaPlayer);
+            }catch(Exception e){
+                GenericToast.showToast(ctx, UNAVAILABLE_AT_THE_MOMENT, GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
             }
 
-            playSingleVerse(position, holder, mediaPlayer);
         });
 
     }
 
-    private void playSingleVerse(int position, ViewHolder holder, MediaPlayer mediaPlayer){
+    private void playSingleVerse(int position, ViewHolder holder, MediaPlayer mediaPlayer) {
+        // Reset the previous ViewHolder if the position has changed
         if (position != prevposition) {
-            // Reset UI for the previously selected verse
+            // Reset the UI for the previous ViewHolder
             if (previousViewHolder != null) {
-                previousViewHolder.play.setBackgroundResource(R.drawable.playcolored);
-                previousViewHolder.play.setVisibility(View.INVISIBLE);
-                previousViewHolder.stop.setEnabled(false);
+                previousViewHolder.play.setVisibility(View.INVISIBLE); // Hide play button for the previous ViewHolder
+                previousViewHolder.stop.setEnabled(false); // Disable stop button for the previous ViewHolder
+                previousViewHolder.play.setBackgroundResource(R.drawable.playcolored); // Reset to play icon
             }
 
-            // Start playing the new verse
-            holder.play.setBackgroundResource(R.drawable.pausecolored);
-            holder.play.setVisibility(View.VISIBLE);
-            onceMedia = 1;
+//            Toast.makeText(ctx,(prevposition+"MediaPlayer "+""+ position), Toast.LENGTH_LONG).show();
+            // Update UI for the current ViewHolder
+            holder.play.setVisibility(View.VISIBLE); // Show play button for the current ViewHolder
+            holder.play.setBackgroundResource(R.drawable.pausecolored); // Show pause icon
+            holder.stop.setEnabled(true); // Enable stop button
+
+            // Reset and prepare the MediaPlayer for the new verse
             mediaPlayer.reset();
-            prevposition = position;
-            previousViewHolder = holder;
+            prevposition = position; // Update the position tracker
+            previousViewHolder = holder; // Update the reference to the current ViewHolder
+
+            // Show progress dialog while loading the verse
             progressDialog.show();
 
+            // Get the URL for the current verse and play
             String url = getStringUrl(position, num);
             gotoMediaPlayer(url, holder);
 
+            // Handle the completion of the MediaPlayer
             mediaPlayer.setOnCompletionListener(mp -> {
-                holder.play.setBackgroundResource(R.drawable.playcolored);
-                holder.play.setVisibility(View.INVISIBLE); // Hide play button on completion
+//                Toast.makeText(ctx,("MediaPlayer "+"Playback completed for position: " + position), Toast.LENGTH_LONG).show();
+                holder.play.setBackgroundResource(R.drawable.playcolored); // Reset to play icon
+                holder.play.setVisibility(View.INVISIBLE); // Hide the play button
+                holder.stop.setEnabled(false); // Disable stop button
                 mediaPlayer.stop();
                 mediaPlayer.reset();
 
-                length = 0;
-                onceMedia = 0;
-                this.prevposition = -1;
-                holder.stop.setEnabled(false);
-                this.previousViewHolder = null;
+                length = 0; // Reset playback position
+                prevposition = -1; // Reset the position tracker
+                previousViewHolder = null; // Clear the previous ViewHolder reference
             });
         } else {
-            // Toggle pause/resume for the currently playing verse
-            if (this.mediaPlayer.isPlaying()) {
-                this.mediaPlayer.pause();
-                length = this.mediaPlayer.getCurrentPosition();
-                holder.play.setBackgroundResource(R.drawable.playcolored); // Update to play icon
+            // If playing the same verse, toggle play/pause
+            if (mediaPlayer.isPlaying()) {
+//                Toast.makeText(ctx, "pause", Toast.LENGTH_LONG).show();;
+                mediaPlayer.pause(); // Pause playback
+                length = mediaPlayer.getCurrentPosition(); // Save the current position
+                holder.play.setBackgroundResource(R.drawable.playcolored); // Switch to play icon
             } else {
-                this.mediaPlayer.seekTo(length);
-                this.mediaPlayer.start();
-                holder.play.setBackgroundResource(R.drawable.pausecolored); // Update to pause icon
+//                Toast.makeText(ctx, "play", Toast.LENGTH_LONG).show();;
+                mediaPlayer.seekTo(length); // Resume from the saved position
+                mediaPlayer.start(); // Start playback
+                holder.play.setBackgroundResource(R.drawable.pausecolored); // Switch to pause icon
             }
-            holder.play.setVisibility(View.VISIBLE);
+            holder.play.setVisibility(View.VISIBLE); // Ensure the play button is visible
         }
     }
+
+    private void playVersesSequentially(int position, MediaPlayer mediaPlayer) {
+        // Stop recursion if all verses have been played
+        if (position >= listitem1.size()) {
+//            mediaPlayer.stop();
+//            mediaPlayer.reset();
+            return;
+        }
+
+        // Get the RecyclerView instance
+        RecyclerView recyclerView = ((Activity) ctx).findViewById(R.id.quranverses); // Replace with actual RecyclerView ID
+
+        // Scroll to the current verse
+        scrollToNextBatch(position, recyclerView);
+
+        // Retrieve the ViewHolder for the current position
+        ViewHolder currentHolder = (ViewHolder) recyclerView.findViewHolderForAdapterPosition(position);
+
+        if (currentHolder == null) {
+            // If the ViewHolder is not available (e.g., off-screen), delay and retry
+            recyclerView.postDelayed(() -> {
+                ViewHolder updatedHolder = (ViewHolder) recyclerView.findViewHolderForAdapterPosition(position);
+                if (updatedHolder != null) {
+                    // Play the verse once the ViewHolder becomes available
+                    playSingleVerse(position, updatedHolder, mediaPlayer);
+
+                    // Listen for completion to move to the next verse
+                    mediaPlayer.setOnCompletionListener(mp -> playVersesSequentially(position + 1, mediaPlayer));
+                } else {
+                    // If still unavailable, skip to the next verse
+                    playVersesSequentially(position + 1, mediaPlayer);
+                }
+            }, 300); // Adjust the delay for smooth scrolling and binding
+            return;
+        }
+
+        // Play the current verse
+        playSingleVerse(position, currentHolder, mediaPlayer);
+
+        // Set an OnCompletionListener to proceed to the next verse
+        mediaPlayer.setOnCompletionListener(mp -> {
+            // If it's the last verse, stop the player and reset
+            if (position == listitem1.size() - 1) {
+//                Toast.makeText(ctx,("MediaPlayer "+"Playback completed for position: " + position), Toast.LENGTH_LONG).show();
+                currentHolder.play.setBackgroundResource(R.drawable.playcolored); // Reset to play icon
+                currentHolder.play.setVisibility(View.INVISIBLE); // Hide the play button
+                currentHolder.stop.setEnabled(false); // Disable stop button
+                mediaPlayer.stop();
+                mediaPlayer.reset();
+                length = 0; // Reset playback position
+                prevposition = -1; // Reset the position tracker
+                previousViewHolder = null; // Clear the previous ViewHolder reference
+//                Log.d("MediaPlayer", "Last verse completed, media stopped.");
+            } else {
+                playVersesSequentially(position + 1, mediaPlayer); // Otherwise, move to the next verse
+            }
+        });
+    }
+
+    private void scrollToNextBatch(int position, RecyclerView recyclerView) {
+        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager instanceof LinearLayoutManager) {
+            LinearLayoutManager linearLayoutManager = (LinearLayoutManager) layoutManager;
+
+            // Check if the position is outside the current visible range
+            int lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition();
+            if (position > lastVisibleItem) {
+                // Smooth scroll to the current position
+                recyclerView.smoothScrollToPosition(position);
+            }
+        }
+    }
+
     private void gotoMediaPlayer(String url, ViewHolder holder) {
 
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -254,8 +338,8 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
             progressDialog.dismiss();
             holder.stop.setEnabled(true);
             mediaPlayer.start();
+//            Toast.makeText(ctx, "starting media", Toast.LENGTH_LONG).show();
         });
-
     }
 
     private String getStringUrl(int position, int num) {
@@ -388,12 +472,6 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
             final boolean unmetered = networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_METERED);
         }
     };
-
-
-
-    public static boolean checkConnection(Context context) {
-        return true;
-    }
 
     private void displayNoInternet(String msg) {
 //        TastyToast.makeText(ctx,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
