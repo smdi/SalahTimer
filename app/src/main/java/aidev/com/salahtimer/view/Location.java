@@ -20,6 +20,7 @@ import com.aidev.generictoast.GenericToast;
 import java.util.ArrayList;
 import java.util.List;
 import aidev.com.salahtimer.R;
+import aidev.com.salahtimer.model.InternetChecker;
 import aidev.com.salahtimer.model.pojo.CountryCityDBTable;
 import aidev.com.salahtimer.model.pojo.CountryCityRepository;
 import androidx.annotation.NonNull;
@@ -43,7 +44,8 @@ public class Location extends Fragment {
     private CountryCityRepository mRepository;
 
     private LiveData<List<CountryCityDBTable>> allCC;
-
+    private InternetChecker internetChecker;
+    private boolean isConnectionAvailable = false;
 
     List<CountryCityDBTable> list;
     ArrayList<String> arrayList;
@@ -63,6 +65,23 @@ public class Location extends Fragment {
         cityac = (AutoCompleteTextView) view.findViewById(R.id.cityac);
         conac = (AutoCompleteTextView) view.findViewById(R.id.conac);
 
+        internetChecker = new InternetChecker(view.getContext());
+        internetChecker.setNetworkStateListener(new InternetChecker.NetworkStateListener() {
+            @Override
+            public void onNetworkAvailable() {
+                isConnectionAvailable = true;
+            }
+
+            @Override
+            public void onNetworkLost() {
+                isConnectionAvailable = false;
+            }
+
+            @Override
+            public void onInternetCapabilityChanged(boolean hasInternet) {
+            }
+        });
+        internetChecker.startMonitoring();
 
 
         initialisers(view);
@@ -77,8 +96,6 @@ public class Location extends Fragment {
         share = (TextView) view.findViewById(R.id.share);
         share.setOnClickListener(view13 -> {
 
-//            startplayer();
-
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, "Islami Duniya");
@@ -88,30 +105,21 @@ public class Location extends Fragment {
 
             sAux = sAux + "\n\nPlay store link for the application\n\n"  + AppLInks.getPlaystore() + "\n\n\n";
 
-//            sAux = sAux + "Download and share the app";
-
-//            sAux = sAux + "\n\nDrive link for Offline Quran apk\n\n"  + AppLInks.getOfflineAppLink() + "\n\n";
-
             i.putExtra(Intent.EXTRA_TEXT, sAux);
             startActivity(Intent.createChooser(i, "share application"));
 
         });
 
-//        ghustkadaab = (LinearLayout) view.findViewById(R.id.gustkadab);
-//        ghustkadaab.setOnClickListener(view1 -> {
-//            startplayer();
-//            loadFragmentWithNoInternet(new GhustKeAdaab(),"ghust");
-//        });
 
         namazkdua = (LinearLayout) view.findViewById(R.id.namazkdua);
         namazkdua.setOnClickListener(view1 -> {
-//            startplayer();
+
             loadFragmentWithNoInternet(new Namaz_me_dua(),"namaz ke dua");
         });
 
         quran = (LinearLayout) view.findViewById(R.id.quran);
         quran.setOnClickListener(view1 -> {
-//            startplayer();
+
             loadFragmentWithNoInternet(new QuranIndexDisplay(),"index");
 
         });
@@ -119,21 +127,21 @@ public class Location extends Fragment {
 
         bookmark = (LinearLayout) view.findViewById(R.id.quranbookmark);
         bookmark.setOnClickListener(view1 -> {
-//            startplayer();
+
             loadFragmentWithNoInternet(new QuranBookmark(),"quranbookmark");
         });
 
 
         names99 = (LinearLayout) view.findViewById(R.id.names99);
         names99.setOnClickListener(view1 -> {
-//            startplayer();
+
             loadFragmentWithNoInternet(new AllahNames(),"AllahNames");
         });
 
 
         hadith = (LinearLayout) view.findViewById(R.id.hadith);
         hadith.setOnClickListener(view1 -> {
-//            startplayer();
+
             Bundle bundle = new Bundle();
             bundle.putString("data","read");
             Fragment fragment = new Hadith();
@@ -145,21 +153,14 @@ public class Location extends Fragment {
 
         tasbeeh = (LinearLayout) view.findViewById(R.id.tasbeehlayout);
         tasbeeh.setOnClickListener(view1 -> {
-//            startplayer();
+
             loadFragmentWithNoInternet(new TasbeehFragment(),"tasbeeh");
         });
 
 
-//        unlawfulgazes = (LinearLayout) view.findViewById(R.id.unlawfulgazes);
-//        unlawfulgazes.setOnClickListener(view1 -> {
-////            startplayer();
-//            loadFragmentWithNoInternet(new UnlawfulGazes(),"unlawfulgazes");
-//
-//        });
-
         hadithBookmark = (LinearLayout) view.findViewById(R.id.hadithbookmark);
         hadithBookmark.setOnClickListener(view1 -> {
-//            startplayer();
+
             loadFragmentWithNoInternet(new HadithBookmark(),"HadithBookmark");
         });
 
@@ -205,7 +206,7 @@ public class Location extends Fragment {
 
 
         search.setOnClickListener(view -> {
-//            startplayer();
+
 
             String cityText = cityac.getText().toString();
             String countryText = conac.getText().toString();
@@ -278,7 +279,7 @@ public class Location extends Fragment {
     }
 
     private void displayNoInternet(String msg) {
-//        TastyToast.makeText(getActivity(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
+
         GenericToast.showToast(getActivity(),
                 msg,
                 GenericToast.LENGTH_SHORT,
@@ -288,21 +289,14 @@ public class Location extends Fragment {
                 GenericToast.DEFAULT_FONT);
     }
 
-//    private void startplayer() {
-//
-//        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
-//        mp.start();
-//    }
 
     @SuppressLint("MissingPermission")
     private boolean checkConnection() {
 
-        ConnectivityManager connectivityManager = (ConnectivityManager)  getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-            return true;
-
-        } else { return false; }
+        if (!isConnectionAvailable) {
+            return false;
+        }
+        return true;
 
     }
 }

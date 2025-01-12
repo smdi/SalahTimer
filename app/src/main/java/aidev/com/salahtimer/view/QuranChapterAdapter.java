@@ -55,7 +55,6 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
     private int prevposition = -1;
     private int length = 0 ;
     private QuranBookmarkRepository quranBookmarkRepository;
-    private static final long DOUBLE_CLICK_TIME_DELTA = 300; // milliseconds
     private long lastClickTime = 0;
     private ViewHolder previousViewHolder = null; // Keep track of the previous ViewHolder
     private final InternetChecker internetChecker;
@@ -141,20 +140,15 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
             @Override
             public void onNetworkAvailable() {
                 isConnectionAvailable = true;
-                System.out.println("Network available in SomeClass");
-//                GenericToast.showToast(ctx, "Nw available"+isConnectionAvailable, GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
             }
 
             @Override
             public void onNetworkLost() {
                 isConnectionAvailable = false;
-                System.out.println("Network lost in SomeClass");
-//                GenericToast.showToast(ctx, "Network lost"+isConnectionAvailable, GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
             }
 
             @Override
             public void onInternetCapabilityChanged(boolean hasInternet) {
-                System.out.println("Internet capability in SomeClass: " + hasInternet);
             }
         });
         internetChecker.startMonitoring();
@@ -175,21 +169,15 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
             @Override
             public void onNetworkAvailable() {
                 isConnectionAvailable = true;
-                System.out.println("Network available in SomeClass");
-//                GenericToast.showToast(ctx, "Nw available"+isConnectionAvailable, GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
             }
 
             @Override
             public void onNetworkLost() {
                 isConnectionAvailable = false;
-                System.out.println("Network lost in SomeClass");
-//                GenericToast.showToast(ctx, "Network lost"+isConnectionAvailable, GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
             }
 
             @Override
             public void onInternetCapabilityChanged(boolean hasInternet) {
-                System.out.println("Internet capability in SomeClass: " + hasInternet);
-
             }
         });
         internetChecker.startMonitoring();
@@ -224,8 +212,6 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
                 GenericToast.showToast(ctx, UNAVAILABLE_AT_THE_MOMENT, GenericToast.LENGTH_SHORT, GenericToast.CUSTOM, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
             }
 
-//            GenericToast.showToast(ctx, "Quran verse bookmarked!", GenericToast.LENGTH_SHORT, GenericToast.SUCCESS, GenericToast.LITE, GenericToast.DEFAULT_FONT, GenericToast.DEFAULT_FONT);
-//            quranBookmarkRepository.insert(new QuranBookMarkDBTable((num + "" + ind), split[5], split[1], "" + ind, "" + num));
             return true;
         });
 
@@ -268,7 +254,6 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
                 previousViewHolder.play.setBackgroundResource(R.drawable.playcolored); // Reset to play icon
             }
 
-//            Toast.makeText(ctx,(prevposition+"MediaPlayer "+""+ position), Toast.LENGTH_LONG).show();
             // Update UI for the current ViewHolder
             holder.play.setVisibility(View.VISIBLE); // Show play button for the current ViewHolder
             holder.play.setBackgroundResource(R.drawable.pausecolored); // Show pause icon
@@ -288,7 +273,6 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
             // Handle the completion of the MediaPlayer
             mediaPlayer.setOnCompletionListener(mp -> {
-//                Toast.makeText(ctx,("MediaPlayer "+"Playback completed for position: " + position), Toast.LENGTH_LONG).show();
                 holder.play.setBackgroundResource(R.drawable.playcolored); // Reset to play icon
                 holder.play.setVisibility(View.INVISIBLE); // Hide the play button
                 holder.stop.setEnabled(false); // Disable stop button
@@ -302,12 +286,10 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         } else {
             // If playing the same verse, toggle play/pause
             if (mediaPlayer.isPlaying()) {
-//                Toast.makeText(ctx, "pause", Toast.LENGTH_LONG).show();;
                 mediaPlayer.pause(); // Pause playback
                 length = mediaPlayer.getCurrentPosition(); // Save the current position
                 holder.play.setBackgroundResource(R.drawable.playcolored); // Switch to play icon
             } else {
-//                Toast.makeText(ctx, "play", Toast.LENGTH_LONG).show();;
                 mediaPlayer.seekTo(length); // Resume from the saved position
                 mediaPlayer.start(); // Start playback
                 holder.play.setBackgroundResource(R.drawable.pausecolored); // Switch to pause icon
@@ -319,13 +301,8 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
     private void playVersesSequentially(int position, MediaPlayer mediaPlayer) {
         // Stop recursion if all verses have been played
         if (position >= listitem1.size()) {
-//            mediaPlayer.stop();
-//            mediaPlayer.reset();
             return;
         }
-
-        // Get the RecyclerView instance
-//        RecyclerView recyclerView = ((Activity) ctx).findViewById(R.id.quranverses); // Replace with actual RecyclerView ID
 
         // Scroll to the current verse
         scrollToNextBatch(position, recyclerView);
@@ -402,7 +379,6 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
             progressDialog.dismiss();
             holder.stop.setEnabled(true);
             mediaPlayer.start();
-//            Toast.makeText(ctx, "starting media", Toast.LENGTH_LONG).show();
         });
     }
 

@@ -49,7 +49,6 @@ public class HadithBookmarkAdapter extends RecyclerView.Adapter<HadithBookmarkAd
 
         holder.delete.setOnClickListener(view1 -> {
 
-//            startplayer();
             hadithBookmarkViewModel.insert(new HadithBookmarkDBTable(hadithBookmarkDBTable.getSerail_no_of_hadith(),
                     hadithBookmarkDBTable.getTitle(),hadithBookmarkDBTable.getContent(),0));
 
@@ -80,11 +79,5 @@ public class HadithBookmarkAdapter extends RecyclerView.Adapter<HadithBookmarkAd
 
         }
     }
-
-//    private void startplayer() {
-//
-//        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
-//        mp.start();
-//    }
 
 }

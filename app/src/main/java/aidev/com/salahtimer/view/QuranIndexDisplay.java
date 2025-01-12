@@ -61,17 +61,10 @@ public class QuranIndexDisplay extends Fragment {
 
                 listView.setOnItemClickListener((adapterView, view1, i, l) -> {
                     //make a transaction to new fragment
-//                    startplayer();
                     movetoQuranChapter(i+1);
             });
 
     }
-
-//    private void startplayer() {
-//
-//        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
-//        mp.start();
-//    }
 
     private void movetoQuranChapter(int num){
 

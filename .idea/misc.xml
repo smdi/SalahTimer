@@ -4,15 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/back_activity.xml" value="0.2415" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/back_relative_timings.xml" value="0.2415" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/custom_design_pressed_unpressed_holder.xml" value="0.2135" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/custom_design_unpressed.xml" value="0.2135" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/cutsom_design_pressed.xml" value="0.2135" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/line.xml" value="0.2415" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/line_drawable.xml" value="0.1" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/linear_layout_menu_radius.xml" value="0.135" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/location_underline.xml" value="0.1" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/navigation_back.xml" value="0.1825" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/no_data_dark_foreground.xml" value="0.2415" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/purple_down_cut.xml" value="0.2415" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/rotatebeeddesign.xml" value="0.2415" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/share_background.xml" value="0.2415" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/textcolor_pressed_unpressed.xml" value="0.279" />
-        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/activity_router.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/thumb_drawable.xml" value="0.2415" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/timings_card_back.xml" value="0.2415" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/whatsapp.xml" value="0.2415" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/drawable/white_border.xml" value="0.2415" />
+        <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/activity_router.xml" value="0.1" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_allah_names.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Shaik Mohammad Imran/StudioProjects/SalahTimer/app/src/main/res/layout/fragment_compass.xml" value="0.27447916666666666" />

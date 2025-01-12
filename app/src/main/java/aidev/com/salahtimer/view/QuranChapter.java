@@ -39,7 +39,6 @@ public class QuranChapter extends Fragment {
     private QuranViewModel quranViewModel;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-//    private TextView  arabic, translitertion, translation;
     private ImageView playpause, stop;
     private int num;
     private List<Quran_Ar_En.Datum> data1;
@@ -48,14 +47,7 @@ public class QuranChapter extends Fragment {
     private ProgressDialog progressDialog;
     private MediaPlayer mediaPlayer;
     private int tranliterationNumber = 3;
-//    int pplay = 0;
-//    int length = 0;
-//    private MediaPlayer mediaPlayer;
-//    private int onceMedia = 0;
     private RelativeLayout head,quranchapter;
-//    private SeekBar seekBar;
-//    private Handler mSeekbarUpdateHandler;
-//    private Runnable mUpdateSeekbar;
     private String message;
 
 
@@ -76,16 +68,6 @@ public class QuranChapter extends Fragment {
         num = getArguments().getInt("number");
         message = QuranIndex.QuranIndexProfile.getIndexDisplay(num);
         quranViewModel = new ViewModelProvider(this, new QuranFactory(getActivity())).get(QuranViewModel.class);
-
-//        SharedPreferences sh = getActivity().getSharedPreferences("DB", Context.MODE_PRIVATE);
-//        int exe = sh.getInt("dataofquran", 3);
-//
-//        if(exe == 2){
-////            fetcherTranslation(exe,num);
-//        }
-//        if(exe == 3){
-//            fetcherTransliteration(exe,num);
-//        }
 
         fetcherTransliteration(tranliterationNumber,num);
     }
@@ -165,7 +147,6 @@ public class QuranChapter extends Fragment {
     private void getPop() {
 
         progressDialog.dismiss();
-//        TastyToast.makeText(getActivity(),"",TastyToast.LENGTH_SHORT,TastyToast.ERROR).show();
         GenericToast.showToast(getActivity(),
                 "slow Internet connection",
                 GenericToast.LENGTH_SHORT,
@@ -200,31 +181,9 @@ public class QuranChapter extends Fragment {
 
         recyclerView.setLayoutManager(linearLayoutManager);
 
-//        head = view.findViewById(R.id.head);
-//
-//        head.setOnClickListener(view1 -> {
-//
-//        });
         quranchapter = view.findViewById(R.id.quranchapter);
 
         quranchapter.setOnClickListener(view1 -> {});
-//        translation = (TextView) view.findViewById(R.id.translation);
-//        translitertion = (TextView) view.findViewById(R.id.transliteration);
-//        translitertion.setOnClickListener(view1 -> {
-////            startplayer();
-//            store(3);
-//            fetcherTransliteration(3, num);
-//        });
-//        translation.setOnClickListener(view1 -> {
-////            startplayer();
-//            if(checkConnection()){
-//                store(2);
-//                fetcherTranslation(2, num);
-//            }
-//            else {
-//                displayNoInternet("No Internet connection");
-//            }
-//        });
 
         faker = new ArrayList<>();
         faker.add("Fetching Data");
@@ -255,7 +214,6 @@ public class QuranChapter extends Fragment {
 
     }
     private void displayNoInternet(String msg) {
-//        TastyToast.makeText(getActivity(),msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
         GenericToast.showToast(getActivity(),
                 msg,
                 GenericToast.LENGTH_SHORT,
@@ -265,12 +223,6 @@ public class QuranChapter extends Fragment {
                 GenericToast.DEFAULT_FONT);
 
     }
-
-//    private void startplayer() {
-//
-//        final MediaPlayer mp = MediaPlayer.create(getActivity() ,R.raw.knock);
-//        mp.start();
-//    }
 
     @Override
     public void onStop() {

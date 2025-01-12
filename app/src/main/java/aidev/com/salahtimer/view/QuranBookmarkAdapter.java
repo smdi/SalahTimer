@@ -77,8 +77,7 @@ public class QuranBookmarkAdapter extends RecyclerView.Adapter<QuranBookmarkAdap
             bundle.putInt("number",num);
             bundle.putString("bookmark","scroll");
             bundle.putInt("scroll",verseno);
-            Fragment fragment = new QuranChapter();  //online
-//        Fragment fragment = new QuranOffline();  //offline
+            Fragment fragment = new QuranChapter();
             fragment.setArguments(bundle);
             FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.quranbookmark,fragment).addToBackStack("chapter");
@@ -99,7 +98,6 @@ public class QuranBookmarkAdapter extends RecyclerView.Adapter<QuranBookmarkAdap
 
     }
     private void displayNoInternet(String msg) {
-//        TastyToast.makeText(ctx,msg,TastyToast.LENGTH_SHORT,TastyToast.DEFAULT).show();
         GenericToast.showToast(ctx,
                 msg,
                 GenericToast.LENGTH_SHORT,
@@ -132,11 +130,5 @@ public class QuranBookmarkAdapter extends RecyclerView.Adapter<QuranBookmarkAdap
 
         }
     }
-
-//    private void startplayer() {
-//
-//        final MediaPlayer mp = MediaPlayer.create(ctx ,R.raw.knock);
-//        mp.start();
-//    }
 
 }

@@ -11,13 +11,9 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 
 import com.aidev.generictoast.GenericToast;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import aidev.com.salahtimer.R;
-import aidev.com.salahtimer.view.Compass;
-import aidev.com.salahtimer.view.HadithNotifier;
-import aidev.com.salahtimer.view.HijriCalendar;
 import aidev.com.salahtimer.view.Location;
 import aidev.com.salahtimer.view.Router;
 
