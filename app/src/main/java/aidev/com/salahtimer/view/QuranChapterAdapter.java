@@ -14,10 +14,13 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,6 +65,9 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
     private final String UNAVAILABLE_AT_THE_MOMENT = "Unavailable at the moment!";
     private RecyclerView recyclerView;
     private int violet = Color.rgb(163, 28, 235); //Color.rgb(183, 33, 255);  // RGB value for #B721FF
+    private static final String PREFS_NAME = "AppPrefs";
+    private static final String KEY_TOOLTIP_SHOWN = "tooltip_shown";
+    private static int oncePopup = 0;
 
     public QuranChapterAdapter(Activity ctx, List<Quran_Ar_En.Datum> listitem, List<String> listitem1
             , QuranViewModel quranViewModel, int exe, String[] split, int num, ProgressDialog progressDialog, MediaPlayer mediaPlayer) {
@@ -196,6 +202,19 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
 
         int ind = position + 1;
         holder.vno.setText("" + ind);
+
+        // Check if the tooltip has been shown before
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        boolean isTooltipShown = sharedPreferences.getBoolean(KEY_TOOLTIP_SHOWN, false);
+
+        if (!isTooltipShown && oncePopup == 0) {
+
+            showTooltip(holder.content);
+            oncePopup = 1;
+            // Save the state to preferences
+            sharedPreferences.edit().putBoolean(KEY_TOOLTIP_SHOWN, true).apply();
+        }
+
         holder.content.setText(listitem1.get(position));
         holder.cardView.setOnLongClickListener(v -> {
 
@@ -243,6 +262,28 @@ public class QuranChapterAdapter extends RecyclerView.Adapter<QuranChapterAdapte
         });
 
     }
+
+    private void showTooltip(View anchorView) {
+        // Inflate the tooltip layout
+        LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View tooltipView = inflater.inflate(R.layout.tooltip_layout, null);
+
+        // Create a PopupWindow
+        final PopupWindow popupWindow = new PopupWindow(
+                tooltipView,
+                RecyclerView.LayoutParams.WRAP_CONTENT,
+                RecyclerView.LayoutParams.WRAP_CONTENT,
+                true
+        );
+
+        // Dismiss button functionality
+        Button dismissButton = tooltipView.findViewById(R.id.tooltipDismiss);
+        dismissButton.setOnClickListener(v -> popupWindow.dismiss());
+
+        // Show the tooltip near the anchor view
+        popupWindow.showAtLocation(anchorView, Gravity.CENTER, 0, 0);
+    }
+
 
     private void playSingleVerse(int position, ViewHolder holder, MediaPlayer mediaPlayer) {
         // Reset the previous ViewHolder if the position has changed

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/tooltip_background">
+
+    <TextView
+        android:id="@+id/tooltipTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quick Tips"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/back5"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tooltipLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Tap on a verse to play its audio"
+        android:textColor="@android:color/white"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tooltipLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Long touch on a verse to play audio for all verses"
+        android:textColor="@android:color/white"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tooltipLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3. Swipe to bookmark a verse"
+        android:textColor="@android:color/white"
+        android:paddingBottom="16dp" />
+
+    <Button
+        android:id="@+id/tooltipDismiss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Got it, thanks!"
+        android:textAllCaps="false"
+        android:background="@drawable/button_popup"
+        android:textColor="#000000"
+        />
+
+</LinearLayout>
+
